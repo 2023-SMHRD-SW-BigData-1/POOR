@@ -26,7 +26,7 @@ async function getSelect(request, response) {
             connectString : dbConfig.connectString
         })
 
-        // const result = await connection.execute(
+        // const0 result = await connection.execute(
         // 'SELECT * FROM T_USER',
         //     [],(err, result)=>{
         //         console.log(result)
