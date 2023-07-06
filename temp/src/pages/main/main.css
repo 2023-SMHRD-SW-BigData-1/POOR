@@ -1,0 +1,59 @@
+.form-floating{
+    width: 500px;
+    height: 100px;
+    font-size: 100%;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.body1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mb-1{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.h3{
+    text-align: center;
+}
+.mb-4{
+    width: 200px;
+    height : 200px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.btn_btn-light{
+    width: 250px;
+    color: black;
+    background-color:aliceblue;
+    border: 0;
+    
+}
+.btn_btn-secondary{
+    width: 250px;
+    color: white;
+    background-color: gray;
+    border: 0;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+#floatingInput{
+    line-height: 100px;
+}
+.idSearch{
+    text-decoration: none;
+    color: black;
+}
+.pwSearch{
+    text-decoration: none;
+    color: black;
+}
+.idPwSearch{
+    text-align: center;
+}
