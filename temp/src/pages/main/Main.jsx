@@ -15,11 +15,11 @@ const Main = () => {
   <h3 className='h3'>거지의 꿈과 함께하세요.</h3>
   
   <div className="form-floating">
-      <input type="text" className="form-control" id="floatingInput" placeholder="ID"/>
+      <input type="text" name='id'className="form-control" id="floatingInput" placeholder="ID"/>
       <label for="floatingInput">ID</label>
     </div>
     <div className="form-floating">
-        <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
+        <input type="password" name='pw'className="form-control" id="floatingPassword" placeholder="Password"/>
         <label for="floatingPassword">Password</label>
     </div>
 
