@@ -26,14 +26,18 @@ async function getSelect(request, response) {
             connectString : dbConfig.connectString
         })
 
-        const result = await connection.execute(
-        'SELECT * FROM T_USER',
-            [],(err, result)=>{
-                console.log(result)
-                response.send(result.rows)
+        // const0 result = await connection.execute(
+        // 'SELECT * FROM T_USER',
+        //     [],(err, result)=>{
+        //         console.log(result)
+        //         response.send(result.rows)
                 
-            } // num의 값 전달
-        )
+        //     } // num의 값 전달
+        // )
+        const result = await connection.execute('SELECT * FROM T_USER');
+
+    // 쿼리 결과 처리
+    console.log(result.rows);
 
     } catch (error) {
         console.log(error)
