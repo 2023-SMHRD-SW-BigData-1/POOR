@@ -3,7 +3,9 @@ import React from 'react'
 // import ListMain from './ListMain';
 // import DiscountMain from './main/discountMain';
 // import WriteView from './main/writeViewMain';
-import WritePageMain from './main/writePageMain';
+// import WritePageMain from './main/writePageMain';
+import SignInMain from './main/signInMain';
+
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       {/* <ListMain></ListMain> */}
       {/* <DiscountMain></DiscountMain> */}
       {/* <WriteView></WriteView> */}
-      <WritePageMain></WritePageMain>
+      {/* <WritePageMain></WritePageMain> */}
+      <SignInMain></SignInMain>
+
     </div>
   );
 }
