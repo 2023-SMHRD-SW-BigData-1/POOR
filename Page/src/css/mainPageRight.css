@@ -33,8 +33,9 @@
 }
 .mainRightEtc{
     color: gray;
-    float: right;
-    /* position: absolute; */
+    /* float: right; */
+    position: absolute;
+    bottom: 0;
     /* right: 20px;
     bottom: 20px; */
     font-size: x-large;

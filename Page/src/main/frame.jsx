@@ -8,6 +8,7 @@ import Mypage from './myPage'
 // import DiscountPage2 from './discountPage'
 import NewPageMain from './newPageMain'
 import SetUpMain from './setUpMain'
+import DiscountPage2 from '../components/discountPage2'
 
 const frame = () => {
   return (
@@ -23,11 +24,11 @@ const frame = () => {
           </div>
           <div className='childCenter'>
               {/* <DiscountPage></DiscountPage> */}
-              {/* <ListPage></ListPage> */}
+              <ListPage></ListPage>
               {/* <Mypage></Mypage> */}
               {/* <DiscountPage2></DiscountPage2> */}
               {/* <NewPageMain></NewPageMain> */}
-              <SetUpMain></SetUpMain>
+              {/* <SetUpMain></SetUpMain> */}
           </div>
           <div className='childRight'>
               <MainPageRight></MainPageRight>

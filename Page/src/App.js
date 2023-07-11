@@ -16,12 +16,12 @@ function App() {
     <div className="mainApp">
       {/* <MyPage></MyPage> */}
       {/* <ListMain></ListMain> */}
-      <DiscountMain></DiscountMain>
+      {/* <DiscountMain></DiscountMain> */}
       {/* <WriteView></WriteView> */}
       {/* <WritePageMain></WritePageMain> */}
       {/* <Frame></Frame> */}
       {/* <MainPageLeft></MainPageLeft> */}
-      {/* <SignInMain></SignInMain> */}
+      <SignInMain></SignInMain>
       {/* <DiscountPage2></DiscountPage2> */}
       {/* <NewPageMain></NewPageMain> */}
       {/* <SetUpMain></SetUpMain> */}
