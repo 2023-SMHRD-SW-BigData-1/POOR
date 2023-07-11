@@ -440,19 +440,19 @@ input{
     color :black;  
 }
 .body1{
-    display : flex;
-    justify-content: center;
-    align-content: center;
-    gap: 50px;
+    display : inline-flex;
+    /* justify-content: center;
+    align-content: center; */
+    gap: 30px;
     padding-top : 15px;
-    margin : 30px;
 }
 article{
     display: flex;
     flex-direction: column;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
-    width : 614px;
+    width : 550px;
     height: 100%;
+    background-color: #F0F4F3;
 }
 .feedHeader{
     display : flex;
@@ -468,9 +468,9 @@ article{
     padding-left: 10px;
     font-weight: bold;
 }
-.feedHeader a{
+/* .feedHeader a{
     padding-left : 420px;
-}
+} */
 .feedImage{
     display : flex;
     justify-content: center;
@@ -561,7 +561,7 @@ article{
 .feedCommentContainer button{
     border : 0;
     outline: 0;
-    color : rgba(var(--d69,0,149,246),1);
+    color : rgb(142, 143, 142);
     background-color: white;
 }       
 aside {
@@ -588,6 +588,7 @@ aside {
     display: flex;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     flex-direction: column;
+    background-color: #F0F4F3;
 }
 .asideBodyStory{
     display : flex;
@@ -597,7 +598,7 @@ aside {
     padding : 1px 0;
 }
 .asideBodyStory span{
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
     padding-left : 10px;
 }
 .asideBodyStory p{
@@ -632,13 +633,14 @@ aside {
 }
 .asidehi p{
     font-size: 15px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .asideTails{
     display : flex;
     flex-direction: column;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     margin-top : 20px;
+    background-color: #F0F4F3;
 }
 .asideTails img{
     border-radius: 50%;
@@ -652,7 +654,7 @@ aside {
 }
 .asideTailsRecommend span{
     padding-left : 10px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .asideTailsRecommend p{
     padding-right : 10px;
@@ -673,7 +675,7 @@ aside {
 }
 .asideTailsRecommend2 p{
     padding-top : 5px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .font-face {
     font-family: 'mainFont3', sans-serif;
@@ -734,21 +736,14 @@ input{
 .headerRightImage a{
     color :black;  
 }
-.body1{
+/* .body1{
     display : flex;
     justify-content: center;
     align-content: center;
     gap: 50px;
     padding-top : 15px;
     margin : 30px;
-}
-article{
-    display: flex;
-    flex-direction: column;
-    border : 1px solid rgba(var(--b6a,219,219,219),1);
-    width : 614px;
-    height: 100%;
-}
+} */
 .feedHeader{
     display : flex;
     padding : 10px 5px;
@@ -763,9 +758,7 @@ article{
     padding-left: 10px;
     font-weight: bold;
 }
-.feedHeader a{
-    padding-left : 420px;
-}
+
 .feedImage{
     display : flex;
     justify-content: center;
@@ -823,7 +816,7 @@ article{
 }
 .moreView a{
     text-decoration: none;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .friendsSentence{
     display: flex;
@@ -840,7 +833,7 @@ article{
 .time{
     padding : 10px 0 10px 10px;
     font-size : 15px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .feedCommentContainer{
     display: flex;
@@ -848,16 +841,19 @@ article{
     justify-content: space-between;
     border-top : 1px solid rgba(var(--b6a,219,219,219),1);
     padding : 5px;
+    background-color: #F0F4F3;
 }
 .feedComment{
     border : none;
     width : 560px;
+    background-color: #F0F4F3;
 }
+
 .feedCommentContainer button{
     border : 0;
     outline: 0;
+    background-color: #F0F4F3;
     color : rgba(var(--d69,0,149,246),1);
-    background-color: white;
 }       
 aside {
     display : flex;
@@ -892,7 +888,7 @@ aside {
     padding : 1px 0;
 }
 .asideBodyStory span{
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
     padding-left : 10px;
 }
 .asideBodyStory p{
@@ -927,7 +923,7 @@ aside {
 }
 .asidehi p{
     font-size: 15px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .asideTails{
     display : flex;
@@ -947,7 +943,7 @@ aside {
 }
 .asideTailsRecommend span{
     padding-left : 10px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
 .asideTailsRecommend p{
     padding-right : 10px;
@@ -968,5 +964,5 @@ aside {
 }
 .asideTailsRecommend2 p{
     padding-top : 5px;
-    color : rgba(var(--b6a,219,219,219),1);
+    color : rgb(142, 143, 142);
 }
