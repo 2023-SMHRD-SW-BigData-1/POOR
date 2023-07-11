@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+} */
+@font-face {
+  font-family: "mainFont";
+  src: url(./fonts/Uhbee\ NaHyun.ttf);
+}
+@font-face {
+  font-family: "mainFontBold";
+  src: url(./fonts/Uhbee\ NaHyun\ Bold.ttf);
+}
+@font-face {
+  font-family: "mainFont2";
+  src: url(./fonts/UhBee\ DDOYO.ttf);
+}
+@font-face {
+  font-family: "mainFontBold2";
+  src: url(./fonts/UhBee\ DDOYO\ BOLD.ttf);
+}
+@font-face {
+  font-family: "mainFont3";
+  src: url(./fonts/UhBee\ Motomi.ttf);
 }

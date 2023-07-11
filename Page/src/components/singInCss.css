@@ -3,7 +3,7 @@
 
 :root {
   --bg: #F0F4F3;
-  --theme: #3AB19B;
+  --theme: #697a79;
   --theme-two: #FFFFFF;
   --text: #697a79;
 }
@@ -14,16 +14,18 @@
 }
 body {
   /* include a circle and a triangle elements through SVG shapes, and at either end of the page */
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><circle cx="50" cy="50" r="50" fill="%23FBCD44"/></g></svg>'), url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><path d="M 0 80 l 100 -80 v 100 z" fill="%23E35E6A"/></g></svg>'), var(--bg);
+  /* background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><circle cx="50" cy="50" r="50" fill="%23FBCD44"/></g></svg>'), url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><path d="M 0 80 l 100 -80 v 100 z" fill="%23E35E6A"/></g></svg>'), var(--bg); */
+  background-color: #F0F4F3;
   background-repeat: no-repeat;
   background-position: bottom -150px left -70px, top -120px right -100px;
   background-size: 300px, 380px, 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'mainFontBold2', sans-serif;
   color: var(--text);
   /* center the main element in the viewport */
   display: flex;
   justify-content: center;
   padding: 1rem 0;
+  font-size: larger;
 }
 /* include the same shapes included in the background atop the content of the page, with a semi-translucent white
 this softens the color of the shapes, but most prominently shows the shapes as if continuing on the underlying content
@@ -72,14 +74,14 @@ display the content in a single column layout
 }
 /* styles shared by the halves' elements */
 .Panel h2 {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
 .Panel p {
   margin: 1rem 0;
-  max-width: 25ch;
-  font-size: 0.95rem;
+  max-width: 28ch;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 300;
   text-align: center;

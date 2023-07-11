@@ -5,6 +5,7 @@ import './mainCss.css'
 const ListPage = () => {
   return (
     <>
+    <div className='listContainer'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -31,7 +32,7 @@ const ListPage = () => {
         </div>
         <div className="board_list_wrap">
           <div className="board_list">
-            <div className="top">
+            <div className="ListTop">
               <div className="num">번호</div>
               <div className="title">제목</div>
               <div className="writer">글쓴이</div>
@@ -39,21 +40,7 @@ const ListPage = () => {
               <div className="count">조회</div>
             </div>
             <div>
-              <div className="num">5</div>
-              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-              <div className="writer">김이름</div>
-              <div className="date">2023.7.15</div>
-              <div className="count">33</div>
-            </div>
-            <div>
-              <div className="num">4</div>
-              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-              <div className="writer">김이름</div>
-              <div className="date">2023.7.15</div>
-              <div className="count">33</div>
-            </div>
-            <div>
-              <div className="num">3</div>
+              <div className="num">1</div>
               <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
               <div className="writer">김이름</div>
               <div className="date">2023.7.15</div>
@@ -67,7 +54,56 @@ const ListPage = () => {
               <div className="count">33</div>
             </div>
             <div>
-              <div className="num">1</div>
+              <div className="num">3</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">4</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">5</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">6</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">7</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">8</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">9</div>
+              <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div className="writer">김이름</div>
+              <div className="date">2023.7.15</div>
+              <div className="count">33</div>
+            </div>
+            <div>
+              <div className="num">10</div>
               <div className="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
               <div className="writer">김이름</div>
               <div className="date">2023.7.15</div>
@@ -89,6 +125,7 @@ const ListPage = () => {
             <a href="write.html" className="on">등록</a>
           </div>
         </div>
+      </div>
       </div>
     </>
   )
