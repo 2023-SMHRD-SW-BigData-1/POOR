@@ -1,9 +1,11 @@
 import React from 'react'
-import SignIn from '../components/SignIn'
+// import SignIn from '../components/SignIn'
+import LoginTestMain from '../components/loginTest'
 
 const signInMain = () => {
   return (
-    <SignIn></SignIn>
+    // <SignIn></SignIn>
+    <LoginTestMain></LoginTestMain>
   )
 }
 

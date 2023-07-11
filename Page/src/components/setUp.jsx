@@ -11,7 +11,7 @@ const setUp = () => {
               <span>로그아웃</span>
               <br />
             </div>
-            <strong>X</strong>
+            
           </div>
           <div className="onen">
             <ul>
@@ -41,7 +41,7 @@ const setUp = () => {
                 </div>
               </li>
             </ul>
-            <div className="bottom">
+            <div className="setUpBottom">
               <h4>거지의 꿈 고객센터 <strong>062-655-3506</strong></h4>
             </div>
           </div>

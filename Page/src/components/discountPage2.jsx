@@ -10,9 +10,11 @@ import disImg6 from '../img/올리브영_800x800.jpg'
 import disImg7 from '../img/요기요_800x800.jpg'
 import '../css/templatemo-style.css'
 // import '../css/mainCss.css'
+// import Slider from "react-slick";
 
 
 const discountPage2 = () => {
+    
   return (
     <div className='disContainer'>
       <header className="headerContainer">
@@ -27,13 +29,10 @@ const discountPage2 = () => {
             <i className="fas fa-search"></i>
             <input type="text" placeholder="검색" />
           </div>
-          {/* <nav className="headerRightImage">
-            <a href=" "><i className="far fa-compass"></i></a>
-            <a href=" "><i className="far fa-heart"></i></a>
-            <a href=" "><i className="fas fa-user"></i></a>
-          </nav> */}
         </div>
       </header>
+
+      
 
       <div className="disContents">
         <div className="disObject">
@@ -59,7 +58,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>12 Jul 2023</span>
+                    <span className="tm-text-gray-light">12 Jul 2023</span>
                     <span className='disText'>11,402 views</span>
                 </div>
             </div>
@@ -72,7 +71,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>10 Jul 2023</span>
+                    <span className="tm-text-gray-light">10 Jul 2023</span>
                     <span className='disText'>9,906 views</span>
                 </div>
             </div>
@@ -85,7 +84,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>09 Jul 2023</span>
+                    <span className="tm-text-gray-light">09 Jul 2023</span>
                     <span className='disText'>16,100 views</span>
                 </div>
             </div>
@@ -98,7 +97,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>08 Jul 2023</span>
+                    <span className="tm-text-gray-light">08 Jul 2023</span>
                     <span className='disText'>16,008 views</span>
                 </div>
             </div>
@@ -111,7 +110,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>11 Jul 2023</span>
+                    <span className="tm-text-gray-light">11 Jul 2023</span>
                     <span className='disText'>12,860 views</span>
                 </div>
             </div>
@@ -124,7 +123,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>14 Jul 2023</span>
+                    <span className="tm-text-gray-light">14 Jul 2023</span>
                     <span className='disText'>10,900 views</span>
                 </div>
             </div>
@@ -137,7 +136,7 @@ const discountPage2 = () => {
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
-                    <span className='disText'>14 Jul 2023</span>
+                    <span className="tm-text-gray-light">14 Jul 2023</span>
                     <span className='disText'>11,300 views</span>
                 </div>
             </div>  
