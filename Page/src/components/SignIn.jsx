@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 // import { render } from 'react-dom'
 // import mainImg from '../img/캡처.PNG'
 // import titleImg from '../img/타이틀.PNG'
-import './singInCss.css'
+import '../css/singInCss.css'
 
 const SignIn = () => {
 
@@ -201,7 +201,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="singInApp">
         <FormPanel signIn={this.state.signIn} />
         <ActionPanel signIn={this.state.signIn} slide={this.slide} />
       </div>

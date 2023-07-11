@@ -3,7 +3,7 @@ import myImg from '../img/ho.jpg'
 import myPostImg from '../img/new.PNG'
 import myScrapImg from '../img/scrap.png'
 import myInfoImg from '../img/info.PNG'
-import './myPage.css'
+import '../css/myPage.css'
 
 const MyPage = () => {
 
