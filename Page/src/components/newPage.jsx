@@ -1,5 +1,5 @@
 import React from 'react'
-import './mainCss.css'
+import '../css/mainCss.css'
 import img1 from '../img/캡처.PNG'
 import postImg from '../img/지갑텅빈.png'
 import profil1 from '../img/게시글프사.png'

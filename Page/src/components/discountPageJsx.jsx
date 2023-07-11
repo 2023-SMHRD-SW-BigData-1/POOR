@@ -1,7 +1,7 @@
 import React from 'react'
 import MainImg from '../img/캡처.PNG'
-import './mainCss.css'
-import './discountPage.css'
+import '../css/mainCss.css'
+import '../css/discountPage.css'
 
 const discountPageJsx = () => {
   return (

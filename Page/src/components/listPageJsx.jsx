@@ -1,6 +1,6 @@
 import React from 'react'
 import MainImg from '../img/캡처.PNG'
-import './mainCss.css'
+import '../css/mainCss.css'
 
 const ListPage = () => {
   return (

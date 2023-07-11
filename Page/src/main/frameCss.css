@@ -89,7 +89,7 @@
     .parents {
       display: inline-flex;
       /* flex-basis: 60%; */
-      width: 500px;
+      /* width: 500px; */
     }
     .childLeft {
         flex-basis: 100px;

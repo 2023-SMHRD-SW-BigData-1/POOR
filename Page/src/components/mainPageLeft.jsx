@@ -1,5 +1,5 @@
 import React from 'react'
-import './mainPageLeft.css'
+import '../css/mainPageLeft.css'
 import titleImg from '../img/타이틀.PNG'
 import homeIcon from '../img/home.PNG'
 import searchIcon from '../img/search.PNG'

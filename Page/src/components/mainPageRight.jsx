@@ -1,5 +1,5 @@
 import React from 'react'
-import './mainPageRight.css'
+import '../css/mainPageRight.css'
 import goalIcon from '../img/goal.PNG'
 import memoIcon from '../img/memeo.PNG'
 import hoImg from '../img/ho.jpg'
