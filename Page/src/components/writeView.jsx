@@ -31,7 +31,7 @@ const writeView = () => {
             <div className="title">
               냉장고 문이 안열려요..
             </div>
-            <div className="info">
+            <div className="wirteInfo">
               <dl>
                 <dt>번호</dt>
                 <dd>1</dd>

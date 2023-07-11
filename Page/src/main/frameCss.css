@@ -1,0 +1,110 @@
+/* .parents{
+    display: flex;
+    flex : 1;
+    text-align: center;
+    flex-direction: row;
+}
+.childLeft{
+    flex:1;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.childCenter{
+    flex : 2;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.childRight{
+    flex : 1;
+    text-align: center;
+} */
+/* .parents {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    flex-direction: row;
+  }
+  
+  .childLeft {
+    flex: 1;
+    
+   
+  align-self: center;
+    text-align: center;
+    width: 100%;
+    
+   
+  height: 100%;
+  }
+  
+  .childCenter {
+    flex: 2;
+    
+   
+  text-align: center;
+    
+   
+  margin-left: 100px;
+    
+   
+  margin-right: 100px;
+  }
+  
+  .childRight {
+    flex: 1;
+    
+   
+  text-align: center;
+  } */
+  /* .frameContainer{
+    display: inline-flex;
+  } */
+  .parents {
+    display: flex;
+    justify-content: space-between; /* 각 구역을 좌우로 최대한 분리 */
+    height: 1500px;
+}
+
+.childLeft {
+    flex-basis: 20%; /* 각 구역의 너비 설정 */
+    /* border: 1px solid black; */
+    /* background-color: #3AB19B; */
+    background-color: #F0F4F3;
+}
+.childCenter {
+    flex-basis: 60%; /* 각 구역의 너비 설정 */
+    /* border: 1px solid black; */
+    padding: 0 130px 0 130px;
+    /* background-color: #F0F4F3; */
+}
+.childRight {
+    flex-basis: 20%; /* 각 구역의 너비 설정 */
+    /* border: 1px solid black; */
+    /* background-color: #3AB19B; */
+    background-color: #F0F4F3;
+}
+@media (max-width: 1500px) {
+    .parents {
+      display: inline-flex;
+      /* flex-basis: 60%; */
+      width: 500px;
+    }
+    .childLeft {
+        flex-basis: 100px;
+        /* width: 10px; */
+    }
+    .childCenter{
+        display: inline-block;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 0 0 100px 100px;
+        /* width: 100%;
+        height: 100%; */
+    }
+    .childRight{
+        display: none;
+    }
+  }

@@ -1,7 +1,13 @@
-.myPageBody{
+.myPageContainer{
     /* position: relative; */
     line-height:50px;
+    /* display: flex;
+    flex-wrap: wrap; */
 }
+/* .myPageContents{
+    display: flex;
+
+} */
 .topImgDiv{
     display: flex;
     width: 30%;

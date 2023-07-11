@@ -1,4 +1,4 @@
-@media (max-width: 1000px) {
+@media (max-width: 1500px) {
     .board_wrap {
         width: 100%;
         min-width: 320px;
@@ -7,10 +7,12 @@
     }
     .mainTag{
         margin-right:10px ;
+        display: flex;
+        width: 200px;
     }
     .mainImg{
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
     }
 
     .board_list .num,
@@ -25,10 +27,14 @@
 
     .board_list .title {
         text-indent: 10px;
+        color: #777;
     }
 
-    .board_list .top .title {
+    .board_list .ListTop .title {
         text-indent: 0;
+    }
+    .ListTop{
+        padding-bottom:-100px;
     }
 
     .board_page a {
@@ -63,7 +69,7 @@
     }
 
     .board_write .info dl {
-        width: 49%;
+        width: 40%;
     }
 
     .board_write .info dl:first-child {
@@ -103,23 +109,30 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.board_list_wrap{
+    display: flex;
+    flex-direction: column;
+
+}
 
 .board_wrap {
     width: 1000px;
-    margin: 100px auto;
+    margin: 50px auto;
+    font-family: "mainFont3";
 }
 
 .board_title {
     margin-bottom: 30px;
+    color: rgb(13, 43, 2);
 }
 
 .board_title strong {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .board_title p {
     margin-top: 5px;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
 }
 
 .bt_wrap {
@@ -169,36 +182,42 @@ a {
     display: inline-block;
     padding: 15px 0;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
-.board_list > div.top > div {
+.board_list > div.ListTop > div {
     font-weight: 600;
 }
 
 .board_list .num {
     width: 10%;
+    color: #777;
+
 }
 
 .board_list .title {
-    width: 60%;
+    width: 55%;
     text-align: left;
+    color: #777;
 }
 
-.board_list .top .title {
+.board_list .ListTop .title {
     text-align: center;
 }
 
 .board_list .writer {
     width: 10%;
+    color: #777;
 }
 
 .board_list .date {
     width: 10%;
+    color: #777;
 }
 
 .board_list .count {
     width: 10%;
+    color: #777;
 }
 
 .board_page {
@@ -365,16 +384,28 @@ a {
     border: 0;
     resize: vertical;
 }
-.headerContainer{
+/* @media (max-width : 1500px) {
+    .listContainer{
+        display: inline-block;
+        width: 700px;
+        height: 700px;
+    }
+} */
+/* .listContainer{
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+} */
+/* .headerContainer{
     display: flex;
     justify-content: center;
     align-content: center;
     border-bottom : 1px solid rgba(var(--b6a,219,219,219),1);
     height : 54px;
     padding : 30px;
-}
+} */
 .headerContents{
-    display : flex;
+    display : inline-block;
     justify-content: space-evenly;
     width : 100%;
     align-items : center;
@@ -388,7 +419,7 @@ a {
     font-size : 30px;
     color : black;
     font-weight: bold;
-    font-family : "Lobster", cursive;
+    font-family : "mainFont3", cursive;
 }
 .headerSearchBar{
     display : flex;
@@ -645,7 +676,7 @@ aside {
     color : rgba(var(--b6a,219,219,219),1);
 }
 .font-face {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'mainFont3', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
 }
 .headerContainer{
@@ -655,7 +686,7 @@ aside {
     border-bottom : 1px solid rgba(var(--b6a,219,219,219),1);
     height : 54px;
     padding : 30px;
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'mainFont3', sans-serif;
 }
 .headerContents{
     display : flex;
@@ -667,12 +698,13 @@ aside {
 
 
 .mainImg{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 .mainA{
     color: black;
     text-decoration: none;
+    font-size: x-large;
 }
 .WestagramTag{
     display : flex;
@@ -682,15 +714,15 @@ aside {
     font-size : 30px;
     color : black;
     font-weight: bold;
-    font-family : "Lobster", cursive;
+    font-family : "mainFont3", cursive;
 }
-.headerSearchBar{
+/* .headerSearchBar{
     display : flex;
     justify-content: center;
     align-items: center;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     padding : 5px 5px 5px 5px;
-}
+} */
 input{
     border : none;
     width : 230px;
