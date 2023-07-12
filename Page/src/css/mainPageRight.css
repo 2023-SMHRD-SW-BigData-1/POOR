@@ -1,6 +1,6 @@
 .container{
     padding-left: 20px;
-
+    position: fixed;
 }
 .pageTop{
     margin-top: 80px;
@@ -34,10 +34,10 @@
 .mainRightEtc{
     color: gray;
     /* float: right; */
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    /* right: 20px;
-    bottom: 20px; */
+    right: 20px;
+    bottom: 20px;
     font-size: x-large;
     text-decoration: none;
     font-family: "mainFont3";
