@@ -29,9 +29,9 @@ const frame = () => {
               {/* <ListPage></ListPage> */}
               {/* <Mypage></Mypage> */}
               {/* <DiscountPage2></DiscountPage2> */}
-              {/* <NewPageMain></NewPageMain> */}
+              <NewPageMain></NewPageMain>
               {/* <SetUpMain></SetUpMain> */}
-              <MyPageMain></MyPageMain>
+              {/* <MyPageMain></MyPageMain> */}
               {/* <MyPageScrap></MyPageScrap> */}
               {/* <MyPageDC></MyPageDC> */}
           </div>

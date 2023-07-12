@@ -428,6 +428,9 @@ a {
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     padding : 5px 5px 5px 5px;
 }
+.fa-search{
+    border-style: none;
+}
 input{
     border : none;
     width : 230px;
@@ -452,7 +455,7 @@ article{
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     width : 550px;
     height: 100%;
-    background-color: #F0F4F3;
+    /* background-color: #F0F4F3; */
 }
 .feedHeader{
     display : flex;
@@ -547,23 +550,33 @@ article{
     font-size : 15px;
     color : rgba(var(--b6a,219,219,219),1);
 }
-.feedCommentContainer{
+/* .feedCommentContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     border-top : 1px solid rgba(var(--b6a,219,219,219),1);
     padding : 5px;
-}
+} */
 .feedComment{
     border : none;
-    width : 560px;
+    width : 100%;
+
 }
-.feedCommentContainer button{
-    border : 0;
-    outline: 0;
-    color : rgb(142, 143, 142);
-    background-color: white;
-}       
+.commentContainer{
+    /* display: inline-block; */
+    vertical-align: top;
+}
+.commentContents{
+    /* display: inline-block; */
+    width: 530px;
+    vertical-align: top;
+}
+.commentContents form{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+     
 aside {
     display : flex;
     flex-direction: column;
@@ -588,7 +601,7 @@ aside {
     display: flex;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     flex-direction: column;
-    background-color: #F0F4F3;
+    /* background-color: #F0F4F3; */
 }
 .asideBodyStory{
     display : flex;
@@ -640,7 +653,7 @@ aside {
     flex-direction: column;
     border : 1px solid rgba(var(--b6a,219,219,219),1);
     margin-top : 20px;
-    background-color: #F0F4F3;
+    /* background-color: #F0F4F3; */
 }
 .asideTails img{
     border-radius: 50%;
@@ -688,8 +701,8 @@ aside {
     border-bottom : 1px solid rgba(var(--b6a,219,219,219),1);
     height : 70px;
     padding : 30px;
-    font-family: 'mainFont3', sans-serif;
 }
+
 .headerContents{
     display : flex;
     justify-content: space-evenly;
@@ -717,6 +730,9 @@ aside {
     color : black;
     font-weight: bold;
     font-family : "mainFont3", cursive;
+}
+.no-results{
+    font-family: 'Courier New', Courier, monospace;
 }
 /* .headerSearchBar{
     display : flex;
@@ -835,26 +851,17 @@ input{
     font-size : 15px;
     color : rgb(142, 143, 142);
 }
-.feedCommentContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top : 1px solid rgba(var(--b6a,219,219,219),1);
-    padding : 5px;
-    background-color: #F0F4F3;
-}
+
 .feedComment{
     border : none;
     width : 560px;
-    background-color: #F0F4F3;
 }
 
-.feedCommentContainer button{
+/* .feedCommentContainer button{
     border : 0;
     outline: 0;
-    background-color: #F0F4F3;
     color : rgba(var(--d69,0,149,246),1);
-}       
+}        */
 aside {
     display : flex;
     flex-direction: column;
@@ -966,3 +973,74 @@ aside {
     padding-top : 5px;
     color : rgb(142, 143, 142);
 }
+.sns-like-button{
+    margin-left: 90px;
+    margin-top: 5px;
+    width: 60px;
+    height: 30px;
+    font-size: larger;
+}
+.sns-like-button button{
+    width: 30px;
+    height: 30px;
+    border: white;
+    border-radius: 20%;
+}
+
+.sns-search {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  
+  .search-result {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .search-result:last-child {
+    margin-right: 0;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #999;
+  }
+  
+  .no-results {
+    margin-top: 8px;
+    color: #999;
+    font-style: italic;
+  }
+  .commentMain{
+    display: block;
+    width : 548px;
+    border-top : 1px solid rgba(var(--b6a,219,219,219),1);
+    padding : 5px;
+    justify-content: space-between;
+
+  }
+  
+  .commentMain button{
+    border : 0;
+    outline: 0;
+    color : rgb(142, 143, 142);
+    background-color: white;
+}  

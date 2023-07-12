@@ -21,6 +21,7 @@ import mainPageImg12 from '../img/하하우는_300x300.jpg'
 const myPageScrap = () => {
   return (
     <>
+    <div className='myPageContainer'>
     <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
@@ -152,6 +153,7 @@ const myPageScrap = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
     </>
   )

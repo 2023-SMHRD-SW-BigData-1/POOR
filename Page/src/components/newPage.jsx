@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../css/mainCss.css'
 import img1 from '../img/캡처.PNG'
 import postImg from '../img/지갑텅빈.png'
@@ -11,7 +11,60 @@ import profil6 from '../img/킹푸어.png'
 import profil7 from '../img/테잌마이머니.png'
 import img2 from '../img/다운로드.png'
 
-const newPage = () => {
+const NewPage = () => {
+  const [likeCount, setLikeCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLike = () => {
+    if (isLiked) {
+      setLikeCount(likeCount - 1);
+      setIsLiked(false);
+    } else {
+      setLikeCount(likeCount + 1);
+      setIsLiked(true);
+    }
+  };
+  const [inputValue, setInputValue] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleInputKeyDown = (e) => {
+    if (e.key === 'Enter' && inputValue !== '') {
+      searchTags(inputValue);
+      setInputValue('');
+    }
+  };
+
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newComment !== '') {
+      setComments([...comments, newComment]);
+      setNewComment('');
+    }
+  };
+
+  const handleChange = (event) => {
+    setNewComment(event.target.value);
+  };
+
+
+  const searchTags = (tag) => {
+    // 검색 로직을 수행하고 결과를 설정합니다.
+    // 예를 들어, API 요청을 보내거나 로컬 데이터에서 필터링을 수행할 수 있습니다.
+    const results = []; // 검색 결과를 담을 배열
+    // 검색 로직 수행
+    // ...
+
+    setSearchResults(results);
+  };
+
+
   return (
     <div>
       <header className="headerContainer">
@@ -23,14 +76,25 @@ const newPage = () => {
             </a>
           </div>
           <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
+          <input
+            type="text"
+            placeholder="검색"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleInputKeyDown}
+          />
           </div>
-          <nav className="headerRightImage">
-            <a href=""><i className="far fa-compass"></i></a>
-            <a href=""><i className="far fa-heart"></i></a>
-            <a href=""><i className="fas fa-user"></i></a>
-          </nav>
+          <div className="search-results">
+        {searchResults.length > 0 ? (
+          searchResults.map((result, index) => (
+            <span key={index} className="search-result">
+              {result}
+            </span>
+          ))
+        ) : (
+          <span className="no-results">No results found</span>
+        )}
+      </div>
         </div>
       </header>
 
@@ -61,6 +125,12 @@ const newPage = () => {
               <img src={profil2} width="32px" height="32px" alt="" />
               <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
               </a>
+              <div className="sns-like-button">
+                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
+                {isLiked ? '💰' : '💸'}
+                </button>
+                <span className="like-count">{likeCount}</span>
+              </div>
             </div>
             <div className="reactionSentence">
               <div className="surfSentence">
@@ -78,11 +148,31 @@ const newPage = () => {
             <div className="time">
               <p>42분전</p>
             </div>
-            <div className="feedCommentContainer">
+            {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
               <a href="">
               <button className='feedCommentBtn'>게시</button>
               </a>
+            </div> */}
+            <div className='commentMain'>
+              <div className='commentContainer'>
+                <ul>
+                  {comments.map((comment, index) => (
+                    <li key={index}>{comment}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className='commentContents'>
+                <form onSubmit={handleSubmit}>
+                  <input className="feedComment"
+                    type="text"
+                    value={newComment}
+                    onChange={handleChange}
+                    placeholder="댓글 입력"
+                  />
+                  <button type="submit">작성</button>
+                </form>
+              </div>
             </div>
           </div>
         </article>
@@ -167,4 +257,4 @@ const newPage = () => {
   )
 }
 
-export default newPage
+export default NewPage

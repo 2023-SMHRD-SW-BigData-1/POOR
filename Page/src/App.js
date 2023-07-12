@@ -13,6 +13,7 @@ import SetUpMain from './main/setUpMain';
 import MyPageMainMain from './main/myPageMainMain';
 import MyPageScrapMain from './main/mainPageScrapMain';
 import MyPageDCMain from './main/myPageDCMain';
+import TestMain from './main/testMain';
 import MainPageMain from './main/mainPageMain';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       {/* <DiscountMain></DiscountMain> */}
       {/* <WriteView></WriteView> */}
       {/* <WritePageMain></WritePageMain> */}
-      {/* <Frame></Frame> */}
+      <Frame></Frame>
       {/* <MainPageLeft></MainPageLeft> */}
       {/* <SignInMain></SignInMain> */}
       {/* <DiscountPage2></DiscountPage2> */}
@@ -32,7 +33,9 @@ function App() {
       {/* <MyPageMainMain></MyPageMainMain> */}
       {/* <MyPageScrapMain></MyPageScrapMain> */}
       {/* <MyPageDCMain></MyPageDCMain> */}
-      <MainPageMain></MainPageMain>
+      {/* <MainPageMain></MainPageMain> */}
+      {/* <TestMain></TestMain> */}
+      {/* <MainPageMain></MainPageMain> */}
     </div>
   );
 }
