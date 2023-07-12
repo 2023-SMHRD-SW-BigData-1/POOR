@@ -12,7 +12,7 @@
   padding: 0;
   margin: 0;
 }
-body {
+/* body {
   background-color: #F0F4F3;
   background-repeat: no-repeat;
   background-position: bottom -150px left -70px, top -120px right -100px;
@@ -23,11 +23,11 @@ body {
   justify-content: center;
   padding: 1rem 0;
   font-size: larger;
-}
+} */
 /* include the same shapes included in the background atop the content of the page, with a semi-translucent white
 this softens the color of the shapes, but most prominently shows the shapes as if continuing on the underlying content
 */
-body:after {
+/* body:after {
   position: absolute;
   content: '';
   top: 0;
@@ -36,11 +36,11 @@ body:after {
   height: 100%;
   pointer-events: none;
   background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><circle cx="50" cy="50" r="50" fill="%23ffffff22"/></g></svg>'), url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><path d="M 0 80 l 100 -80 v 100 z" fill="%23ffffff22"/></g></svg>');
-  /* background-color: #9bd8cd; */
+  background-color: #9bd8cd;
   background-repeat: no-repeat;
   background-position: bottom -150px left -70px, top -120px right -100px;
   background-size: 300px, 380px;
-}
+} */
 
 .singInApp {
   /* cap the width of the main panel */
@@ -67,6 +67,7 @@ display the content in a single column layout
   position: relative;
   /* ooverflow hidden to avoid janky horizontal scroll as the child elements are transitioned into view */
   overflow-x: hidden;
+  font-family: 'mainFontBold2';
 
 }
 /* styles shared by the halves' elements */
@@ -161,6 +162,13 @@ this excludes the social icons */
 } */
 
 
+.singInApp h2{
+  font-size: 3.5rem;
+  margin-top: -60px;
+}
+.singInApp h4{
+  font-size: 1.5rem;
+}
 /*
 on smaller viewports position the panel atop one another
 expand the main panel to cover the entirety of the viewport
@@ -178,7 +186,10 @@ expand the main panel to cover the entirety of the viewport
     box-shadow: none;
   }
 }
-
+.loginForm{
+  display: flex;
+  text-align: center;
+}
 
 /* expand the first half to cover twice the space of the second half */
 .FormPanel {
@@ -206,6 +217,7 @@ expand the main panel to cover the entirety of the viewport
     margin-bottom: -20px;
     font-family: 'mainFontBold2';
     font-size: 0.9rem;
+    margin-left: 25px;
 }
 
 /*

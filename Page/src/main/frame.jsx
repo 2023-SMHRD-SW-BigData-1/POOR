@@ -5,10 +5,12 @@ import ListPage from '../components/listPageJsx'
 import './frameCss.css'
 import MainPageRight from './mainPageRight'
 import Mypage from './myPage'
-// import DiscountPage2 from './discountPage'
 import NewPageMain from './newPageMain'
 import SetUpMain from './setUpMain'
 import DiscountPage2 from '../components/discountPage2'
+import MyPageMain from '../components/myPageMain'
+import MyPageScrap from '../components/myPageScrap'
+import MyPageDC from '../components/myPageDC'
 
 const frame = () => {
   return (
@@ -24,11 +26,14 @@ const frame = () => {
           </div>
           <div className='childCenter'>
               {/* <DiscountPage></DiscountPage> */}
-              <ListPage></ListPage>
+              {/* <ListPage></ListPage> */}
               {/* <Mypage></Mypage> */}
               {/* <DiscountPage2></DiscountPage2> */}
               {/* <NewPageMain></NewPageMain> */}
               {/* <SetUpMain></SetUpMain> */}
+              <MyPageMain></MyPageMain>
+              {/* <MyPageScrap></MyPageScrap> */}
+              {/* <MyPageDC></MyPageDC> */}
           </div>
           <div className='childRight'>
               <MainPageRight></MainPageRight>
