@@ -1,11 +1,14 @@
 
 .hyunHBody{
     display: flex;
+    font-family: 'mainFontBold2';
+    font-size: 1.5rem;
   }
   .blackboard_image {
     /* position: relative; */
     background-image: url(../img/칠판-100_700x400.jpg) ;
     background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -13,6 +16,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
@@ -22,6 +26,7 @@
     text-align: center;
     width: 700px;
     height: 400px;
+    margin-top: 20px;
   }
   .blackboard_image_text {
     /* position: absolute;
@@ -37,6 +42,10 @@
     overflow:hidden;
     font-size: medium;
    }
-   .mainGraph{
-    margin-top: 500px;
+   #chart{
+    margin-top: 50px;
    }
+   /* .mainGraph{
+    margin-top: 500px;
+    width: 500px;
+   } */

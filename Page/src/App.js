@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-// import MyPage from './main/myPageMain'
 import ListMain from './main/listMain';
 import DiscountMain from './main/discountMain';
 import WriteView from './main/writeViewMain';
@@ -13,13 +12,11 @@ import SetUpMain from './main/setUpMain';
 import MyPageMainMain from './main/myPageMainMain';
 import MyPageScrapMain from './main/mainPageScrapMain';
 import MyPageDCMain from './main/myPageDCMain';
-import TestMain from './main/testMain';
 import MainPageMain from './main/mainPageMain';
 
 function App() {
   return (
     <div className="mainApp">
-      {/* <MyPage></MyPage> */}
       {/* <ListMain></ListMain> */}
       {/* <DiscountMain></DiscountMain> */}
       {/* <WriteView></WriteView> */}

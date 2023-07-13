@@ -437,8 +437,8 @@ figure.effect-ming img {
 figure.effect-ming figcaption::before {
 	position: absolute;
 	top: 30px;
-	right: 110px;
-	bottom: 110px;
+	right: 30px;
+	bottom: 30px;
 	left: 30px;
 	border: 2px solid #fff;
 	box-shadow: 0 0 0 30px rgba(255,255,255,0.2);
@@ -457,7 +457,6 @@ figure.effect-ming h2 {
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: scale(1.5);
 	transform: scale(1.5);
-    margin-right: 70px;
 }
 
 figure.effect-ming:hover figcaption::before,
