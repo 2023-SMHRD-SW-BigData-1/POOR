@@ -5,7 +5,8 @@ import '../css/mainCss.css'
 const ListPage = () => {
   return (
     <>
-    <div className='listContainer'>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -125,6 +126,7 @@ const ListPage = () => {
             <a href="write.html" className="on">등록</a>
           </div>
         </div>
+      </div>
       </div>
       </div>
     </>

@@ -1,0 +1,40 @@
+@media (max-width: 1500px) {
+    .appStyle {
+      display: flex;
+      /* flex-basis: 60%; */
+      /* width: 500px; */
+      justify-content: center;
+        text-align: center;
+    }
+    .appLeftStyle {
+        width: 50px !important;
+        
+    }
+    .appCenterStyle{
+        display: inline-block;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .appRightStyle{
+        display: none;
+    }
+  }
+
+.appStyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+.appLeftStyle{
+    flex-basis: 18%;
+    background-color: #F0F4F3;
+}
+.appCenterStyle{
+    flex-basis: 64%;
+    background-color: white;
+}
+.appRightStyle{
+    flex-basis: 18%;
+    background-color: #F0F4F3;
+}

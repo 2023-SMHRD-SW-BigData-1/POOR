@@ -66,7 +66,8 @@ const NewPage = () => {
 
 
   return (
-    <div>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -75,26 +76,7 @@ const NewPage = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-          <input
-            type="text"
-            placeholder="검색"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleInputKeyDown}
-          />
-          </div>
-          <div className="search-results">
-        {searchResults.length > 0 ? (
-          searchResults.map((result, index) => (
-            <span key={index} className="search-result">
-              {result}
-            </span>
-          ))
-        ) : (
-          <span className="no-results">No results found</span>
-        )}
-      </div>
+          
         </div>
       </header>
 
@@ -252,6 +234,7 @@ const NewPage = () => {
                 </div>
             </div>
         </aside>
+        </div>
         </div>
     </div>
   )

@@ -30,14 +30,27 @@ footer, header, hgroup, menu, nav, section {
 }
 .myPageContainer{
     display: inline-block;
-
-}
-.myPageBody {
-	line-height: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .myPageBody {
+  line-height: 1.3;
     display: inline-block;
     justify-content: center;
-    padding-left: 90px;
-}
+    font-family: 'mainFontBold2';
+      font-size: 1.6rem;
+      width: 100%;
+    height: 100%;
+  }
+  .mainPageContainer{
+    display: inline-block;
+    width : 900px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 230px;
+  }
 
 blockquote, q {
 	quotes: none;
@@ -57,12 +70,12 @@ q:before, q:after {
     display: flex;
     flex-direction: column;
 } */
-.myPageBody{
+/* .myPageBody{
     color: gray;
     display: inline-block;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
@@ -98,6 +111,8 @@ body::-webkit-scrollbar {
 .profile {
     display: flex;
     flex-direction: column;
+    font-family: none !important;
+    color: rgb(70, 70, 70);
     /* font-family: 'mainFontBold2'; */
     /* font-size: 2rem; */
 }
@@ -105,11 +120,13 @@ body::-webkit-scrollbar {
 .profile__head {
     display:flex;
     margin: 2rem 1rem;
+    font-weight: bold;
 }
 
 .profile__container {
     display:flex;
     margin: 2rem 1rem;
+
 }
 
 
@@ -195,14 +212,17 @@ body::-webkit-scrollbar {
 }
 
 .status__info {
-    color: gray;
+    color: rgb(78, 78, 78);
     margin-bottom: 0.5rem;
     font-family: 'mainFont3';
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .status__number {
-    font-weight: bold;
+    color: rgb(92, 92, 92);
+    font-family: none !important;
+    font-size: 1.2rem;
 }
 
 .content__container {
@@ -211,13 +231,13 @@ body::-webkit-scrollbar {
     grid-gap: 3px;
 }
 .content__photo{
-    width: 230px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
 }
 
 .content__photo img {
-    width: 230px;
-    height: 230px;
+    width: 290px;
+    height: 290px;
 }
 
 .footer__container {
@@ -252,8 +272,11 @@ body::-webkit-scrollbar {
     justify-content: space-around;
     padding: 0.5rem 0;
     border-bottom: 1px solid lightgray;
-    height: 80px;
+    height: 70px;
     padding-top: 15px;
+}
+.toolbar__container a{
+    margin-top: 10px;
 }
 
 .toolbar__icon{
