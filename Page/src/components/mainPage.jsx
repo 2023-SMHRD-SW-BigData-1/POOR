@@ -5,11 +5,12 @@ import ChartComponent from './graph.jsx'
 
 const mainPage = () => {
   return (
-    <div className="hyunHBody">
+    <div className='myPageContainer'>
+    <div className="myPageBody">
       <div className="blackboard_image">
         {/* <img className="backImg" src="./img2/칠판-100.jpg" width="100%" height="500px" /> */}
         <div className="textContainer">
-          <h1 className="blackboard_image_text" style={{ fontSize: '50px' }}>
+          <h1 className="blackboard_image_text" style={{ fontSize: '45px' }}>
             OOO님의 등급 : 부자
           </h1>
           <p style={{ color: 'white' }}>
@@ -19,7 +20,7 @@ const mainPage = () => {
               <li>지난 달 대비 댓글이 8개 더 추가 되었습니다.</li>
               <li>지난 달 대비 68000원을 아꼈습니다!</li>
               <br />
-              <span>다음 등급 까지 남은 활동 포인트 : 97포인트</span>
+              <span className='textSpan' style={{fontSize : '30px'}}>다음 등급 까지 남은 활동 포인트 : 97포인트</span>
             </ul>
           </p>
           <br />
@@ -35,6 +36,7 @@ const mainPage = () => {
           </div> */}
         </div>
           <ChartComponent className='mainGraph'></ChartComponent>
+      </div>
       </div>
     </div>
   )

@@ -31,18 +31,10 @@ const myPageScrap = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
-          <nav className="headerRightImage">
-            <a href="/"><i className="far fa-compass"></i></a>
-            <a href="/"><i className="far fa-heart"></i></a>
-            <a href="/"><i className="fas fa-user"></i></a>
-          </nav>
+          
         </div>
       </header>
-      <div className="main">
+      <div className="mainPageContainer">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">

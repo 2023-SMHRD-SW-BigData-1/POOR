@@ -16,7 +16,8 @@ import '../css/templatemo-style.css'
 const discountPage2 = () => {
     
   return (
-    <div className='disContainer'>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -25,10 +26,7 @@ const discountPage2 = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
+          
         </div>
       </header>
 
@@ -140,6 +138,7 @@ const discountPage2 = () => {
                     <span className='disText'>11,300 views</span>
                 </div>
             </div>  
+      </div>
       </div>
     </div>
   )

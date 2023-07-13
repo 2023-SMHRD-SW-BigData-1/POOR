@@ -14,10 +14,7 @@ const writeView = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
+          
         </div>
       </header>
 

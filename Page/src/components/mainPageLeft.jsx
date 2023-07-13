@@ -17,29 +17,29 @@ const mainPageLeft = () => {
           <img className="mainTitle" src={titleImg} alt="" />
           <ul className="nav">
             <li className="nav-item">
-              <a className='iconATag' href="#home">
+              <a className='iconATag' href="/home">
                 <img className="icon" src={homeIcon} alt="" /></a>
-                <a href="#home" className='textA'>홈</a>
+                <a href="/home" className='textA'>홈</a>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="#search">
+              <a className='iconATag' href="/listpage">
                 <img className="icon" src={searchIcon} alt="" /></a>
-                <a href="#search" className='textA'>검색</a>
+                <a href="/listpage" className='textA'>검색</a>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="#new">
+              <a className='iconATag' href="/new">
                 <img className="icon" src={newIcon} alt="" /></a>
-                <a href="#new" className='textA'>게시글</a>
+                <a href="/new" className='textA'>게시글</a>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="#discountInfo">
+              <a className='iconATag' href="/discountInfo">
                 <img className="icon" src={infoIcon} alt="" /></a>
-                <a href="#discountInfo" className='textA'>할인정보</a>
+                <a href="/discountInfo" className='textA'>할인정보</a>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="#my">
+              <a className='iconATag' href="/my">
                 <img className="icon" src={myIcon} alt="" /></a>
-                <a href="#my" className='textA'>마이페이지</a>
+                <a href="/my" className='textA'>마이페이지</a>
             </li>
           </ul>
           <img className="car" src={mainImg} alt="" />

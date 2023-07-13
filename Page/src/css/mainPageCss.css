@@ -1,7 +1,20 @@
+.myPageContainer{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.myPageBody {
+line-height: 1.3;
+  display: inline-block;
+  justify-content: center;
+  font-family: 'mainFontBold2';
+    font-size: 1.6rem;
+    width: 100%;
+  height: 100%;
+}
 
-.hyunHBody{
-    display: flex;
-  }
   .blackboard_image {
     /* position: relative; */
     background-image: url(../img/칠판-100_700x400.jpg) ;
@@ -21,7 +34,8 @@
     display: inline-block;
     text-align: center;
     width: 700px;
-    height: 400px;
+    height: 360px;
+    margin-bottom: 150px;
   }
   .blackboard_image_text {
     /* position: absolute;
@@ -37,6 +51,15 @@
     overflow:hidden;
     font-size: medium;
    }
-   .mainGraph{
-    margin-top: 500px;
+   #chart{
+    margin-top: 50px;
+    margin-bottom: 100px;
    }
+   /* .mainGraph{
+    margin-top: 500px;
+    width: 500px;
+   } */
+   .textContainer h1{
+    padding-bottom: 10px;
+   }
+  
