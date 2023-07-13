@@ -18,12 +18,10 @@ app.use('/', userRouter)
 app.use('/main', indexRouter)
 // app.use('/join', joinRouter)
 app.use('/write', writeRouter)
-// app.use('/main', indexRouter)
-// app.use('/join', indexRouter)
-// app.use('/write', indexRouter)
-// app.use('/listpage', indexRouter)
 app.use('/discount', indexRouter)
 app.use('/my', indexRouter)
+app.use('/new', indexRouter)
+
 
 
 
