@@ -1,0 +1,47 @@
+.container{
+    padding-left: 20px;
+
+}
+.pageTop{
+    margin-top: 80px;
+    display: flex;
+    font-family: "mainFont3";
+    font-size: x-large;
+    padding-left: 20px;
+
+}
+.topImg{
+    width: 125px;
+    height: 125px;
+}
+.topInside{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    text-align: center;
+    justify-content: center;
+}
+.bottomUl{
+    font-size: larger;
+    line-height: 2rem;
+    padding-left: 20px;
+}
+.bottomImg{
+    width: 170px;
+    height: 50px;
+    margin: 70px 0px 0px 10px;
+}
+.mainRightEtc{
+    color: gray;
+    float: right;
+    /* position: absolute; */
+    /* right: 20px;
+    bottom: 20px; */
+    font-size: x-large;
+    text-decoration: none;
+    font-family: "mainFont3";
+
+}
+a:hover{
+    text-decoration: underline;
+}

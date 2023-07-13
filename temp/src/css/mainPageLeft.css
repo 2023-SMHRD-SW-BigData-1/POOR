@@ -1,0 +1,135 @@
+/* .headerContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    padding: 0 90px;
+}
+.headerContents {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    height: 54px;
+    padding: 30px;
+    font-family: 'Sunflower', sans-serif;
+}
+.title{
+    width: 300px;
+    height: 100px;
+    margin: 20px 30px 50px 20px;
+}
+.nav-item{
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.icon{
+  width: 50px;
+  height: 50px;
+}
+.car{
+  width: 200px;
+  height: 200px;
+  margin-top: 100px;
+  display: flex;
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    padding: 0 0 1% 0;
+    justify-content: space-around;
+}
+.nav{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+} */
+/* @media (max-width: 1000px) {
+  .mainHeaderContents {
+    display: none;
+    height: 0px;
+    overflow: hidden;
+  }
+  .mainHeaderContainer {
+    padding-left: 50px;
+  }
+} */
+@media (max-width : 1500px) {
+  .textA {
+    display: none !important;
+  }
+  .mainTitle{
+    display: none;
+  }
+  .car{
+    display: none !important; 
+  }
+  .mainHeaderContainer{
+    width: 100px;
+  }
+}
+.mainHeaderContainer{
+  display: flex;
+  /* visibility: collapse; */
+  /* width: 10px; */
+  /* overflow-x: hidden ; */
+  flex-direction: column;
+
+  /* width: 530px;
+  height: 2017px; */
+}
+.mainHeaderContents{
+  display: flex;
+  /* visibility: collapse; */
+  flex-direction: column;
+}
+.mainTitle{
+  width: 280px;
+  height: 100px;
+  margin: 20px 20px 20px 20px;
+}
+.icon{
+width: 50px;
+height: 50px;
+padding-right: 20px;
+padding-top: 10px;
+}
+.nav-item{
+display: flex !important;
+flex-direction: row !important;
+font-size: 1.7rem !important;
+margin-top: 20px !important;
+margin-left: 20px !important;
+text-decoration: none !important;
+color: black !important;
+font-family: "mainFont3" !important;
+}
+/* .iconATag{
+font-size: 1.7rem !important;
+margin-top: 20px !important;
+margin-left: 20px !important;
+text-decoration: none !important;
+color: black !important;
+font-family: "mainFont3" !important;
+} */
+
+.car{
+width: 200px;
+height: 200px;
+margin-top: 80px;
+margin-left: 20px;
+display: flex;
+}
+.textA{
+  color: #777;
+  text-decoration: none;
+  display: flex;
+  padding-top: 20px;
+
+}

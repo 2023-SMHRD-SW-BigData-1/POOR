@@ -1,0 +1,70 @@
+.myPageContainer{
+    /* position: relative; */
+    line-height:50px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+/* .myPageContents{
+    display: flex;
+
+} */
+.topImgDiv{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+}
+.topEtcDiv{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+/* .etcChatDiv{
+    display: flex;
+    flex-direction: column;
+} */
+.myImg{
+    width:100px;
+    height:100px;
+    display: flex;
+    vertical-align:middle;
+}
+.myPageTop{
+    display: flex;
+    padding: 0 20%;
+    justify-content: space-between;
+}
+.myPostLength{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.myFollowLength{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.myFolloweLength{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.ATageDiv{
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+}
+.myPostATag{
+    color: black;
+    text-decoration: none;
+}
+.myScrapATag{
+    color: black;
+    text-decoration: none;
+}
+.myInfoATag{
+    color: black;
+    text-decoration: none;
+}

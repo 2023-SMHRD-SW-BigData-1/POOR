@@ -7,8 +7,6 @@ const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}));
 const app = express()
-// oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/temp/oracle_client'})
-
 oracledb.initOracleClient({libDir: 'oracle_client'})
 let conn;
 oracledb.getConnection({
@@ -22,24 +20,23 @@ oracledb.getConnection({
     conn = con;
 });
 
-const handleLogin = async(id,pw)=>{
+
+
+const handleLogin = async(req,res)=>{
     try{
-        const sql = "SELECT * FROM T_USER WHERE USER_ID = '"+id+"' AND USER_PW = '"+pw+"'";
+        const sql = "SELECT * FROM T_USER WHERE USER_ID = '"+req.body.id+"' AND USER_PW = '"+req.body.pw+"'";
     
 
         let result;
         result = await conn.execute(sql)
-
-            if (result.rows.USER_ID !== '') {
-              // 로그인 성공
+            if (result.rows.length >= 1) {
               console.log('로그인 성공');
+              res.send('성공')
             } else {
-              // 로그인 실패
               console.log('로그인 실패');
+            res.redirect('/')
             }
-            count=0
         
-            await conn.close()
     }catch(err){
         console.log(err);
     }
@@ -50,11 +47,13 @@ app.use(handleLogin)
 
 
 router.post('/', (req, res)=>{
-    handleLogin(req.body.id,req.body.pw)
-    res.sendFile(path.join(__dirname,'/react-project/build/index.html'))
+    console.log('user router');
+    handleLogin(req,res)
+    // console.log(req.body);
 
    
 })
+
 
 
 module.exports = router;
