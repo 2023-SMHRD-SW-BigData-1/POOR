@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    <h1>방제목</h1>
+    <fieldset>
+        <legend>채팅 내용</legend>
+    </fieldset>
+</body> -->
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <style>
+        * { box-sizing: border-box; }
+        .mine { text-align: right; }
+        .mine div:first-child, .other div:first-child { font-size: 12px; }
+        .mine div:last-child, .other div:last-child {
+        display: inline-block;
+        border: 1px solid silver;
+        border-radius: 5px;
+        padding: 2px 5px;
+        max-width: 300px;
+        }
+        #chat-list { height: 500px; overflow: auto; padding: 5px; }
+        #chat-form { text-align: right; }
+    </style>
+</head>
+<body>
+    <h1>꿈꾸는거지</h1>
+    <fieldset>
+        <legend>채팅 내용</legend>
+        <div id="chat-list"> <!-- 채팅내용 출력 구역 -->
+            {%for chat in chats%}
+                {%if chat.userid === user.id%}
+                    <div class="mine">
+                        <div>{{t_user.user_id[0]}}</div>
+                        <div>{{chat.chat}}</div>
+                    </div>
+                {%else%}
+                    <div class="other">
+                        <div>{{t_user.user_id[0]}}</div>
+                        <div>{{chat.chat}}</div>
+                    </div>
+                {%endif%}
+            {%endfor%}
+                </div>
+    </fieldset>
+    <!-- action + submit → 동기통신 -->
+    <form method="post" id="chat-form">
+        <input type="text" name="chat" id="chat">
+        <input type="submit" value="전송">
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://localhost:8090/chat', { // /chat : namespace
+            path : '/socket.io'
+        })
+
+        socket.on('chat', function(data){ // data → userid → user / chat(실제 채팅내용) → chat
+            const div = document.createElement('div') // userid, chat 묶고 있을 div
+            
+            if(data.user === '{{user.id}}'){
+                div.classList.add('mine')
+            }else{
+                div.classList.add('other')
+            }
+            div.classList.add('mine')
+
+            const userid = document.createElement('div')
+            userid.textContent = data.user
+            div.appendChild(userid) // div에 userid_div를 자식요소로 추가
+
+            const chat = document.createElement('div')
+            chat.textContent = data.chat
+            div.appendChild(chat)
+
+            document.getElementById('chat-list').appendChild(div)
+        })
+        
+        // id가 chat-form 에 submit 버튼이 눌리면(제출 이벤트가 발생하면)
+        document.getElementById('chat-form').addEventListener('submit', function(e){
+            // submit 버튼의 기본 기능인 서버로 바로 요청하는 것을 막아주어야 함
+            e.preventDefault() // 이벤트의 기본 기능을 수행하지 못하도록 막는 것
+            
+            if(e.target.chat.value){ // 작성한 채팅 내용이 있으면
+                axios.post('/room/{{roomid}}/chat',{
+                    chat : e.target.chat.value
+                }).then((data)=>{
+                    e.target.chat.value=''
+                })
+            }
+        })
+
+    </script>
+</body>
+</html>
