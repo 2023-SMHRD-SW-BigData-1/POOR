@@ -30,6 +30,7 @@ router.get('/',(req,res)=>{
     // })
       console.log(connection)
     let sql = 'select * from room';
+    console.log('test');
     connection.execute(sql,function(err,rows,fields){
         console.log(rows)
         res.render('main', {rooms : rows, state:'OK'})
@@ -63,21 +64,22 @@ router.get('/rooms',(req,res)=>{
 
 // 특정 채팅방 들어가기
 // router.get('/room/:roomid',(req,res)=>{
-//     let roomid = req.params.roomid
-
-//     // 현재까지 해당 방에서 한 채팅들 전부 불러오기 → DB
-//     let sql = 'select * from chat where roomid=?'
-
-//     connection.query(sql,[roomid],function(err,rows,fields){
-//        let chats = rows
-
-//        res.render('chat', {roomid:roomid, chats : chats, user:req.session.t_user[0]})
-//     })
-// })
-
+  //     let roomid = req.params.roomid
+  
+  //     // 현재까지 해당 방에서 한 채팅들 전부 불러오기 → DB
+  //     let sql = 'select * from chat where roomid=?'
+  
+  //     connection.query(sql,[roomid],function(err,rows,fields){
+    //        let chats = rows
+    
+    //        res.render('chat', {roomid:roomid, chats : chats, user:req.session.t_user[0]})
+    //     })
+    // })
+    
+    // 특정 채팅방 들어가기
 router.get('/room/:roomid', (req, res) => {
     let roomid = req.params.roomid;
-  
+    console.log(roomid);
     let sql = 'SELECT * FROM chat WHERE roomid = :roomid';
   
     oracledb.getConnection(db_config, (err, connection) => {
@@ -126,12 +128,14 @@ router.get('/room/:roomid', (req, res) => {
 //     })
 // })
 
+// 채팅(채팅 내용 저장)
 router.post('/room/:roomid/chat',(req, res)=>{
     let roomid = req.params.roomid
-
+    console.log('asfas');
+  console.log(req);
     // 만약 로그인하지 않은 사용자라면, 로그인 페이지로 이동시킨다.
     if (!req.session.t_user) {
-      return res.redirect('/users/login');
+      return res.redirect('/');
     }
 
     let userid = req.session.t_user[0].user_id
@@ -154,3 +158,92 @@ router.post('/room/:roomid/chat',(req, res)=>{
 
 
 module.exports = router
+
+
+// const express = require('express');
+// const oracledb = require('oracledb');
+// oracledb.initOracleClient({ libDir: '../oracle_client' });
+// const db_config = require('../config/database');
+// const router = express.Router();
+// const bodyParser = require('body-parser');
+// let connection;
+
+// router.use(bodyParser.urlencoded({ extended: false }));
+// router.use(bodyParser.json());
+
+// router.get('/', (req, res) => {
+//   oracledb.getConnection(db_config, (err, conn) => {
+//     if (err) {
+//       console.log('DB에 연결할 수 없습니다.', err);
+//       return;
+//     }
+//     console.log('DB에 연결되었습니다.');
+//     connection = conn;
+
+//     let sql = 'select * from room';
+//     connection.execute(sql, function (err, rows, fields) {
+//       console.log(rows);
+//       res.render('main', { rooms: rows, state: 'OK' });
+//     });
+//   });
+// });
+
+// router.get('/room/:roomid', (req, res) => {
+//   let roomid = req.params.roomid;
+//   let sql = 'SELECT * FROM chat WHERE roomid = :roomid';
+
+//   oracledb.getConnection(db_config, (err, conn) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+
+//     conn.execute(sql, [roomid], { outFormat: oracledb.OUT_FORMAT_OBJECT }, (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         return;
+//       }
+//       let chats = result.rows;
+//       if (req.session.t_user && req.session.t_user[0]) {
+//         res.render('chat', { roomid: roomid, chats: chats, user: req.session.t_user[0] });
+//       } else {
+//         res.render('chat', { roomid: roomid, chats: chats, user: null });
+//       }
+//       conn.release();
+//     });
+//   });
+// });
+
+// router.post('/room/:roomid/chat', (req, res) => {
+//   let roomid = req.params.roomid;
+
+//   if (!req.session.t_user) {
+//     return res.redirect('/');
+//   }
+
+//   let userid = req.session.t_user[0].user_id;
+//   let chat = req.body.chat; //요청으로부터 chat 값을 가져옵니다.
+
+//   console.log(chat);
+//   let sql = 'insert into chat(roomid, userid, chat) values(:roomid,:userid,:chat)'; //sql문 변경
+
+//   connection.execute(sql, [roomid, userid, chat], function (err, result) { //values 추가
+//     if (err) {
+//       console.error('Error inserting chat!', err);
+//       return;
+//     }
+//     req.app.get('io').of('/chat').to(roomid).emit('chat', { user: userid, chat: chat });
+//     res.send('ok');
+//   });
+// });
+
+// oracledb.getConnection(db_config, (err, conn) => {
+//   if (err) {
+//     console.log('DB에 연결할 수 없습니다.', err);
+//     return;
+//   }
+//   console.log('DB에 연결되었습니다.');
+//   connection = conn;
+// });
+
+// module.exports = router;
