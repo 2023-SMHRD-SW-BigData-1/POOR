@@ -1,45 +1,72 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../css/singInCss.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 const LoginTest = () => {
-//   const [signIn, setSignIn] = useState(true);
+  const [signIn, setSignIn] = useState(true);
 
-  const toggleSignIn = () => {
-    // setSignIn(!signIn);
-  };
 
-//   const heading = signIn ? '회원가입' : '로그인';
-//   const paragraph = signIn
-//     ? '환영합니다! 거지의 꿈이 처음이시라면 회원가입 해주세요!'
-//     : '거지의 꿈에 회원가입이 되어 있으시면 로그인 해주세요!';
-//   const button = signIn ? 'Login' : 'Join';
-//   const submitBtn = signIn ? 'JOIN' : 'LOGIN';
-const [signIn] = useState(true); // signIn 상태를 항상 true로 설정
+    const id = useRef()
+    const pw = useRef()
 
-const heading = '회원가입';
-const paragraph = '환영합니다! 거지의 꿈이 처음이시라면 회원가입 해주세요!';
-const button = 'Login';
-const submitBtn = 'JOIN';
+    const [text, setText] = useState('');
+  
+    const toggleSignIn = (event) => {
+      setText(event.target.value);
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log('객체생성');
+      // 서버로 전송할 데이터 객체 생성
+      const data = {
+        id : id.current.value,
+        pw: pw.current.value,
+      };
+      console.log('데이터 전송');
+      // axios를 사용하여 서버로 데이터 전송
+      axios.post('/', data)
+        .then(response => {
+          console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    };
+
+  // const toggleSignIn = () => {
+  //   setSignIn(!signIn);
+  // };
+
+  const heading = signIn ? '회원가입' : '로그인';
+  const paragraph = signIn
+    ? '환영합니다! 거지의 꿈이 처음이시라면 회원가입 해주세요!'
+    : '거지의 꿈에 회원가입이 되어 있으시면 로그인 해주세요!';
+  const button = signIn ? 'Login' : 'Join';
+  const submitBtn = signIn ? 'JOIN' : 'LOGIN';
 
   const inputs = [
     {
       type: 'text',
       placeholder: 'ID',
+      index:0
     },
     {
       type: 'password',
       placeholder: 'Password',
+      index:1
     },
   ];
 
-//   if (!signIn) {
-//     inputs.unshift({
-//       type: 'text',
-//       placeholder: 'Name',
-//     });
-//   }
+  if (!signIn) {
+    inputs.unshift({
+      type: 'text',
+      placeholder: 'Name',
+      index : 2
+    });
+  }
 
   const link = {
     href: '#',
@@ -49,28 +76,27 @@ const submitBtn = 'JOIN';
     href: '#',
     text: '비밀번호찾기',
   };
+  
 
   return (
     <div className="singInApp">
       <div className="Panel FormPanel">
        
-        <h2>회원가입</h2>
+        <h2>{heading}</h2>
         <h4>소통에 합리적 소비를 더하다!</h4>
         <h4>거지의 꿈과 함께하세요.</h4>
-        <form className='loginForm'>
-          {/* {inputs.map(({ type, placeholder }) => (
-            <input type={type} key={placeholder} placeholder='Password' />
-          ))} */}
-          <input type="text" placeholder='ID'/>
-          <input type="password" placeholder='Password'/>
 
+        <form action='/' method='post'>
+            <input type='id' placeholder='ID' name='id' ref={id} />
+            <input type='password' placeholder='PASSWORD' name='pw' ref={pw} />
         
+
         <div className="searchLink">
-          <a href="">아이디찾기</a>
-          <a href="">비밀번호찾기</a>
+          <a href={link.href}>{link.text}</a>
+          <a href={linkPw.href}>{linkPw.text}</a>
         </div>
-        <input type="submit" value={submitBtn} className='submitBtn'/>
-        {/* <button onClick={toggleSignIn}>{button}</button> */}
+        
+        <button onClick={toggleSignIn}>{button}</button>
         </form>
       </div>
     </div>
