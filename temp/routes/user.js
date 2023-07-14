@@ -37,7 +37,7 @@ const handleLogin = async(req,res)=>{
             if (result.rows.length >= 1) {
               console.log('로그인 성공');
             //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
-            res.redirect('/main')
+            res.json({message : 'success'})
             } else {
               console.log('로그인 실패');
             res.redirect('/')

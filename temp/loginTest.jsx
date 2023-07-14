@@ -1,11 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import '../css/singInCss.css';
 import { useState } from 'react';
 import axios from 'axios';
+import { CheckLogin } from '../context/CheckLogin';
+import { useNavigate } from 'react-router-dom';
 
 
-const LoginTest = () => {
+const LoginTest = ({onValueChange}) => {
   const [signIn, setSignIn] = useState(true);
+  const nav = useNavigate()
+
 
 
     const id = useRef()
@@ -13,32 +17,33 @@ const LoginTest = () => {
 
     const [text, setText] = useState('');
   
-    const toggleSignIn = (event) => {
-      setText(event.target.value);
-    };
+    // const toggleSignIn = (event) => {
+    //   setText(event.target.value);
+    // };
   
-    const handleSubmit = (event) => {
+    const toggleSignIn = (event) => {
       event.preventDefault();
       console.log('객체생성');
-      // 서버로 전송할 데이터 객체 생성
       const data = {
         id : id.current.value,
         pw: pw.current.value,
       };
       console.log('데이터 전송');
-      // axios를 사용하여 서버로 데이터 전송
       axios.post('/', data)
         .then(response => {
-          console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
+          console.log(response.data.message);
+          console.log('onvaluechange'); 
+          onValueChange(response.data.message)
+          nav('/main')
+          
         })
         .catch(error => {
           console.error(error);
         });
     };
 
-  // const toggleSignIn = () => {
-  //   setSignIn(!signIn);
-  // };
+   
+
 
   const heading = signIn ? '회원가입' : '로그인';
   const paragraph = signIn
