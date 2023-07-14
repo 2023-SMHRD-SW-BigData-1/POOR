@@ -18,7 +18,7 @@ app.use(cors())
 //     number: 'number1',
 // }
 
-
+let num;
 router.get('/', function(req,res){
 
         console.log('listpage');
@@ -60,6 +60,23 @@ const getPost = async (req, res) => {
     }
 }
 
+const selectPost = async (req, res) => {
+    try {
+        const value = num.query
+        console.log(value);
+        // const value = 23
+        const getSql = "SELECT * FROM t_post where post_seq="+value
+        const getResult = await conn.execute(getSql)
+        // console.log(getResult.rows);
+        const data = getResult.rows
+        res.json(data)
+
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 app.use(getPost)
 
@@ -73,10 +90,24 @@ router.get('/listpage', function(req, res) {
 //     res.json(data)
 
 // })
-router.get('/viewpage?:num', function(req, res) {
+
+app.use(selectPost)
+
+
+router.get('/listpage/viewpage', function(req, res) {
+    console.log('view page content');
+    // console.log(req.query);
+    selectPost(req,res)
+  });
+
+router.get('/viewpage', function(req, res) {
     console.log('view page');
+    // console.log(req._parsedUrl);
+    num = req._parsedUrl
+
     res.sendFile(path.join(__dirname,'../project/build/index.html'))
   });
+
 
 
 

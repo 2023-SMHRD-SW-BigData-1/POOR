@@ -19,7 +19,12 @@ oracledb.getConnection({
     }
     conn = con;
 });
+router.get('/', function(req,res){
 
+    console.log('listpage');
+    res.sendFile(path.join(__dirname,'../project/build/index.html'))
+
+})
 
 
 const handleLogin = async(req,res)=>{
@@ -31,7 +36,8 @@ const handleLogin = async(req,res)=>{
         result = await conn.execute(sql)
             if (result.rows.length >= 1) {
               console.log('로그인 성공');
-              res.send('성공')
+            //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
+            res.redirect('/main')
             } else {
               console.log('로그인 실패');
             res.redirect('/')
