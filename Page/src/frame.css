@@ -21,10 +21,10 @@
     }
   }
 
-.appStyle{
+.mainApp{
     display: flex;
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: center;
 }
 .appLeftStyle{
     flex-basis: 18%;

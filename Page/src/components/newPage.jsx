@@ -38,6 +38,8 @@ const NewPage = () => {
     }
   };
 
+  
+
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
@@ -48,6 +50,33 @@ const NewPage = () => {
       setNewComment('');
     }
   };
+
+  const handleSubmit2 = async (event) => {
+    event.preventDefault();
+    if (newComment !== '') {
+      try {
+        const response = await fetch('/comment', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ comment: newComment }),
+        });
+  
+        if (response.ok) {
+          // 댓글 저장이 성공한 경우
+          console.log('Comment saved successfully');
+          setComments([...comments, newComment]);
+          setNewComment('');
+        } else {
+          console.error('Comment save failed');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
 
   const handleChange = (event) => {
     setNewComment(event.target.value);

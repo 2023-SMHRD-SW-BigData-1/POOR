@@ -8,111 +8,112 @@ function ChartComponent() {
     const options = {
       series: [
         {
-          name: 'Actual',
+          name: '이번달 수치',
           data: [
             {
-              x: '2011',
-              y: 1292,
+              x: '게시글 수',
+              y: 8,
               goals: [
                 {
-                  name: 'Expected',
-                  value: 1400,
+                  name: '이전달 수치',
+                  value: 5,
                   strokeHeight: 5,
-                  strokeColor: '#775DD0'
+                  strokeColor: '#E91E63'
                 }
               ]
             },
             {
-                x: '2012',
-                y: 4432,
+                x: '댓글 수',
+                y: 36,
                 goals: [
                   {
-                    name: 'Expected',
-                    value: 5400,
+                    name: '이전달 수치',
+                    value: 28,
                     strokeHeight: 5,
-                    strokeColor: '#775DD0'
+                    strokeColor: '#E91E63'
                   }
                 ]
               },
               {
-                x: '2013',
-                y: 5423,
+                x: '좋아요 수',
+                y: 162,
                 goals: [
                   {
-                    name: 'Expected',
-                    value: 5200,
+                    name: '이전달 수치',
+                    value: 132,
                     strokeHeight: 5,
-                    strokeColor: '#775DD0'
+                    strokeColor: '#E91E63'
                   }
                 ]
               },
               {
-                x: '2014',
-                y: 6653,
+                x: '절약수치',
+                y: 68,
                 goals: [
                   {
-                    name: 'Expected',
-                    value: 6500,
+                    name: '이전달 수치',
+                    value: 54,
                     strokeHeight: 5,
-                    strokeColor: '#775DD0'
+                    strokeColor: '#E91E63'
                   }
                 ]
               },
-              {
-                x: '2015',
-                y: 8133,
-                goals: [
-                  {
-                    name: 'Expected',
-                    value: 6600,
-                    strokeHeight: 13,
-                    strokeWidth: 0,
-                    strokeLineCap: 'round',
-                    strokeColor: '#775DD0'
-                  }
-                ]
-              },
-              {
-                x: '2016',
-                y: 7132,
-                goals: [
-                  {
-                    name: 'Expected',
-                    value: 7500,
-                    strokeHeight: 5,
-                    strokeColor: '#775DD0'
-                  }
-                ]
-              },
-              {
-                x: '2017',
-                y: 7332,
-                goals: [
-                  {
-                    name: 'Expected',
-                    value: 8700,
-                    strokeHeight: 5,
-                    strokeColor: '#775DD0'
-                  }
-                ]
-              },
-              {
-                x: '2018',
-                y: 6553,
-                goals: [
-                  {
-                    name: 'Expected',
-                    value: 7300,
-                    strokeHeight: 2,
-                    strokeDashArray: 2,
-                    strokeColor: '#775DD0'
-                  }
-                ]
-              }
+              // {
+              //   x: '2015',
+              //   y: 8133,
+              //   goals: [
+              //     {
+              //       name: '이전달 수치',
+              //       value: 6600,
+              //       strokeHeight: 13,
+              //       strokeWidth: 0,
+              //       strokeLineCap: 'round',
+              //       strokeColor: '#775DD0'
+              //     }
+              //   ]
+              // },
+              // {
+              //   x: '2016',
+              //   y: 7132,
+              //   goals: [
+              //     {
+              //       name: '이전달 수치',
+              //       value: 7500,
+              //       strokeHeight: 5,
+              //       strokeColor: '#775DD0'
+              //     }
+              //   ]
+              // },
+              // {
+              //   x: '2017',
+              //   y: 7332,
+              //   goals: [
+              //     {
+              //       name: '이전달 수치',
+              //       value: 8700,
+              //       strokeHeight: 5,
+              //       strokeColor: '#775DD0'
+              //     }
+              //   ]
+              // },
+              // {
+              //   x: '2018',
+              //   y: 6553,
+              //   goals: [
+              //     {
+              //       name: '이전달 수치',
+              //       value: 7300,
+              //       strokeHeight: 2,
+              //       strokeDashArray: 2,
+              //       strokeColor: '#775DD0'
+              //     }
+              //   ]
+              // }
           ]
         }
       ],
       chart: {
+        width : 700,
         height: 350,
         type: 'bar'
       },
@@ -121,16 +122,16 @@ function ChartComponent() {
           columnWidth: '60%'
         }
       },
-      colors: ['#00E396'],
+      colors: ['#66BB6A'],
       dataLabels: {
         enabled: false
       },
       legend: {
         show: true,
         showForSingleSeries: true,
-        customLegendItems: ['Actual', 'Expected'],
+        customLegendItems: ['이번달 수치', '이전달 수치'],
         markers: {
-          fillColors: ['#00E396', '#775DD0']
+          fillColors: ['#66BB6A', '#E91E63']
         }
       }
     };

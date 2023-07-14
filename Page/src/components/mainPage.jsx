@@ -16,9 +16,10 @@ const mainPage = () => {
           <p style={{ color: 'white' }}>
             나의 활동 & 절약 현황
             <ul style={{ color: 'white' }}>
-              <li>지난 달 대비 게시글 3개 더 작성 했습니다.</li>
+              <li>지난 달 대비 게시글을 3개 더 작성 했습니다.</li>
               <li>지난 달 대비 댓글이 8개 더 추가 되었습니다.</li>
-              <li>지난 달 대비 68000원을 아꼈습니다!</li>
+              <li>지난 달 대비 좋아요가 30개 더 눌렸습니다.</li>
+              <li>이번 달 '거지의 꿈'으로 68,000원을 아꼈습니다!</li>
               <br />
               <span className='textSpan' style={{fontSize : '30px'}}>다음 등급 까지 남은 활동 포인트 : 97포인트</span>
             </ul>
@@ -35,7 +36,7 @@ const mainPage = () => {
             <script src={graph}></script>
           </div> */}
         </div>
-          <ChartComponent className='mainGraph'></ChartComponent>
+          <ChartComponent></ChartComponent>
       </div>
       </div>
     </div>

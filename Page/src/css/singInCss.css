@@ -217,7 +217,7 @@ expand the main panel to cover the entirety of the viewport
     margin-bottom: -20px;
     font-family: 'mainFontBold2';
     font-size: 0.9rem;
-    margin-left: 25px;
+    margin-left: 40px;
 }
 
 /*
@@ -252,5 +252,6 @@ on smaller viewports remove the border radius
 }
 .searchLink{
     display: flex;
+    justify-content: center;
     flex-direction: row;
 }
