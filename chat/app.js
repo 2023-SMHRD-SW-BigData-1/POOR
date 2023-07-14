@@ -22,7 +22,9 @@ app.use(session({
     secret : 'secretKey',
     cookie : {
         httpOnly :true,
-        secure : true
+        secure : true,
+        user_id : true,
+        t_user : true
     },
     saveUninitialized: true,
     store : new fileStore()

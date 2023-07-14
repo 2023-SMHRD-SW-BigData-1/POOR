@@ -132,12 +132,13 @@ router.get('/room/:roomid', (req, res) => {
 router.post('/room/:roomid/chat',(req, res)=>{
     let roomid = req.params.roomid
     console.log('asfas');
-  console.log(req);
+    console.log(req);
     // 만약 로그인하지 않은 사용자라면, 로그인 페이지로 이동시킨다.
-    if (!req.session.t_user) {
-      return res.redirect('/');
-    }
-
+    // if (!req.session.t_user) {
+      //   return res.redirect('/');
+      console.log('asfas');
+    // }
+    console.log(req.session.cookie);
     let userid = req.session.t_user[0].user_id
     let chat = req.body.chat
 
