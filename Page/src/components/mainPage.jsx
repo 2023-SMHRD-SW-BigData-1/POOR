@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../css/mainPageCss.css'
 // import graph from './hyunhwang.js'
 
+
 import ChartComponent from './graph.jsx'
 
-const mainPage = () => {
+const MainPage = () => {
+  const [userData, setUserData] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //       // 데이터베이스에서 사용자 정보 조회
+  //       const connection = await oracledb.getConnection();
+  //       const result = await connection.execute('SELECT * FROM users WHERE id = :id', [userId]);
+  //       setUserData(result.rows[0]);
+
+  //   fetchData();
+  // }, []);
+
+
   return (
     <div className='myPageContainer'>
     <div className="myPageBody">
@@ -12,7 +26,7 @@ const mainPage = () => {
         {/* <img className="backImg" src="./img2/칠판-100.jpg" width="100%" height="500px" /> */}
         <div className="textContainer">
           <h1 className="blackboard_image_text" style={{ fontSize: '45px' }}>
-            OOO님의 등급 : 부자
+          {/* {userData.name}님의 등급: {userData.grade} */}
           </h1>
           <p style={{ color: 'white' }}>
             나의 활동 & 절약 현황
@@ -40,4 +54,4 @@ const mainPage = () => {
   )
 }
 
-export default mainPage
+export default MainPage

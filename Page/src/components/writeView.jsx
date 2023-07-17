@@ -3,7 +3,7 @@ import MainImg from '../img/캡처.PNG'
 import '../css/mainCss.css'
 import '../css/writeViewCss.css'
 
-const writeView = () => {
+const WriteView = () => {
   return (
     <>
       <header className="headerContainer">
@@ -66,4 +66,4 @@ const writeView = () => {
   )
 }
 
-export default writeView
+export default WriteView

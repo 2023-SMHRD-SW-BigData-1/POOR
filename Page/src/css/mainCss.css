@@ -169,14 +169,17 @@ a {
     font-size: 0;
 }
 
-.bt_wrap a {
+.bt_wrap button {
     display: inline-block;
     min-width: 80px;
     margin-left: 10px;
     padding: 10px;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 5px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    background-color: #777;
+    color: white;
+    font-family: 'mainFont3';
 }
 
 .bt_wrap a:first-child {
@@ -471,7 +474,8 @@ input{
 }
 .body1{
     display : inline-flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-content: center;
     gap: 30px;
     padding-top : 15px;
@@ -611,10 +615,12 @@ article{
 }
      
 aside {
-    display : flex;
+    /* display : flex; */
     flex-direction: column;
     width : 400px;
     font-family: none;
+    position: fixed;
+    left: 1050px;
 }
 .asideHead{
     display : flex;

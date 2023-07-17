@@ -10,6 +10,7 @@ import SignInMain from  './components/loginTest';
 import NewPageMain from './main/newPageMain';
 import MainPageMain from './main/mainPageMain';
 import MyPageMainMain from './main/myPageMainMain'
+import JoinMain from './components/joinTest';
 // import SetUpMain from './main/setUpMain';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -59,7 +60,10 @@ function App() {
          
           
         ) : (
+          <>
           <Route path="/" element={<SignInMain onValueChange={change}/>} />
+          <Route path="/join" element={<JoinMain onValueChange={change}/>} />
+          </>
         )}
 
       </Routes>

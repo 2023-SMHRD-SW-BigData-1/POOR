@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useContext, useEffect, useRef } from 'react';
 import '../css/singInCss.css';
 import { useState } from 'react';
@@ -24,37 +23,11 @@ const LoginTest = ({onValueChange}) => {
     const toggleSignIn = (event) => {
       event.preventDefault();
       console.log('객체생성');
-=======
-import React, { useRef } from 'react';
-import '../css/singInCss.css';
-import { useState } from 'react';
-import axios from 'axios';
-
-
-const LoginTest = () => {
-  const [signIn, setSignIn] = useState(true);
-
-
-    const id = useRef()
-    const pw = useRef()
-
-    const [text, setText] = useState('');
-  
-    const toggleSignIn = (event) => {
-      setText(event.target.value);
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      console.log('객체생성');
-      // 서버로 전송할 데이터 객체 생성
->>>>>>> 7d6564bb6e96392a180ef4f88a4ba0e98e61f74b
       const data = {
         id : id.current.value,
         pw: pw.current.value,
       };
       console.log('데이터 전송');
-<<<<<<< HEAD
       axios.post('http://localhost:8888/user', data)
         .then(response => {
           console.log(response.data.message);
@@ -62,30 +35,16 @@ const LoginTest = () => {
           onValueChange(response.data.message)
           nav('/main')
           
-=======
-      // axios를 사용하여 서버로 데이터 전송
-      axios.post('/', data)
-        .then(response => {
-          console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
->>>>>>> 7d6564bb6e96392a180ef4f88a4ba0e98e61f74b
         })
         .catch(error => {
           console.error(error);
         });
     };
 
-<<<<<<< HEAD
    
 
 
   const heading = signIn ? '로그인' : '회원가입';
-=======
-  // const toggleSignIn = () => {
-  //   setSignIn(!signIn);
-  // };
-
-  const heading = signIn ? '회원가입' : '로그인';
->>>>>>> 7d6564bb6e96392a180ef4f88a4ba0e98e61f74b
   const paragraph = signIn
     ? '환영합니다! 거지의 꿈이 처음이시라면 회원가입 해주세요!'
     : '거지의 꿈에 회원가입이 되어 있으시면 로그인 해주세요!';
@@ -143,6 +102,7 @@ const LoginTest = () => {
         
         <button onClick={toggleSignIn}>{button}</button>
         </form>
+        <button onClick={()=>nav('/join')} className='joinBtn'>JOIN</button>
       </div>
     </div>
   );
