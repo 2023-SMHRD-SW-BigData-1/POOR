@@ -45,7 +45,12 @@ const ListPage = () => {
   const handlePageChange =(pageNumber) => {
     setActivePage(pageNumber);
   }
-  
+
+  const [posts, setPosts] = useState([]);
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+ 
 
 
   return (
@@ -80,7 +85,7 @@ const ListPage = () => {
                 <div className="date">작성일</div>
                 <div className="count">조회</div>
               </div>
-              {data.map(item=>
+              {data.slice(offset, offset + limit).map(item=>
               <List title={item.POST_TITLE} content={item.POST_CONTENT} id={item.USER_ID} date={item.CREATED_AT} number={item.POST_SEQ}/>
               )}
               {/* <List onClick={nav('/listpage/viewpage?number')} title={title} id={id} date={date} content={content} number={number} />
@@ -93,7 +98,7 @@ const ListPage = () => {
               <Pagination className='num'
                 activePage={activePage}
                 itemsCountPerPage={10} // 페이지당 항목 수
-                totalItemsCount={100} // 전체 항목 수
+                totalItemsCount={data.length} // 전체 항목 수
                 pageRangeDisplayed={5} // 표시할 페이지 링크 수
                 onChange={handlePageChange} // 페이지 변경 시 호출되는 함수
                 itemClass="bt prev" 
