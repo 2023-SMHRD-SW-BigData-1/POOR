@@ -4,7 +4,6 @@ import '../css/mainCss.css'
 import List from './List'
 import axios from 'axios'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Pagination from 'react-js-pagination';
 
 const ListPage = () => {
   const [data, setData] = useState([])
@@ -41,16 +40,17 @@ const ListPage = () => {
     nav('/write')
   }
 
-  const [activePage, setActivePage] = useState(1);
-  const handlePageChange =(pageNumber) => {
-    setActivePage(pageNumber);
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageNumber = [];
+  for (let i = 1; i <= Math.ceil(data.length / 5); i++) {
+    pageNumber.push(i);
   }
-
-  const [posts, setPosts] = useState([]);
-  const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(1);
-  const offset = (page - 1) * limit;
- 
+  useEffect(() => {
+    setStart((currentPage - 1) * 5);
+    setEnd(currentPage * 5);
+  }, [currentPage]);
 
 
   return (
@@ -85,25 +85,29 @@ const ListPage = () => {
                 <div className="date">작성일</div>
                 <div className="count">조회</div>
               </div>
-              {data.slice(offset, offset + limit).map(item=>
+              {data.slice(start, end).map(item=>
               <List title={item.POST_TITLE} content={item.POST_CONTENT} id={item.USER_ID} date={item.CREATED_AT} number={item.POST_SEQ}/>
               )}
               {/* <List onClick={nav('/listpage/viewpage?number')} title={title} id={id} date={date} content={content} number={number} />
             
               */}
+              <nav style={{ listStyleType: "none", display: "flex" }}>
+                {pageNumber.map((num) => (
+                  <li key={num} onClick={() => setCurrentPage(num)}>
+                    <button>{num}</button>
+                  </li>
+                ))}
+              </nav>
+
+
+              
 
 
             </div>
             <div className="board_page">
-              <Pagination className='num'
-                activePage={activePage}
-                itemsCountPerPage={10} // 페이지당 항목 수
-                totalItemsCount={data.length} // 전체 항목 수
-                pageRangeDisplayed={5} // 표시할 페이지 링크 수
-                onChange={handlePageChange} // 페이지 변경 시 호출되는 함수
-                itemClass="bt prev" 
-                linkClass="bt next" 
-              />
+
+
+              
             </div>
             <div className="bt_wrap">
               <button onClick={turnWrite} className='on'>글쓰기</button>
