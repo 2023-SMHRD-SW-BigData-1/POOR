@@ -72,10 +72,7 @@ router.post('/', (req, res)=>{
 
    
 })
-router.get('/protect',(req,res)=>{
-    console.log(req.session);
-    
-})
+
 
 
 module.exports = router;

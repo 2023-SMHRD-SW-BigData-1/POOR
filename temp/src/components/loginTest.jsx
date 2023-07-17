@@ -29,12 +29,12 @@ const LoginTest = ({onValueChange}) => {
         pw: pw.current.value,
       };
       console.log('데이터 전송');
-      axios.post('/', data)
+      axios.post('http://localhost:8888', data)
         .then(response => {
           console.log(response.data.message);
           console.log('onvaluechange'); 
           onValueChange(response.data.message)
-          nav('/home')
+          nav('/main')
           
         })
         .catch(error => {
@@ -103,6 +103,7 @@ const LoginTest = ({onValueChange}) => {
         
         <button onClick={toggleSignIn}>{button}</button>
         </form>
+        {/* <h2 onClick={()=>nav('/join')}>회원가입</h2> */}
       </div>
     </div>
   );

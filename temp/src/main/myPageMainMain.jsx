@@ -1,5 +1,5 @@
 import React from 'react'
-import MyPageMain from '../components/myPageMain'
+import MyPageMain from '../components/MyPageMain'
 
 const myPageMainMain = () => {
   return (

@@ -1,46 +1,12 @@
 
-
-.myPageContainer{
-    display: inline-block;
-
-}
-.myPageBody {
-	line-height: 1;
-    display: inline-block;
-    justify-content: center;
-}
-.headerContainer{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    border-bottom : 1px solid rgba(var(--b6a,219,219,219),1);
-    height : 80px;
-    /* padding-left: -20px; */
-    font-family: 'mainFont3', sans-serif;
-    background-color: white !important;
-    /* margin: 0 360px; */
-    margin-left: 320px;
-    margin-right: 360px;
-    z-index: 1;
-}
-.headerContents{
-    display : flex;
-    justify-content: space-evenly;
-    width : 100%;
-    align-items : center;
-    background-color: white !important;
-
-}
 .disContents {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 70px;
+    gap: 60px;
     /* width: 1100px; */
     padding-top: 40px;
-    margin-left: 350px;
-    margin-right: 350px;
     background-color: white !important;
 
 }
@@ -306,8 +272,8 @@ figure.effect-ming img {
 figure.effect-ming figcaption::before {
 	position: absolute;
 	top: 30px;
-	right: 110px;
-	bottom: 110px;
+	right: 30px;
+	bottom: 30px;
 	left: 30px;
 	border: 2px solid #fff;
 	box-shadow: 0 0 0 30px rgba(255,255,255,0.2);
@@ -326,7 +292,6 @@ figure.effect-ming h2 {
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: scale(1.5);
 	transform: scale(1.5);
-    margin-right: 70px;
 }
 
 figure.effect-ming:hover figcaption::before,

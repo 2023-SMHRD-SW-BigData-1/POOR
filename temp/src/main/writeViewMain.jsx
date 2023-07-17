@@ -2,31 +2,32 @@ import React, { useEffect, useState } from 'react'
 import WriteView from '../components/WriteView'
 import axios from 'axios'
 import WritePage from '../components/WritePage'
+import { useParams } from 'react-router-dom'
 
 const WriteViewMain = () => {
+let {num} = useParams()
 
   const [data, setData] = useState([])
   const [title, setTitle] = useState([])
   const [id, setId] = useState([])
-  const [number, setNumber] = useState([])
+  const [number, setNumber] = useState(1)
   const [date, setDate] = useState([])
   const [content, setContent] = useState([])
-  
 
-  useEffect(() => {
+  useEffect((req,res) => {
     console.log('WRITE VIEW')
-    axios.get('/listpage/listpage/viewpage?')
+    console.log(req);
+    axios.get(`http://localhost:8888/listpage/listpage/viewpage/:num`)
       .then(res => {
-        console.log('1',res)
-        console.log('2',res.data)
-        console.log('3',res.data[0])
+        // console.log('1',res)
+        // console.log('2',res.data)
+        // console.log('3',res.data[0])
         setData(res.data[0])
       })
       .catch(err => {
         console.log(err);
       })
   }, [])
-  console.log(data.POST_TITLE);
 
 
   return (

@@ -87,6 +87,8 @@ const submitBtn = 'JOIN';
           <a href="">비밀번호찾기</a>
         </div>
         <input type="submit" value='Login' onClick={toggleSignIn} className='submitBtn'/>
+        <br />
+        <h2 onClick={()=>nav('/')}>로그인</h2>
         {/* <button onClick={toggleSignIn}>{button}</button> */}
         </form>
       </div>

@@ -19,32 +19,30 @@ const MainPageLeft = () => {
         <div className="mainHeaderContents">
           <img className="mainTitle" src={titleImg} alt="" />
           <ul className="nav">
-            <li className="nav-item">
-              <a className='iconATag' onClick={() => nav('/home')}>
-                <img className="icon" src={homeIcon} alt="" /></a>
-                <a onClick={() => nav('/home')} className='textA'>홈</a>
+          <li className="nav-item">
+            <button className='iconATag' onClick={()=>nav('./main')}>
+                <img className="icon" src={homeIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./main')}>  메인</button>
             </li>
             <li className="nav-item">
-              <button className='iconATag' onClick={() => nav('/listpage')}><img className="icon" src={searchIcon} alt="" /></button>
-              {/* <a className='iconATag' onClick={() => nav('/listpage')}>
-                <img className="icon" src={searchIcon} alt="" /></a> */}
-                <button onClick={() => nav('/listpage')} className='textA'>검색</button>
-                {/* <a onClick={() => nav('/listpage')} className='textA'>검색</a> */}
+              <button className='iconATag' onClick={()=>nav('./listpage')}>
+                <img className="icon" src={searchIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./listpage')}>  검색</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' onClick={() => nav('/new')}>
-                <img className="icon" src={newIcon} alt="" /></a>
-                <a onClick={() => nav('/new')} className='textA'>게시글</a>
+            <button className='iconATag' onClick={()=>nav('./new')}>
+                <img className="icon" src={newIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./new')}>  게시글</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' onClick={() => nav('/discountInfo')}>
-                <img className="icon" src={infoIcon} alt="" /></a>
-                <a onClick={() => nav('/discountInfo')} className='textA'>할인정보</a>
+            <button className='iconATag' onClick={()=>nav('./discountinfo')}>
+                <img className="icon" src={infoIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./discountinfo')}>  할인정보</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' onClick={() => nav('/my')}>
-                <img className="icon" src={myIcon} alt="" /></a>
-                <a onClick={() => nav('/my')} className='textA'>마이페이지</a>
+            <button className='iconATag' onClick={()=>nav('./my')}>
+                <img className="icon" src={myIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./my')}>  마이페이지</button>
             </li>
           </ul>
           <img className="car" src={mainImg} alt="" />

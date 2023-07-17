@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import MainImg from '../img/캡처.PNG'
 import '../css/mainCss.css'
 import '../css/writeViewCss.css'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const WriteView = ({title, content, id, date, number}) => {
-  
+  let {num}= useParams()
+  console.log('num', num)
+  const nav = useNavigate()
 
 
   const appStyle = {
@@ -16,6 +19,8 @@ const WriteView = ({title, content, id, date, number}) => {
     display: "flex",
     marginLeft : "50px"
   }
+  
+
   return (
     <div style={appStyle}>
       <header className="headerContainer">
@@ -71,8 +76,8 @@ const WriteView = ({title, content, id, date, number}) => {
             </div>
           </div>
           <div className="bt_wrap">
-            <a href="/listpage" className="on">목록</a>
-            <a href="/write">수정</a>
+            <button onClick={()=>{nav('/listpage')}}>목록</button>
+            <button onClick={()=>{nav('/write')}}>수정</button>
           </div>
         </div>
       </div>

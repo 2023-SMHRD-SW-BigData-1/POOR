@@ -62,7 +62,8 @@ const getPost = async (req, res) => {
 
 const selectPost = async (req, res) => {
     try {
-        const value = num.query
+        const value = Object.keys(req.query)
+        console.log('req.query',req.query);
         console.log(value);
         // const value = 23
         const getSql = "SELECT * FROM t_post where post_seq="+value
@@ -94,8 +95,9 @@ router.get('/listpage', function(req, res) {
 app.use(selectPost)
 
 
-router.get('/listpage/viewpage', function(req, res) {
-    console.log('view page content');
+router.get('/listpage/viewpage/:num', function(req, res) {
+    
+    console.log('view page content!!!!');
     selectPost(req,res)
   });
 

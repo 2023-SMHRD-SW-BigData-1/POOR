@@ -29,11 +29,13 @@ const WritePage = () => {
         content : text,
         id : id.current.value
       };
+      
   
       // axios를 사용하여 서버로 데이터 전송
-      axios.post('/write', data)
+      axios.post('http://localhost:8888/write', data)
         .then(response => {
           console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
+          
         })
         .catch(error => {
           console.error(error);
@@ -68,7 +70,7 @@ const WritePage = () => {
           <p>절약 정보, 소소한 일상 등 자유로운 대화를 나눠보세요!</p>
         </div>
         <div className="board_write_wrap">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={()=>{handleSubmit()}}>
           <div className="board_write">
             <div className="title">
               <dl>
@@ -82,16 +84,16 @@ const WritePage = () => {
               
             </div>
             <div className="cont">
-              <textarea placeholder="내용 입력" value={text} onChange={handleChange}></textarea>
+              <textarea placeholder="내용 입력" value={text} onChange={(e)=>{handleChange(e)}}></textarea>
             </div>
           </div>
 
           <div className="bt_wrap">
 
             {/* <input type="submit" value='등록' /> */}
-            <button type='submit' className="on" onClick={handleSubmit}>등록</button>
+            <button type='submit' className="on" onClick={(e)=>{handleSubmit(e)}}>등록</button>
             {/* <a type='submit' className="on">등록</a> */}
-            <button className="on" onClick={nav('/listpage')}>목록</button>
+            <button className="on" onClick={()=>{nav('/listpage')}}>목록</button>
 
           </div>
           </form>
