@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const { log } = require('console');
 const express = require('express')
 const oracledb = require('oracledb');
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
@@ -47,6 +48,23 @@ const write = async (req, res) => {
 app.use(write)
 
 // router.post('/write', write)
+const saveChat = async (req, res) => {
+    try {
+        const checkSql = "SELECT POST_SEQ FROM T_POST"
+        const insertSql = "INSERT INTO t_post (post_title, post_content, post_img, post_video, post_views, created_at, user_id, post_likes, post_hashtag, post_seq) VALUES (:title, :content, 'post_img 1', 'post_video 1', 1, sysdate, :id, 1, 'post_hashtag 1',post_seq.NEXTVAL)"
+
+        console.log(req.body.title+req.body.content+ req.body.id+1);
+        const insertResult = await conn.execute(insertSql,[req.body.title, req.body.content, req.body.id]);
+        conn.commit()
+    } catch (err) {
+        console.log(err);
+    }
+
+};
+
+app.use(saveChat)
+
+
 
 
 router.post('/write', (req, res)=>{
@@ -56,6 +74,10 @@ router.post('/write', (req, res)=>{
     //     res.json(data)
     write(req,res)
            
+})
+
+router.get('/new', (req,res)=>{
+    console.log('chat',req.body);
 })
 
 

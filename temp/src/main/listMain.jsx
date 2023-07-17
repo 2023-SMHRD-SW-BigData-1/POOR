@@ -1,5 +1,5 @@
 import React from 'react'
-import ListPage from '../components/listPageJsx'
+import ListPage from '../components/ListPageJsx'
 
 const listMain = () => {
   return (

@@ -1,23 +1,25 @@
 const bodyParser = require('body-parser');
+const { log } = require('console');
 const express = require('express')
 const oracledb = require('oracledb');
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 const path = require('path')
-const cors = require('cors')
 const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}));
 const app = express()
-app.use(cors())
 
-router.get('*', function(req,res){
-    res.sendFile(path.join(__dirname,'../project/build/index.html'))
+router.get('/', function (req, res) {
+    console.log('new router');
+    console.log(res);
+    res.sendFile(path.join(__dirname, '../project/build/index.html'))
 })
 
-oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/project/oracle_client'})
+
+oracledb.initOracleClient({libDir: 'oracle_client'})
 let conn;
 
-oracledb.getConnection({
+conn =oracledb.getConnection({
     user : "campus_h_230627_1",
     password : "smhrd1",
     connectString : "project-db-stu2.smhrd.com:1524/"
@@ -26,26 +28,33 @@ oracledb.getConnection({
         console.log('접속실패',err);
     }
     conn = con;
-});
-
-const getNew = async (req,res)=>{
-    try{
-        const getSql = "select * from t_post"
-        const getResult = await conn.excute(getSql)
-        console.log(getResult.rows);
-        const data = getResult.rows
-        res.send(data)
+})
 
 
-    }catch(err){
+
+const write = async (req, res) => {
+    try {
+        const checkSql = "SELECT POST_SEQ FROM T_POST"
+        const insertSql = "INSERT INTO t_post (post_title, post_content, post_img, post_video, post_views, created_at, user_id, post_likes, post_hashtag, post_seq) VALUES (:title, :content, 'post_img 1', 'post_video 1', 1, sysdate, :id, 1, 'post_hashtag 1',post_seq.NEXTVAL)"
+
+        console.log(req.body.title+req.body.content+ req.body.id+1);
+        const insertResult = await conn.execute(insertSql,[req.body.title, req.body.content, req.body.id]);
+        conn.commit()
+    } catch (err) {
         console.log(err);
     }
-}
-app.use(getNew)
+
+};
+
+app.use(write)
 
 
-// router.post('/write', write)
 
-router.get('/new',getNew)
+router.get('/new', (req,res)=>{
+    console.log('chat',res);
+})
+
+
+
 
 module.exports = router;

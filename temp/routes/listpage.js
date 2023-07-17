@@ -96,13 +96,11 @@ app.use(selectPost)
 
 router.get('/listpage/viewpage', function(req, res) {
     console.log('view page content');
-    // console.log(req.query);
     selectPost(req,res)
   });
 
 router.get('/viewpage', function(req, res) {
     console.log('view page');
-    // console.log(req._parsedUrl);
     num = req._parsedUrl
 
     res.sendFile(path.join(__dirname,'../project/build/index.html'))

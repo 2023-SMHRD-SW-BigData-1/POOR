@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './App.css'
-import MyPage from './main/myPage'
 import ListMain from './main/listMain';
 import DiscountMain from './main/discountMain';
 import WriteView from './main/WriteViewMain';
@@ -11,16 +10,18 @@ import SignInMain from  './components/loginTest';
 import NewPageMain from './main/newPageMain';
 import MainPageMain from './main/mainPageMain';
 import MyPageMainMain from './main/myPageMainMain'
+import SetUpMain from './main/setUpMain'
 // import SetUpMain from './main/setUpMain';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { CheckLogin } from './context/CheckLogin';
+import JoinTest from './components/JoinTest';
 
 function App() {
   const appStyle = {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
+    // justifyContent: "space-between",
+    // alignItems: "flex-start",
   };
   const nav = useNavigate()
   const [check ,setCheck] = useState(false)
@@ -39,33 +40,42 @@ function App() {
   return (
     <div className="mainApp">
       {/* <Frame></Frame> */}
-      {check ? <MainPageLeft className="appLeftStyle"/>:null}
-
+      {check ? 
+      <>
+      <div className='left'><MainPageLeft className="appLeftStyle"/></div>
+      
+      </>
+      :null}
+      <div style={appStyle}>
       <Routes className="appCenterStyle">
       {check ? (
 
           <>
           <Route path='/listpage' element={<ListMain/>}/>
-          <Route path='/main' element={<NewPageMain/>}/>
+          <Route path='/home' element={<MainPageMain/>}/>
           <Route path='/discountinfo' element={<DiscountMain/>}/>
           <Route path='/write' element={<WritePageMain/>}/>
           <Route path='/my' element={<MyPageMainMain/>}/>
-
+          <Route path='/setup' element={<SetUpMain/>}/>
+          
           {/* <Route path='/' element={<SignInMain/>}/> */}
           <Route path='/new' element={<NewPageMain/>}/>
-          <Route path='/home' element={<MainPageMain/>}/>
           <Route path='/listpage/viewpage?' element={<WriteView/>}/>
           </>
          
           
         ) : (
+          <>
           <Route path="/" element={<SignInMain onValueChange={change}/>} />
+          <Route path='/join' element={<JoinTest/>}/> 
+          </> 
         )}
 
       </Routes>
-      {check ?<MainPageRight className="appRightStyle"/>:null}
+      {check ?<div className='right'><MainPageRight className="appRightStyle"/></div> : null}
+      {/* <div className='right'><MainPageRight className="appRightStyle"/></div> */}
 
-
+      </div>
       
       </div>
       
