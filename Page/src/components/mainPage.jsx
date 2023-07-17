@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/mainPageCss.css'
 // import graph from './hyunhwang.js'
+
 import ChartComponent from './graph.jsx'
 
 const mainPage = () => {
@@ -30,11 +31,7 @@ const mainPage = () => {
           <br />
           <br />
           <br />
-          {/* <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
-          <div className="canvas-wrap">
-            <canvas id="stack_chart"></canvas>
-            <script src={graph}></script>
-          </div> */}
+          
         </div>
           <ChartComponent></ChartComponent>
       </div>

@@ -7,8 +7,10 @@ import newIcon from '../img/new.PNG'
 import infoIcon from '../img/info.PNG'
 import myIcon from '../img/my.PNG'
 import mainImg from '../img/캡처.PNG'
+import { useNavigate } from 'react-router-dom';
 
-const mainPageLeft = () => {
+const MainPageLeft = () => {
+const nav = useNavigate();
   return (
     <React.Fragment>
       <div className="mainHeaderContainer">
@@ -16,30 +18,30 @@ const mainPageLeft = () => {
         <div className="mainHeaderContents">
           <img className="mainTitle" src={titleImg} alt="" />
           <ul className="nav">
-            <li className="nav-item">
-              <a className='iconATag' href="/home">
-                <img className="icon" src={homeIcon} alt="" /></a>
-                <a href="/home" className='textA'>홈</a>
+          <li className="nav-item">
+            <button className='iconATag' onClick={()=>nav('./main')}>
+                <img className="icon" src={homeIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./main')}>  홈</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="/listpage">
-                <img className="icon" src={searchIcon} alt="" /></a>
-                <a href="/listpage" className='textA'>검색</a>
+              <button className='iconATag' onClick={()=>nav('./listpage')}>
+                <img className="icon" src={searchIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./listpage')}>  검색</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="/new">
-                <img className="icon" src={newIcon} alt="" /></a>
-                <a href="/new" className='textA'>게시글</a>
+            <button className='iconATag' onClick={()=>nav('./new')}>
+                <img className="icon" src={newIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./new')}>  게시글</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="/discountInfo">
-                <img className="icon" src={infoIcon} alt="" /></a>
-                <a href="/discountInfo" className='textA'>할인정보</a>
+            <button className='iconATag' onClick={()=>nav('./discountinfo')}>
+                <img className="icon" src={infoIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./discountinfo')}>  할인정보</button>
             </li>
             <li className="nav-item">
-              <a className='iconATag' href="/my">
-                <img className="icon" src={myIcon} alt="" /></a>
-                <a href="/my" className='textA'>마이페이지</a>
+            <button className='iconATag' onClick={()=>nav('./my')}>
+                <img className="icon" src={myIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./my')}>  마이페이지</button>
             </li>
           </ul>
           <img className="car" src={mainImg} alt="" />
@@ -49,4 +51,4 @@ const mainPageLeft = () => {
   )
 }
 
-export default mainPageLeft
+export default MainPageLeft

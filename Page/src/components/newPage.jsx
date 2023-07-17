@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/mainCss.css'
 import img1 from '../img/캡처.PNG'
 import postImg from '../img/지갑텅빈.png'
@@ -61,7 +61,9 @@ const NewPage = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ comment: newComment }),
-        });
+        })
+        .then(()=>{console.log('then')})
+        .catch(err => console.error(err));
   
         if (response.ok) {
           // 댓글 저장이 성공한 경우
@@ -92,6 +94,7 @@ const NewPage = () => {
 
     setSearchResults(results);
   };
+
 
 
   return (

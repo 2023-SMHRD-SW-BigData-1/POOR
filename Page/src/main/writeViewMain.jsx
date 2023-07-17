@@ -1,10 +1,10 @@
 import React from 'react'
 import WriteView from '../components/writeView'
 
-const writeViewMain = () => {
+const WriteViewMain = () => {
   return (
     <WriteView></WriteView>
   )
 }
 
-export default writeViewMain
+export default WriteViewMain

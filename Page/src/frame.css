@@ -7,8 +7,7 @@
         text-align: center;
     }
     .appLeftStyle {
-        width: 50px !important;
-        
+        width: 100px !important;
     }
     .appCenterStyle{
         display: inline-block;
@@ -17,24 +16,24 @@
         height: 100%;
     }
     .appRightStyle{
-        display: none;
+        display: none !important;
     }
   }
 
 .mainApp{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
 }
 .appLeftStyle{
-    flex-basis: 18%;
-    background-color: #F0F4F3;
+    flex-basis: 18% !important;
+    background-color: #F0F4F3 !important;
 }
 .appCenterStyle{
-    flex-basis: 64%;
-    background-color: white;
+    flex-basis: 64% !important;
+    background-color: white !important;
 }
 .appRightStyle{
-    flex-basis: 18%;
-    background-color: #F0F4F3;
+    flex-basis: 18% !important;
+    background-color: #F0F4F3 !important;
 }

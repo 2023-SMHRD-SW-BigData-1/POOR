@@ -9,7 +9,7 @@ const mainPageRight = () => {
     const nick = ''
     const A=''
   return (
-    <div className='container'>
+    <div className='rightContainer'>
       <div className="pageTop">
         <img className="topImg" src={hoImg} alt="" />
         <div className="topInside">

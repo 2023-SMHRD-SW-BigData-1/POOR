@@ -1,9 +1,9 @@
 import React from 'react'
 import MainPageRight from '../components/mainPageRight'
 
-const mainPageRight = () => {
+const mainPageRight = ({setIsSignedIn}) => {
   return (
-    <MainPageRight></MainPageRight>
+    <MainPageRight setIsSignedIn={setIsSignedIn}></MainPageRight>
   )
 }
 

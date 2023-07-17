@@ -1,8 +1,8 @@
-.myPageContainer{
+/* .myPageContainer{
   display: inline-block;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 64%;
   height: 100%;
 }
 .myPageBody {
@@ -11,9 +11,9 @@ line-height: 1.3;
   justify-content: center;
   font-family: 'mainFontBold2';
     font-size: 1.6rem;
-    width: 100%;
+    width: 64%;
   height: 100%;
-}
+} */
 
   .blackboard_image {
     /* position: relative; */

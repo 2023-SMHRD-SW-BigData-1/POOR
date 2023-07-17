@@ -34,7 +34,7 @@ const myPageScrap = () => {
           
         </div>
       </header>
-      <div className="mainPageContainer">
+      <div className="myPageContainerSub">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
