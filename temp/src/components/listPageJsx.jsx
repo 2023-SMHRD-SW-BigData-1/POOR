@@ -19,7 +19,6 @@ const ListPage = () => {
     console.log('useEffect')
     axios.get('http://localhost:8888/listpage/listpage/')
       .then(res => {
-        // console.log(res)
         console.log(res.data[1].POST_SEQ)
         setData(res.data)
         setNumber(data.POST_SEQ)
