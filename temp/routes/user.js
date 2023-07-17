@@ -6,7 +6,15 @@ const path = require('path')
 const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}));
+const session = require('express-session');
 const app = express()
+
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+  }));
+
 oracledb.initOracleClient({libDir: 'oracle_client'})
 let conn;
 oracledb.getConnection({
@@ -30,17 +38,20 @@ router.get('/', function(req,res){
 const handleLogin = async(req,res)=>{
     try{
         const sql = "SELECT * FROM T_USER WHERE USER_ID = '"+req.body.id+"' AND USER_PW = '"+req.body.pw+"'";
-    
+        const {id, pw} = req.body;
+        console.log(req.body);
 
         let result;
         result = await conn.execute(sql)
             if (result.rows.length >= 1) {
               console.log('로그인 성공');
-            //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
+              //req의 세션 안에 userId라는 key값안에 id(test1)를 넣어줌
+              req.session.userId = id
+
             res.json({message : 'success'})
             } else {
               console.log('로그인 실패');
-            res.redirect('/')
+            res.json({message:'failure'})
             }
         
     }catch(err){
@@ -52,6 +63,8 @@ const handleLogin = async(req,res)=>{
 app.use(handleLogin)
 
 
+
+
 router.post('/', (req, res)=>{
     console.log('user router');
     handleLogin(req,res)
@@ -59,7 +72,10 @@ router.post('/', (req, res)=>{
 
    
 })
-
+router.get('/protect',(req,res)=>{
+    console.log(req.session);
+    
+})
 
 
 module.exports = router;

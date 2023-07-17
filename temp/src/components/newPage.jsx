@@ -10,6 +10,7 @@ import profil5 from '../img/집게사장.png'
 import profil6 from '../img/킹푸어.png'
 import profil7 from '../img/테잌마이머니.png'
 import img2 from '../img/다운로드.png'
+import axios from 'axios';
 
 const NewPage = () => {
   const [likeCount, setLikeCount] = useState(0);
@@ -40,14 +41,27 @@ const NewPage = () => {
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (newComment !== '') {
-      setComments([...comments, newComment]);
-      setNewComment('');
-    }
+    
+    const data = {
+      chat: newComment,
+    };
+    console.log(newComment);
+    setNewComment('')
+    // axios를 사용하여 서버로 데이터 전송
+    console.log('newpage',data);
+    axios.post('http://localhost:8888/new', data)
+    .then(response => {
+        console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
+
+ 
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -62,6 +76,15 @@ const NewPage = () => {
     // ...
 
     setSearchResults(results);
+
+
+    
+  
+
+
+
+
+
   };
 
 

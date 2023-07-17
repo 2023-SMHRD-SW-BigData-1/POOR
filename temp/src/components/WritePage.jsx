@@ -3,8 +3,10 @@ import MainImg from '../img/캡처.PNG'
 import '../css/mainCss.css'
 import '../css/wirtePageCss.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const WritePage = () => {
+  const nav = useNavigate()
   const appStyle = {
     display: "flex",
     flexDirection : 'column'
@@ -89,7 +91,8 @@ const WritePage = () => {
             {/* <input type="submit" value='등록' /> */}
             <button type='submit' className="on" onClick={handleSubmit}>등록</button>
             {/* <a type='submit' className="on">등록</a> */}
-            <a href="list.html">취소</a>
+            <button className="on" onClick={nav('/listpage')}>목록</button>
+
           </div>
           </form>
         </div>

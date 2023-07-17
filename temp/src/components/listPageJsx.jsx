@@ -7,10 +7,11 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const ListPage = () => {
   const [data, setData] = useState([])
-  const [title, setTitle] = useState([])
-  const [id, setId] = useState([])
-  const [number, setNumber] = useState([])
-  const [date, setDate] = useState([])
+  const [title, setTitle] = useState('title')
+  const [id, setId] = useState('id')
+  const [number, setNumber] = useState(0)
+  const [date, setDate] = useState('sysdate')
+  const [content, setContent] = useState('content')
   const nav = useNavigate()
   
 
@@ -31,6 +32,12 @@ const ListPage = () => {
     // flexDirection : 'column'
     
   };
+  const turnWrite =()=>{
+    nav('/write')
+  }
+  const viewPage = (num)=>{
+    nav('/listpage/viewpage?',num)
+  }
 
   return (
     <>
@@ -65,9 +72,9 @@ const ListPage = () => {
                 <div className="count">조회</div>
               </div>
               {data.map(item=>
-              <List title={item.POST_TITLE} id={item.USER_ID} date={item.CREATED_AT} number={item.POST_SEQ}/>
+              <List title={item.POST_TITLE} content={item.POST_CONTENT} onClick={viewPage(item.POST_SEQ)} id={item.USER_ID} date={item.CREATED_AT} number={item.POST_SEQ}/>
               )}
-              {/* <List title={title} id={id} date={date} number={number} /> */}
+              {/* <List onClick={nav('/listpage/viewpage?number')} title={title} id={id} date={date} content={content} number={number} /> */}
 
             </div>
             <div className="board_page">
@@ -82,7 +89,7 @@ const ListPage = () => {
               <a href="#" className="bt last">{'>>'}</a>
             </div>
             <div className="bt_wrap">
-              <a href="write" className="on">등록</a>
+              <button onClick={turnWrite} className='on' />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import MainPageLeft from '../components/mainPageLeft'
+import MainPageLeft from '../components/MainPageLeft'
 
 const mainPageLeft = () => {
   return (
