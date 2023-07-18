@@ -13,6 +13,8 @@ import MyPageMainMain from './main/myPageMainMain'
 import MyPageDC from './components/myPageDC';
 import MyPageScrap from './components/myPageScrap';
 import JoinMain from './components/joinTest';
+import MyPostContentsMain from './main/myPostContentsMain';
+
 // import SetUpMain from './main/setUpMain';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -62,6 +64,7 @@ function App() {
           <Route path='/home' element={<MainPageMain/>}/>
           <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
           <Route path='/chart' element={<ChartMain/>}/>
+          <Route path='/myfeed/:num' element={<MyPostContentsMain/>}/>
           </>
          
           
