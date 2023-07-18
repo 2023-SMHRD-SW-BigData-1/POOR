@@ -29,6 +29,7 @@ import comment5 from '../img/댓글프사5.png'
 
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Post from './Post';
 
 
 const NewPage = () => {
@@ -128,33 +129,7 @@ const NewPage = () => {
     getData()
   }, [])
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (newComment !== '') {
-      try {
-        const response = await fetch('/comment', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ comment: newComment }),
-        })
-        .then(()=>{console.log('then')})
-        .catch(err => console.error(err));
   
-        if (response.ok) {
-          // 댓글 저장이 성공한 경우
-          console.log('Comment saved successfully');
-          setComments([...comments, newComment]);
-          setNewComment('');
-        } else {
-          console.error('Comment save failed');
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  };
 
 
   const handleChange = (event) => {
@@ -269,6 +244,11 @@ const NewPage = () => {
         </article>
 
 {/* /* 2번째 게시 */ }
+<Post profil1={profil1} postImg={photo1} profil2={profil2}/>
+<Post profil1={profil1} postImg={photo2} profil2={profil2}/>
+<Post profil1={profil1} postImg={photo3} profil2={profil2}/>
+<Post profil1={profil1} postImg={photo4} profil2={profil2}/>
+<Post profil1={profil1} postImg={photo5} profil2={profil2}/>
       
 
 
