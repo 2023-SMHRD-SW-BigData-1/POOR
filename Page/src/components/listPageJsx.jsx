@@ -90,10 +90,10 @@ const ListPage = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
+          {/* <div className="headerSearchBar">
             <i className="fas fa-search"></i>
             <input type="text" placeholder="검색" />
-          </div>
+          </div> */}
           {/* <nav className="headerRightImage">
             <a href=" "><i className="far fa-compass"></i></a>
             <a href=" "><i className="far fa-heart"></i></a>

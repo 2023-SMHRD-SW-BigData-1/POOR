@@ -53,6 +53,17 @@ footer, header, hgroup, menu, nav, section {
     align-items: center;
     margin-left: 50px;
   }
+  .profile__right button{
+    width: 200px !important;
+    margin-left: 500px;
+    border: 2rem;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'mainFont3';
+    font-weight: bold;
+    background-color: rgb(155, 199, 149);
+    color: rgb(70, 70, 70);
+  }
 
 blockquote, q {
 	quotes: none;

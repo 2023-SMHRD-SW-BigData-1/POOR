@@ -29,6 +29,8 @@ import comment5 from '../img/댓글프사5.png'
 
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Post from './Post';
+
 
 
 const NewPage = () => {
@@ -81,41 +83,86 @@ const NewPage = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  const handleSubmit = (event) => {
+  const chatSubmit = (event) => {
     event.preventDefault();
-    if (newComment !== '') {
-      setComments([...comments, newComment]);
-      setNewComment('');
-    }
+
+    // 서버로 전송할 데이터 객체 생성
+    console.log('new page chat submit1');
+    const data = {
+      chat: newComment,
+    };
+    console.log('new page chat submit2');
+    console.log(data.chat);
+
+    axios.post('http://localhost:8888/new/new', data)
+      .then(response => {
+        console.log(response.data);
+        console.log('post axios data', response.data)
+        getData()
+        
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
-  const handleSubmit2 = async (event) => {
-    event.preventDefault();
-    if (newComment !== '') {
-      try {
-        const response = await fetch('/comment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ comment: newComment }),
-        })
-        .then(()=>{console.log('then')})
-        .catch(err => console.error(err));
+  const getData = ()=>{
+    axios.get('http://localhost:8888/new/')
+    .then(res => {
+      // console.log(res)
+      console.log('get axios data', res.data)
+      console.log(res.data);
+      setComments(res.data)
+      console.log(res.data[0]);
+      console.log(res.data[0].CHAT);
+
+      // window.location.reload();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  useEffect(() => {
+    console.log('getChat')
+    getData()
+  }, [])
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (newComment !== '') {
+  //     setComments([...comments, newComment]);
+  //     setNewComment('');
+  //   }
+  // };
+
+  // const handleSubmit2 = async (event) => {
+  //   event.preventDefault();
+  //   if (newComment !== '') {
+  //     try {
+  //       const response = await fetch('/comment', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({ comment: newComment }),
+  //       })
+  //       .then(()=>{console.log('then')})
+  //       .catch(err => console.error(err));
   
-        if (response.ok) {
-          // 댓글 저장이 성공한 경우
-          console.log('Comment saved successfully');
-          setComments([...comments, newComment]);
-          setNewComment('');
-        } else {
-          console.error('Comment save failed');
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  };
+  //       if (response.ok) {
+  //         // 댓글 저장이 성공한 경우
+  //         console.log('Comment saved successfully');
+  //         setComments([...comments, newComment]);
+  //         setNewComment('');
+  //       } else {
+  //         console.error('Comment save failed');
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  // };
 
 
   const handleChange = (event) => {
@@ -208,421 +255,33 @@ const NewPage = () => {
             </div> */}
             <div className='commentMain'>
               <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
+              <ul>
+                  {comments.map(item => (
+                    <li>{item.CHAT}</li>
                   ))}
                 </ul>
               </div>
               <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
+                <form>
                   <input className="feedComment"
                     type="text"
                     value={newComment}
                     onChange={handleChange}
                     placeholder="댓글 입력"
                   />
-                  <button type="submit">작성</button>
+                  <button onClick={(e)=>chatSubmit(e)} type="submit">작성</button>
+
                 </form>
               </div>
             </div>
           </div>
         </article>
 
-{/* /* 2번째 게시 */ }
-        <article>
-          <div className="feedHeader">
-            <a href="" className="">
-            <img src={mphoto1} width="32px" height="32px" alt="" />
-            <span>saeyeon_20</span>
-            </a>
-          </div>
-          <div className="feedImage">
-            <img src={photo1} width="550px" height="580px" alt="" />
-          </div>
-          <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div className="feedReaction">
-            <div className="ReactionImage">
-                <a href="">
-              <img src={comment1} width="32px" height="32px" alt="" />
-              <span>NotPoor_20님, wonho_20님 외 3명이 좋아합니다.</span>
-              </a>
-              <div className="sns-like-button">
-                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
-                {isLiked ? '💰' : '💸'}
-                </button>
-                <span className="like-count">{likeCount}</span>
-              </div>
-            </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>IMEEEE_20</span>
-                <p>내 텅장 눈 감아~😢</p>
-              </div>
-              <div className="moreView">
-                
-              </div>
-            </div>
-            <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>ㄴ..혹시 제 잔고 보이세요?</p>
-            </div>
-            <div className="time">
-              
-            </div>
-            {/* <div className="feedCommentContainer">
-              <input className="feedComment" type="text" placeholder="댓글 달기..." />
-              <a href="">
-              <button className='feedCommentBtn'>게시</button>
-              </a>
-            </div> */}
-            <div className='commentMain'>
-              <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
-                  <input className="feedComment"
-                    type="text"
-                    value={newComment}
-                    onChange={handleChange}
-                    placeholder="댓글 입력"
-                  />
-                  <button type="submit">작성</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </article>
-
-{/* /* 3번째 게시 */ }
-        <article>
-          <div className="feedHeader">
-            <a href="" className="">
-            <img src={mphoto2} width="32px" height="32px" alt="" />
-            <span>fullstack=yunG</span>
-            </a>
-          </div>
-          <div className="feedImage">
-            <img src={photo2} width="550px" height="580px" alt="" />
-          </div>
-          <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div className="feedReaction">
-            <div className="ReactionImage">
-                <a href="">
-              <img src={comment2} width="32px" height="32px" alt="" />
-              <span>IMEEEE_20님, wonho_20님 외 6명이 좋아합니다.</span>
-              </a>
-              <div className="sns-like-button">
-                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
-                {isLiked ? '💰' : '💸'}
-                </button>
-                <span className="like-count">{likeCount}</span>
-              </div>
-            </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>wonho_20님</span>
-                <p>가난가?가난가?가난가???</p>
-              </div>
-              <div className="moreView">
-                
-              </div>
-            </div>
-            <div className="friendsSentence">
-              <span>dhhh_25</span>
-              <p>(한껏 오열중)</p>
-            </div>
-            <div className="time">
-              
-            </div>
-            {/* <div className="feedCommentContainer">
-              <input className="feedComment" type="text" placeholder="댓글 달기..." />
-              <a href="">
-              <button className='feedCommentBtn'>게시</button>
-              </a>
-            </div> */}
-            <div className='commentMain'>
-              <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
-                  <input className="feedComment"
-                    type="text"
-                    value={newComment}
-                    onChange={handleChange}
-                    placeholder="댓글 입력"
-                  />
-                  <button type="submit">작성</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </article>
-
-{/* /* 4번째 게시 */ }
-        <article>
-          <div className="feedHeader">
-            <a href="" className="">
-            <img src={mphoto3} width="32px" height="32px" alt="" />
-            <span>H.J20</span>
-            </a>
-          </div>
-          <div className="feedImage">
-            <img src={photo3} width="550px" height="580px" alt="" />
-          </div>
-          <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div className="feedReaction">
-            <div className="ReactionImage">
-                <a href="">
-              <img src={comment3} width="32px" height="32px" alt="" />
-              <span>취업 안해님, wonho_20님 외 7명이 좋아합니다.</span>
-              </a>
-              <div className="sns-like-button">
-                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
-                {isLiked ? '💰' : '💸'}
-                </button>
-                <span className="like-count">{likeCount}</span>
-              </div>
-            </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>밥 벌어먹고 살기 힘들다,,🥹</p>
-              </div>
-              <div className="moreView">
-                
-              </div>
-            </div>
-            <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>강아지는 휴지여도 귀엽구나</p>
-            </div>
-            <div className="time">
-              
-            </div>
-            {/* <div className="feedCommentContainer">
-              <input className="feedComment" type="text" placeholder="댓글 달기..." />
-              <a href="">
-              <button className='feedCommentBtn'>게시</button>
-              </a>
-            </div> */}
-            <div className='commentMain'>
-              <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
-                  <input className="feedComment"
-                    type="text"
-                    value={newComment}
-                    onChange={handleChange}
-                    placeholder="댓글 입력"
-                  />
-                  <button type="submit">작성</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </article>
-
-{/* /* 5번째 게시 */ }
-        <article>
-          <div className="feedHeader">
-            <a href="" className="">
-            <img src={mphoto4} width="32px" height="32px" alt="" />
-            <span>king_of_poor</span>
-            </a>
-          </div>
-          <div className="feedImage">
-            <img src={photo4} width="550px" height="580px" alt="" />
-          </div>
-          <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div className="feedReaction">
-            <div className="ReactionImage">
-                <a href="">
-              <img src={comment4} width="32px" height="32px" alt="" />
-              <span>항상 텅장님, wantrichPlz님 외 3명이 좋아합니다.</span>
-              </a>
-              <div className="sns-like-button">
-                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
-                {isLiked ? '💰' : '💸'}
-                </button>
-                <span className="like-count">{likeCount}</span>
-              </div>
-            </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>saeyeon_20</span>
-                <p>제발 지각좀 하지마라!!😫</p>
-              </div>
-              <div className="moreView">
-                
-              </div>
-            </div>
-            <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>저는 항상 1등으로 오는데요~~</p>
-            </div>
-            <div className="time">
-              
-            </div>
-            {/* <div className="feedCommentContainer">
-              <input className="feedComment" type="text" placeholder="댓글 달기..." />
-              <a href="">
-              <button className='feedCommentBtn'>게시</button>
-              </a>
-            </div> */}
-            <div className='commentMain'>
-              <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
-                  <input className="feedComment"
-                    type="text"
-                    value={newComment}
-                    onChange={handleChange}
-                    placeholder="댓글 입력"
-                  />
-                  <button type="submit">작성</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </article>
-
-{/* /* 6번째 게시 */ }
-        <article>
-          <div className="feedHeader">
-            <a href="" className="">
-            <img src={mphoto5} width="32px" height="32px" alt="" />
-            <span>거랭뱅입니다</span>
-            </a>
-          </div>
-          <div className="feedImage">
-            <img src={photo5} width="550px" height="580px" alt="" />
-          </div>
-          <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div className="feedReaction">
-            <div className="ReactionImage">
-                <a href="">
-              <img src={comment5} width="32px" height="32px" alt="" />
-              <span>너도거지님, 통장텅장퉁장님 외 8명이 좋아합니다.</span>
-              </a>
-              <div className="sns-like-button">
-                <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
-                {isLiked ? '💰' : '💸'}
-                </button>
-                <span className="like-count">{likeCount}</span>
-              </div>
-            </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>이렇게 알림 떠도 카드 긁겠지..?ㅠ</p>
-              </div>
-              <div className="moreView">
-                
-              </div>
-            </div>
-            <div className="friendsSentence">
-              <span>sobi_fairy2</span>
-              <p>너 돈 많아..? 내 계좌는 국민..더보기</p>
-            </div>
-            <div className="time">
-              
-            </div>
-            {/* <div className="feedCommentContainer">
-              <input className="feedComment" type="text" placeholder="댓글 달기..." />
-              <a href="">
-              <button className='feedCommentBtn'>게시</button>
-              </a>
-            </div> */}
-            <div className='commentMain'>
-              <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
-                  <input className="feedComment"
-                    type="text"
-                    value={newComment}
-                    onChange={handleChange}
-                    placeholder="댓글 입력"
-                  />
-                  <button type="submit">작성</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </article>
+        <Post profil1={profil1} postImg={photo1} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo2} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo3} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo4} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo5} profil2={profil2}/>
 
 
         <aside>

@@ -7,6 +7,7 @@ import newIcon from '../img/new.PNG'
 import infoIcon from '../img/info.PNG'
 import myIcon from '../img/my.PNG'
 import mainImg from '../img/캡처.PNG'
+import moneyIcon from '../img/money.png'
 import { useNavigate } from 'react-router-dom';
 
 const MainPageLeft = () => {
@@ -42,9 +43,12 @@ const nav = useNavigate();
             <button className='iconATag' onClick={()=>nav('./my')}>
                 <img className="icon" src={myIcon} alt="" /></button>
                 <button className='textA' onClick={()=>nav('./my')}>  마이페이지</button>
+            </li><li className="nav-item">
+            <button className='iconATag' onClick={()=>nav('./chart')}>
+                <img className="icon" src={moneyIcon} alt="" /></button>
+                <button className='textA' onClick={()=>nav('./chart')}>  가계부</button>
             </li>
           </ul>
-          <img className="car" src={mainImg} alt="" />
         </div>
       </div>
     </React.Fragment>

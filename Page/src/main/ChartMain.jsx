@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useMemo } from "react";
-import NewItemContainer from "./components/NewItem/NewItemContainer";
-import PocketContainer from "./components/Pocket/PocketContainer";
-import "./styles/reset.css";
-import "./styles/font.css";
-import "./styles/button.css";
-import "./styles/common.css";
+import NewItemContainer from "../components/NewItem/NewItemContainer";
+import PocketContainer from "../components/Pocket/PocketContainer";
+import "../styles/reset.css";
+import "../styles/font.css";
+import "../styles/button.css";
+import "../styles/common.css";
 import { useCallback } from "react";
 
 export const ItemDispatchContext = React.createContext();
@@ -66,8 +66,10 @@ const App = () => {
       <ItemDispatchContext.Provider
         value={[memoizedDispatches, memoizedNextItemId]}
       >
+        <div className="WholeContainer">
         <PocketContainer items={items} isAddItem={isAddItem} />
         <NewItemContainer />
+        </div>
       </ItemDispatchContext.Provider>
     </>
   );

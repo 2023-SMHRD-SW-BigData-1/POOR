@@ -47,6 +47,7 @@ const MyPageMain = () => {
               <div className="profile__username">im_notPoor</div>
               <div className="profile__btn">
                 <span>김거지</span>
+                <button>팔로우</button>
               </div>
             </div>
           </div>

@@ -136,11 +136,11 @@ function ChartComponent() {
       }
     };
 
-    const chart = new ApexCharts(chartRef.current, options);
-    chart.render();
+    const chartMain = new ApexCharts(chartRef.current, options);
+    chartMain.render();
 
     return () => {
-      chart.destroy();
+      chartMain.destroy();
     };
   }, []);
 

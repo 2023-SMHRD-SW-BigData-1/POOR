@@ -1,23 +1,22 @@
 const bodyParser = require('body-parser');
+const { log } = require('console');
 const express = require('express')
 const oracledb = require('oracledb');
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 const path = require('path')
-const cors = require('cors')
 const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}));
+const session = require('express-session');
 const app = express()
-app.use(cors())
 
-router.get('*', function(req,res){
-    res.sendFile(path.join(__dirname,'../Page','build','index.html'))
-})
+
+
 
 oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/project/oracle_client'})
 let conn;
 
-oracledb.getConnection({
+conn =oracledb.getConnection({
     user : "campus_h_230627_1",
     password : "smhrd1",
     connectString : "project-db-stu2.smhrd.com:1524/"
@@ -26,28 +25,57 @@ oracledb.getConnection({
         console.log('접속실패',err);
     }
     conn = con;
-});
+})
 
-const getLike = async (req,res)=>{
+
+
+const chat = async (req, res) => {
     try {
-        const checkSql = "SELECT * FROM T_USER WHERE USER_ID = :id";
-        const insertSql = "INSERT INTO T_FEED (FEED_SEQ, FEED_CONTENT, FEED_IMG, FEED_VIEWS, USER_ID, FEED_HASHTAG, FEED_VIDEO, FEED_COMENT, FEED_LIKES, FEED_DATE) VALUES (FEED_SEQ, FEED_CONTENT, FEED_IMG, FEED_VIEWS, USER_ID, FEED_HASHTAG, FEED_VIDEO, FEED_COMENT, :FEED_LIKES.NEXTVAL, FEED_DATE)";
-
-        console.log(req.body.like);
-        const checkResult = await conn.excute(insertSql, [req.body.like])
-
+        const insertSql = "INSERT INTO chat (roomid, userid, chat, chatdate) VALUES (3, 'testuser', :content, sysdate)"
+        console.log('chat function');
+        const insertResult = await conn.execute(insertSql,[req.body.chat]);
         conn.commit()
+        res.json({message:'success'})
+    } catch (err) {
+        console.log(err);
+    }
 
-        res.json({message : 'success'})
+};
+const getChat = async (req, res) => {
+    try {
+        console.log('node get chat');
+        const getSql = "SELECT chat FROM chat where roomid = 3 ORDER BY chatdate"
+        const getResult = await conn.execute(getSql)
+        // console.log(getResult.rows);
+        const data = getResult.rows
+        res.json(data)
+
+
     } catch (err) {
         console.log(err);
     }
 }
-app.use(getLike)
+
+app.use(chat)
+app.use(getChat)
+
+router.get('/', function (req, res) {
+    console.log('new router');
+    getChat(req,res)
+    // res.sendFile(path.join(__dirname, '../project/build/index.html'))
+})
 
 
-// router.post('/write', write)
 
-router.get('/new',getLike)
+
+router.post('/new', (req,res)=>{
+    console.log('new router2');
+    console.log('chat req',req.body);
+    console.log('chat req',req.session);
+    chat(req,res)
+})
+
+
+
 
 module.exports = router;

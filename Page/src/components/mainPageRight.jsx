@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import '../css/mainPageRight.css';
 import goalIcon from '../img/goal.PNG';
 import memoIcon from '../img/memeo.PNG';
-import hoImg from '../img/ho.jpg';
+import mainImg from '../img/캡처.PNG';
 
 const MainPageRight = () => {
   const goalsRef = useRef([]);
@@ -32,7 +32,7 @@ const MainPageRight = () => {
   return (
     <div className='rightContainer'>
       <div className='pageTop'>
-        <img className='topImg' src={hoImg} alt='' />
+        <img className='topImg' src={mainImg} alt='' />
         <div className='topInside'>
           <h3>{`${nick}님`}</h3>
           <h3>{`등급${A}`}</h3>

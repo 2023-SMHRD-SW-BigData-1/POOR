@@ -16,6 +16,7 @@ import JoinMain from './components/joinTest';
 // import SetUpMain from './main/setUpMain';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ChartMain from './main/ChartMain';
 
 function App() {
   
@@ -60,6 +61,7 @@ function App() {
           <Route path='/new' element={<NewPageMain/>}/>
           <Route path='/home' element={<MainPageMain/>}/>
           <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
+          <Route path='/chart' element={<ChartMain/>}/>
           </>
          
           

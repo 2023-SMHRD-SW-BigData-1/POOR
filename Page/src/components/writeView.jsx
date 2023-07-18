@@ -10,19 +10,9 @@ const WriteView = ({title, content, id, date, number}) => {
   const nav = useNavigate()
 
 
-  const appStyle = {
-    display: "flex",
-    flexDirection : 'column'
-    
-  };
-  const upStyle={
-    display: "flex",
-    marginLeft : "50px"
-  }
-  
-
   return (
-    <div style={appStyle}>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -31,10 +21,10 @@ const WriteView = ({title, content, id, date, number}) => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
+          {/* <div className="headerSearchBar">
             <i className="fas fa-search"></i>
             <input type="text" placeholder="검색" />
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -81,6 +71,7 @@ const WriteView = ({title, content, id, date, number}) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

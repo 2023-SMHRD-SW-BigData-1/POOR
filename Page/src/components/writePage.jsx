@@ -7,10 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const WritePage = () => {
   const nav = useNavigate()
-  const appStyle = {
-    display: "flex",
-    flexDirection : 'column'
-  };
+ 
     const id = useRef()
     const title = useRef()
 
@@ -45,7 +42,8 @@ const WritePage = () => {
     };
 
   return (
-    <div style={appStyle}>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -54,7 +52,7 @@ const WritePage = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
+          {/* <div className="headerSearchBar">
             <i className="fas fa-search"></i>
             <input type="text" placeholder="검색" />
           </div>
@@ -62,7 +60,7 @@ const WritePage = () => {
             <a href=" "><i className="far fa-compass"></i></a>
             <a href=" "><i className="far fa-heart"></i></a>
             <a href=" "><i className="fas fa-user"></i></a>
-          </nav>
+          </nav> */}
         </div>
       </header>
 
@@ -101,6 +99,7 @@ const WritePage = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   )
 }
