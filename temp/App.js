@@ -16,6 +16,8 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { CheckLogin } from './context/CheckLogin';
 import JoinTest from './components/JoinTest';
+import MyPageScrap from './components/MyPageScrap'
+import MyPageDC from './components/MyPageDC'
 
 function App() {
   const appStyle = {
@@ -46,21 +48,23 @@ function App() {
       
       </>
       :null}
-      <div style={appStyle}>
+      {/* <div style={appStyle}> */}
       <Routes className="appCenterStyle">
       {check ? (
 
           <>
           <Route path='/listpage' element={<ListMain/>}/>
-          <Route path='/home' element={<MainPageMain/>}/>
+          <Route path='/main' element={<MainPageMain/>}/>
           <Route path='/discountinfo' element={<DiscountMain/>}/>
           <Route path='/write' element={<WritePageMain/>}/>
           <Route path='/my' element={<MyPageMainMain/>}/>
           <Route path='/setup' element={<SetUpMain/>}/>
+          <Route path='/my/myScrap' element={<MyPageScrap/>}></Route>
+          <Route path='/my/myDC' element={<MyPageDC/>}></Route>
           
           {/* <Route path='/' element={<SignInMain/>}/> */}
           <Route path='/new' element={<NewPageMain/>}/>
-          <Route path='/listpage/viewpage?' element={<WriteView/>}/>
+          <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
           </>
          
           
@@ -77,7 +81,7 @@ function App() {
 
       </div>
       
-      </div>
+      // </div>
       
   );
 }
