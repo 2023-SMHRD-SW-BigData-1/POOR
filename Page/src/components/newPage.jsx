@@ -10,6 +10,23 @@ import profil5 from '../img/집게사장.png'
 import profil6 from '../img/킹푸어.png'
 import profil7 from '../img/테잌마이머니.png'
 import img2 from '../img/다운로드.png'
+
+import photo1 from '../img/게시글1.png'
+import photo2 from '../img/게시글2.png'
+import photo3 from '../img/게시글3.png'
+import photo4 from '../img/게시글4.png'
+import photo5 from '../img/게시글5.png'
+import mphoto1 from '../img/게시글프사1.png'
+import mphoto2 from '../img/게시글프사2.png'
+import mphoto3 from '../img/게시글프사3.png'
+import mphoto4 from '../img/게시글프사4.png'
+import mphoto5 from '../img/게시글프사5.png'
+import comment1 from '../img/댓글프사1.png'
+import comment2 from '../img/댓글프사2.png'
+import comment3 from '../img/댓글프사3.png'
+import comment4 from '../img/댓글프사4.png'
+import comment5 from '../img/댓글프사5.png'
+
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -132,7 +149,7 @@ const NewPage = () => {
           
         </div>
       </header>
-
+ {/* /* 1번째 게시 */ }
       <div className="body1">
         <article>
           <div className="feedHeader">
@@ -211,15 +228,17 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+{/* /* 2번째 게시 */ }
         <article>
           <div className="feedHeader">
             <a href="" className="">
-            <img src={profil1} width="32px" height="32px" alt="" />
-            <span>king_of_poor</span>
+            <img src={mphoto1} width="32px" height="32px" alt="" />
+            <span>saeyeon_20</span>
             </a>
           </div>
           <div className="feedImage">
-            <img src={postImg} width="550px" height="580px" alt="" />
+            <img src={photo1} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
             <div className="reactionButton1">
@@ -234,8 +253,8 @@ const NewPage = () => {
           <div className="feedReaction">
             <div className="ReactionImage">
                 <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
+              <img src={comment1} width="32px" height="32px" alt="" />
+              <span>NotPoor_20님, wonho_20님 외 3명이 좋아합니다.</span>
               </a>
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
@@ -246,19 +265,19 @@ const NewPage = () => {
             </div>
             <div className="reactionSentence">
               <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
+                <span>IMEEEE_20</span>
+                <p>내 텅장 눈 감아~😢</p>
               </div>
               <div className="moreView">
-                <a href="">더보기</a>
+                
               </div>
             </div>
             <div className="friendsSentence">
               <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
+              <p>ㄴ..혹시 제 잔고 보이세요?</p>
             </div>
             <div className="time">
-              <p>42분전</p>
+              
             </div>
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
@@ -288,15 +307,17 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+{/* /* 3번째 게시 */ }
         <article>
           <div className="feedHeader">
             <a href="" className="">
-            <img src={profil1} width="32px" height="32px" alt="" />
-            <span>king_of_poor</span>
+            <img src={mphoto2} width="32px" height="32px" alt="" />
+            <span>fullstack=yunG</span>
             </a>
           </div>
           <div className="feedImage">
-            <img src={postImg} width="550px" height="580px" alt="" />
+            <img src={photo2} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
             <div className="reactionButton1">
@@ -311,8 +332,8 @@ const NewPage = () => {
           <div className="feedReaction">
             <div className="ReactionImage">
                 <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
+              <img src={comment2} width="32px" height="32px" alt="" />
+              <span>IMEEEE_20님, wonho_20님 외 6명이 좋아합니다.</span>
               </a>
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
@@ -323,19 +344,19 @@ const NewPage = () => {
             </div>
             <div className="reactionSentence">
               <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
+                <span>wonho_20님</span>
+                <p>가난가?가난가?가난가???</p>
               </div>
               <div className="moreView">
-                <a href="">더보기</a>
+                
               </div>
             </div>
             <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
+              <span>dhhh_25</span>
+              <p>(한껏 오열중)</p>
             </div>
             <div className="time">
-              <p>42분전</p>
+              
             </div>
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
@@ -365,15 +386,17 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+{/* /* 4번째 게시 */ }
         <article>
           <div className="feedHeader">
             <a href="" className="">
-            <img src={profil1} width="32px" height="32px" alt="" />
-            <span>king_of_poor</span>
+            <img src={mphoto3} width="32px" height="32px" alt="" />
+            <span>H.J20</span>
             </a>
           </div>
           <div className="feedImage">
-            <img src={postImg} width="550px" height="580px" alt="" />
+            <img src={photo3} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
             <div className="reactionButton1">
@@ -388,8 +411,8 @@ const NewPage = () => {
           <div className="feedReaction">
             <div className="ReactionImage">
                 <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
+              <img src={comment3} width="32px" height="32px" alt="" />
+              <span>취업 안해님, wonho_20님 외 7명이 좋아합니다.</span>
               </a>
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
@@ -401,18 +424,18 @@ const NewPage = () => {
             <div className="reactionSentence">
               <div className="surfSentence">
                 <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
+                <p>밥 벌어먹고 살기 힘들다,,🥹</p>
               </div>
               <div className="moreView">
-                <a href="">더보기</a>
+                
               </div>
             </div>
             <div className="friendsSentence">
               <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
+              <p>강아지는 휴지여도 귀엽구나</p>
             </div>
             <div className="time">
-              <p>42분전</p>
+              
             </div>
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
@@ -442,15 +465,17 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+{/* /* 5번째 게시 */ }
         <article>
           <div className="feedHeader">
             <a href="" className="">
-            <img src={profil1} width="32px" height="32px" alt="" />
+            <img src={mphoto4} width="32px" height="32px" alt="" />
             <span>king_of_poor</span>
             </a>
           </div>
           <div className="feedImage">
-            <img src={postImg} width="550px" height="580px" alt="" />
+            <img src={photo4} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
             <div className="reactionButton1">
@@ -465,8 +490,8 @@ const NewPage = () => {
           <div className="feedReaction">
             <div className="ReactionImage">
                 <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
+              <img src={comment4} width="32px" height="32px" alt="" />
+              <span>항상 텅장님, wantrichPlz님 외 3명이 좋아합니다.</span>
               </a>
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
@@ -477,19 +502,19 @@ const NewPage = () => {
             </div>
             <div className="reactionSentence">
               <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
+                <span>saeyeon_20</span>
+                <p>제발 지각좀 하지마라!!😫</p>
               </div>
               <div className="moreView">
-                <a href="">더보기</a>
+                
               </div>
             </div>
             <div className="friendsSentence">
               <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
+              <p>저는 항상 1등으로 오는데요~~</p>
             </div>
             <div className="time">
-              <p>42분전</p>
+              
             </div>
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
@@ -519,15 +544,17 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+{/* /* 6번째 게시 */ }
         <article>
           <div className="feedHeader">
             <a href="" className="">
-            <img src={profil1} width="32px" height="32px" alt="" />
-            <span>king_of_poor</span>
+            <img src={mphoto5} width="32px" height="32px" alt="" />
+            <span>거랭뱅입니다</span>
             </a>
           </div>
           <div className="feedImage">
-            <img src={postImg} width="550px" height="580px" alt="" />
+            <img src={photo5} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
             <div className="reactionButton1">
@@ -542,8 +569,8 @@ const NewPage = () => {
           <div className="feedReaction">
             <div className="ReactionImage">
                 <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
+              <img src={comment5} width="32px" height="32px" alt="" />
+              <span>너도거지님, 통장텅장퉁장님 외 8명이 좋아합니다.</span>
               </a>
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
@@ -555,18 +582,18 @@ const NewPage = () => {
             <div className="reactionSentence">
               <div className="surfSentence">
                 <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
+                <p>이렇게 알림 떠도 카드 긁겠지..?ㅠ</p>
               </div>
               <div className="moreView">
-                <a href="">더보기</a>
+                
               </div>
             </div>
             <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
+              <span>sobi_fairy2</span>
+              <p>너 돈 많아..? 내 계좌는 국민..더보기</p>
             </div>
             <div className="time">
-              <p>42분전</p>
+              
             </div>
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
@@ -596,6 +623,8 @@ const NewPage = () => {
             </div>
           </div>
         </article>
+
+
         <aside>
           <div className="asideHead">
             <img src={profil3} width="56px" height="56px" alt="" />
