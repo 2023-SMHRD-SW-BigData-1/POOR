@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './App.css'
-import ListMain from './main/listMain';
+import ListMain from './main/ListMain';
 import DiscountMain from './main/discountMain';
 import WriteView from './main/writeViewMain';
 import WritePageMain from './main/writePageMain';
@@ -10,6 +10,8 @@ import SignInMain from  './components/loginTest';
 import NewPageMain from './main/newPageMain';
 import MainPageMain from './main/mainPageMain';
 import MyPageMainMain from './main/myPageMainMain'
+import MyPageDC from './components/myPageDC';
+import MyPageScrap from './components/myPageScrap';
 import JoinMain from './components/joinTest';
 // import SetUpMain from './main/setUpMain';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -51,11 +53,13 @@ function App() {
           <Route path='/discountinfo' element={<DiscountMain/>}/>
           <Route path='/write' element={<WritePageMain/>}/>
           <Route path='/my' element={<MyPageMainMain/>}/>
+          <Route path='/my/myScrap' element={<MyPageScrap/>}></Route>
+          <Route path='/my/myDC' element={<MyPageDC/>}></Route>
 
           {/* <Route path='/' element={<SignInMain/>}/> */}
           <Route path='/new' element={<NewPageMain/>}/>
           <Route path='/home' element={<MainPageMain/>}/>
-          <Route path='/listpage/viewpage?' element={<WriteView/>}/>
+          <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
           </>
          
           

@@ -16,12 +16,15 @@ import mainPageImg9 from '../img/자린고비2_300x300.jpg'
 import mainPageImg10 from '../img/정형돈_300x300.jpg'
 import mainPageImg11 from '../img/폰반찬_300x300.jpg'
 import mainPageImg12 from '../img/하하우는_300x300.jpg'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 
-const myPageScrap = () => {
+const MyPageMain = () => {
+
+  const nav = useNavigate()
   return (
     <>
-    <div className='myPageContainer'>
+    <div className='myPageContainerSub'>
     <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
@@ -34,7 +37,7 @@ const myPageScrap = () => {
           
         </div>
       </header>
-      <div className="myPageContainerSub">
+      <div className="mainPageContainer">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
@@ -70,23 +73,32 @@ const myPageScrap = () => {
             </div>
           </div>
         </div>
+
+
         <div className="toolbar">
           <div className="toolbar__container">
-            <a href="./myPageMain.html">
+            <button onClick={()=>nav('/my')}>
               <div className="toolbar__icon">
                 <img src={iconImg1} alt="" />
               </div>
-            </a>
-            <a href="./myPageScrap.html">
+            </button>
+            
+            <button onClick={()=>nav('./myScrap')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg2} alt="" />
               </div>
-            </a>
-            <a href="./myPageDC.html">
+
+            </button>
+
+            <button onClick={()=>nav('./myDC')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg3} alt="" />
               </div>
-            </a>
+            </button>
+            
+
           </div>
           <br />
         </div>
@@ -151,4 +163,4 @@ const myPageScrap = () => {
   )
 }
 
-export default myPageScrap
+export default MyPageMain

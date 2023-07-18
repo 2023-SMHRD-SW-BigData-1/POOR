@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import ListPage from '../components/listPageJsx'
+import ListPage from '../components/ListPageJsx'
 
 const ListMain = (props) => {
 

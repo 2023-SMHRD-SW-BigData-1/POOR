@@ -6,10 +6,15 @@ import '../css/myPageCss.css'
 import mainImg from '../img/캡처.PNG'
 import scrapImg1 from '../img/마페스크랩1.png'
 import scrapImg2 from '../img/마페스크랩2.png'
+import { useNavigate } from 'react-router-dom'
+import '../css/mainCss.css'
 
-const myPageScrap = () => {
+
+const MyPageScrap = () => {
+  const nav = useNavigate()
   return (
     <>
+    <div className='myPageContainerSub'>
     <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
@@ -22,7 +27,7 @@ const myPageScrap = () => {
           
         </div>
       </header>
-      <div className="main">
+      <div className="mainPageContainer">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
@@ -58,26 +63,36 @@ const myPageScrap = () => {
             </div>
           </div>
         </div>
+
+
         <div className="toolbar">
           <div className="toolbar__container">
-            <a href="./myPageMain.html">
+            <button onClick={()=>nav('/my')}>
               <div className="toolbar__icon">
                 <img src={iconImg1} alt="" />
               </div>
-            </a>
-            <a href="./myPageScrap.html">
+            </button>
+            
+            <button onClick={()=>nav('/my/myScrap')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg2} alt="" />
               </div>
-            </a>
-            <a href="./myPageDC.html">
+
+            </button>
+
+            <button onClick={()=>nav('/my/myDC')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg3} alt="" />
               </div>
-            </a>
+            </button>
+            
+
           </div>
-          <br />
-        </div>
+          </div>
+
+
         <div className="content">
           <div className="content__container">
             <div className="content__photo">
@@ -94,8 +109,9 @@ const myPageScrap = () => {
         </div>
       </div>
       </div>
+      </div>
     </>
   )
 }
 
-export default myPageScrap
+export default MyPageScrap

@@ -22,6 +22,7 @@ const ListPage = () => {
     axios.get('http://localhost:8888/listpage/listpage/')
       .then(res => {
         console.log(res.data[1].POST_SEQ)
+        console.log(res.data)
         setData(res.data)
         setNumber(data.POST_SEQ)
       })
@@ -116,9 +117,11 @@ const ListPage = () => {
               <div className="count">조회</div>
 
             </div>
-            {data.slice(start, end).map(item=>
+            {
+          
+            data.slice(start, end).map(item=>(
               <List title={item.POST_TITLE} content={item.POST_CONTENT} id={item.USER_ID} date={item.CREATED_AT} number={item.POST_SEQ}/>
-              )}
+              ))}
               {/* <List onClick={nav('/listpage/viewpage?number')} title={title} id={id} date={date} content={content} number={number} />
             
               */}

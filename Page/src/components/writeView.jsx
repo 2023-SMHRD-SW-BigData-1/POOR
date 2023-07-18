@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainImg from '../img/캡처.PNG'
 import '../css/mainCss.css'
 import '../css/writeViewCss.css'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const WriteView = () => {
+const WriteView = ({title, content, id, date, number}) => {
+  let {num}= useParams()
+  console.log('num', num)
+  const nav = useNavigate()
+
+
+  const appStyle = {
+    display: "flex",
+    flexDirection : 'column'
+    
+  };
+  const upStyle={
+    display: "flex",
+    marginLeft : "50px"
+  }
+  
+
   return (
-    <>
+    <div style={appStyle}>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -14,7 +31,10 @@ const WriteView = () => {
               거지의꿈
             </a>
           </div>
-          
+          <div className="headerSearchBar">
+            <i className="fas fa-search"></i>
+            <input type="text" placeholder="검색" />
+          </div>
         </div>
       </header>
 
@@ -26,20 +46,20 @@ const WriteView = () => {
         <div className="board_view_wrap">
           <div className="board_view">
             <div className="title">
-              냉장고 문이 안열려요..
+              {title}
             </div>
             <div className="wirteInfo">
               <dl>
                 <dt>번호</dt>
-                <dd>1</dd>
+                <dd>{number}</dd>
               </dl>
               <dl>
                 <dt>글쓴이</dt>
-                <dd>정세연</dd>
+                <dd>{id}</dd>
               </dl>
               <dl>
                 <dt>작성일</dt>
-                <dd>2023.7.14</dd>
+                <dd>{date}</dd>
               </dl>
               <dl>
                 <dt>조회</dt>
@@ -47,9 +67,8 @@ const WriteView = () => {
               </dl>
             </div>
             <div className="cont">
-              # 냉장고 AS<br />
-              # 냉장고 문 안열림<br />
-              # 냉장고 고장<br />
+              {content} <br />
+              
               <br />
               <br />
               <br />
@@ -57,12 +76,12 @@ const WriteView = () => {
             </div>
           </div>
           <div className="bt_wrap">
-            <a href="list.html" className="on">목록</a>
-            <a href="edit.html">수정</a>
+            <button onClick={()=>{nav('/listpage')}}>목록</button>
+            <button onClick={()=>{nav('/write')}}>수정</button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
