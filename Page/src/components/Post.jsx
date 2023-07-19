@@ -84,7 +84,7 @@ const Post = ({profil1,postImg,profil2,}) => {
  
   return (
     <div className="body1">
-        <article>
+        <article className='newArticle'>
           <div className="feedHeader">
             <a href="" className="">
             <img src={profil1} width="32px" height="32px" alt="" />
