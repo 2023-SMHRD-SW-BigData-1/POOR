@@ -10,6 +10,7 @@ import profil5 from '../img/집게사장.png'
 import profil6 from '../img/킹푸어.png'
 import profil7 from '../img/테잌마이머니.png'
 import img2 from '../img/다운로드.png'
+import axios from 'axios';
 
 const NewPage = () => {
   const [likeCount, setLikeCount] = useState(0);
@@ -40,20 +41,73 @@ const NewPage = () => {
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     if (newComment !== '') {
+
+      fetch('http://localhost:8888/comment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ comment: newComment }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // 댓글 저장이 성공한 경우
+            console.log('댓글이 성공적으로 저장되었습니다.');
+
       setComments([...comments, newComment]);
       setNewComment('');
+
+    } else {
+      // 댓글 저장이 실패한 경우
+      console.log('댓글 저장에 실패하였습니다.');
     }
+    console.log('상태 코드:', response.status);
+
+    // 응답 본문(json 형태로 파싱하여 사용)
+    response.json().then((data) => {
+      console.log('응답 데이터:', data);
+    });
+  })
+  
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+    }
+=======
+    
+    const data = {
+      chat: newComment,
+    };
+    console.log(newComment);
+    setNewComment('')
+    // axios를 사용하여 서버로 데이터 전송
+    console.log('newpage',data);
+    axios.post('http://localhost:8888/new', data)
+    .then(response => {
+        console.log(response.data); // 삽입 결과 또는 처리된 데이터 확인
+      })
+      .catch(error => {
+        console.error(error);
+      });
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
   };
+  
+
+ 
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
   };
 
 
+<<<<<<< HEAD
+=======
   const searchTags = (tag) => {
     // 검색 로직을 수행하고 결과를 설정합니다.
     // 예를 들어, API 요청을 보내거나 로컬 데이터에서 필터링을 수행할 수 있습니다.
@@ -62,9 +116,19 @@ const NewPage = () => {
     // ...
 
     setSearchResults(results);
+
+
+    
+  
+
+
+
+
+
   };
 
 
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
   return (
     <div>
       <header className="headerContainer">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/mainCss.css'
 import img1 from '../img/캡처.PNG'
 import postImg from '../img/지갑텅빈.png'
@@ -11,7 +11,32 @@ import profil6 from '../img/킹푸어.png'
 import profil7 from '../img/테잌마이머니.png'
 import img2 from '../img/다운로드.png'
 
+import photo1 from '../img/게시글1.png'
+import photo2 from '../img/게시글2.png'
+import photo3 from '../img/게시글3.png'
+import photo4 from '../img/게시글4.png'
+import photo5 from '../img/게시글5.png'
+import mphoto1 from '../img/게시글프사1.png'
+import mphoto2 from '../img/게시글프사2.png'
+import mphoto3 from '../img/게시글프사3.png'
+import mphoto4 from '../img/게시글프사4.png'
+import mphoto5 from '../img/게시글프사5.png'
+import comment1 from '../img/댓글프사1.png'
+import comment2 from '../img/댓글프사2.png'
+import comment3 from '../img/댓글프사3.png'
+import comment4 from '../img/댓글프사4.png'
+import comment5 from '../img/댓글프사5.png'
+
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import Post from './Post';
+
+
+
 const NewPage = () => {
+  const nav = useNavigate()
+
+
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -22,8 +47,23 @@ const NewPage = () => {
     } else {
       setLikeCount(likeCount + 1);
       setIsLiked(true);
+
+      axios.post('http://localhost:8888/new', {
+
+      })
+        .then(response => {
+          console.log(response.data.message); // 삽입 결과 또는 처리된 데이터 확인
+          
+          alert('좋아요 등록에 성공하였습니다.')
+          nav('/new')
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
   };
+
+  
   const [inputValue, setInputValue] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
@@ -38,16 +78,92 @@ const NewPage = () => {
     }
   };
 
+  
+
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  const handleSubmit = (event) => {
+  const chatSubmit = (event) => {
     event.preventDefault();
-    if (newComment !== '') {
-      setComments([...comments, newComment]);
-      setNewComment('');
-    }
+
+    // 서버로 전송할 데이터 객체 생성
+    console.log('new page chat submit1');
+    const data = {
+      chat: newComment,
+    };
+    console.log('new page chat submit2');
+    console.log(data.chat);
+
+    axios.post('http://localhost:8888/new/new', data)
+      .then(response => {
+        console.log(response.data);
+        console.log('post axios data', response.data)
+        getData()
+        
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
+
+  const getData = ()=>{
+    axios.get('http://localhost:8888/new/')
+    .then(res => {
+      // console.log(res)
+      console.log('get axios data', res.data)
+      console.log(res.data);
+      setComments(res.data)
+      console.log(res.data[0]);
+      console.log(res.data[0].CHAT);
+
+      // window.location.reload();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  useEffect(() => {
+    console.log('getChat')
+    getData()
+  }, [])
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (newComment !== '') {
+  //     setComments([...comments, newComment]);
+  //     setNewComment('');
+  //   }
+  // };
+
+  // const handleSubmit2 = async (event) => {
+  //   event.preventDefault();
+  //   if (newComment !== '') {
+  //     try {
+  //       const response = await fetch('/comment', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({ comment: newComment }),
+  //       })
+  //       .then(()=>{console.log('then')})
+  //       .catch(err => console.error(err));
+  
+  //       if (response.ok) {
+  //         // 댓글 저장이 성공한 경우
+  //         console.log('Comment saved successfully');
+  //         setComments([...comments, newComment]);
+  //         setNewComment('');
+  //       } else {
+  //         console.error('Comment save failed');
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  // };
+
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -65,8 +181,10 @@ const NewPage = () => {
   };
 
 
+
   return (
-    <div>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -75,31 +193,12 @@ const NewPage = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-          <input
-            type="text"
-            placeholder="검색"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleInputKeyDown}
-          />
-          </div>
-          <div className="search-results">
-        {searchResults.length > 0 ? (
-          searchResults.map((result, index) => (
-            <span key={index} className="search-result">
-              {result}
-            </span>
-          ))
-        ) : (
-          <span className="no-results">No results found</span>
-        )}
-      </div>
+          
         </div>
       </header>
-
+ {/* /* 1번째 게시 */ }
       <div className="body1">
-        <article>
+        <article className='newArticle'>
           <div className="feedHeader">
             <a href="" className="">
             <img src={profil1} width="32px" height="32px" alt="" />
@@ -137,17 +236,13 @@ const NewPage = () => {
                 <span>king_of_poor</span>
                 <p>오늘도 절약 성공~🥳</p>
               </div>
-              <div className="moreView">
-                <a href="">더보기</a>
-              </div>
+              
             </div>
             <div className="friendsSentence">
               <span>South_gunOne</span>
               <p>보기좋게 성공~~~😎</p>
             </div>
-            <div className="time">
-              <p>42분전</p>
-            </div>
+            
             {/* <div className="feedCommentContainer">
               <input className="feedComment" type="text" placeholder="댓글 달기..." />
               <a href="">
@@ -156,27 +251,40 @@ const NewPage = () => {
             </div> */}
             <div className='commentMain'>
               <div className='commentContainer'>
-                <ul>
-                  {comments.map((comment, index) => (
-                    <li key={index}>{comment}</li>
+              <ul>
+                  {comments.map(item => (
+                    <li>{item.CHAT}</li>
                   ))}
                 </ul>
               </div>
               <div className='commentContents'>
-                <form onSubmit={handleSubmit}>
+                <form>
                   <input className="feedComment"
                     type="text"
                     value={newComment}
                     onChange={handleChange}
                     placeholder="댓글 입력"
                   />
-                  <button type="submit">작성</button>
+                  <button onClick={(e)=>chatSubmit(e)} type="submit">작성</button>
+
                 </form>
               </div>
             </div>
           </div>
         </article>
+
+        <Post profil1={profil1} postImg={photo1} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo2} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo3} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo4} profil2={profil2}/>
+        <Post profil1={profil1} postImg={photo5} profil2={profil2}/>
+
+
+<<<<<<< HEAD
+        {/* <aside>
+=======
         <aside>
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
           <div className="asideHead">
             <img src={profil3} width="56px" height="56px" alt="" />
             <div className="asideHeadText">
@@ -251,7 +359,9 @@ const NewPage = () => {
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> */}
+        </div>
+        </div>
         </div>
     </div>
   )

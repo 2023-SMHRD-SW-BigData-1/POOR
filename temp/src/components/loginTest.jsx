@@ -1,14 +1,49 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import '../css/singInCss.css';
 import { useState } from 'react';
+import axios from 'axios';
+import { CheckLogin } from '../context/CheckLogin';
+import { useNavigate } from 'react-router-dom';
 
 
-const LoginTest = () => {
+const LoginTest = ({onValueChange}) => {
   const [signIn, setSignIn] = useState(true);
+  const nav = useNavigate()
 
-  const toggleSignIn = () => {
-    setSignIn(!signIn);
-  };
+
+
+    const id = useRef()
+    const pw = useRef()
+
+    const [text, setText] = useState('');
+  
+    // const toggleSignIn = (event) => {
+    //   setText(event.target.value);
+    // };
+  
+    const toggleSignIn = (event) => {
+      event.preventDefault();
+      console.log('객체생성');
+      const data = {
+        id : id.current.value,
+        pw: pw.current.value,
+      };
+      console.log('데이터 전송');
+      axios.post('http://localhost:8888', data)
+        .then(response => {
+          console.log(response.data.message);
+          console.log('onvaluechange'); 
+          onValueChange(response.data.message)
+          nav('/main')
+          
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    };
+
+   
+
 
   const heading = signIn ? '회원가입' : '로그인';
   const paragraph = signIn
@@ -52,22 +87,23 @@ const LoginTest = () => {
     <div className="singInApp">
       <div className="Panel FormPanel">
        
-        <h2>{heading}</h2>
+        <h2 onClick={()=>nav('/join')}>로그인</h2>
         <h4>소통에 합리적 소비를 더하다!</h4>
         <h4>거지의 꿈과 함께하세요.</h4>
 
-        <form action='/main' method='post'>
-            <input type='id' placeholder='ID' name='id' />
-            <input type='password' placeholder='PASSWORD' name='pw' />
+        <form action='/' method='post'>
+            <input type='id' placeholder='ID' name='id' ref={id} />
+            <input type='password' placeholder='PASSWORD' name='pw' ref={pw} />
         
 
         <div className="searchLink">
           <a href={link.href}>{link.text}</a>
           <a href={linkPw.href}>{linkPw.text}</a>
         </div>
-        <input type="submit" value='로그인' className='submitBtn'/>
+        
         <button onClick={toggleSignIn}>{button}</button>
         </form>
+        {/* <h2 onClick={()=>nav('/join')}>회원가입</h2> */}
       </div>
     </div>
   );

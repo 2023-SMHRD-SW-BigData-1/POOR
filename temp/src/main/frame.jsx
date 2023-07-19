@@ -1,5 +1,5 @@
 import React from 'react'
-import MainPageLeft from './mainPageLeft'
+import MainPageLeft from './MainPageLeft'
 import DiscountPage from '../components/discountPageJsx'
 import ListPage from '../components/listPageJsx'
 import './frameCss.css'
@@ -27,7 +27,7 @@ const frame = () => {
               {/* <Mypage></Mypage> */}
               {/* <DiscountPage2></DiscountPage2> */}
               {/* <NewPageMain></NewPageMain> */}
-              <SetUpMain></SetUpMain>
+              <NewPageMain></NewPageMain>
           </div>
           <div className='childRight'>
               <MainPageRight></MainPageRight>

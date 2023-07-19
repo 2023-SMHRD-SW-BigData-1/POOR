@@ -9,14 +9,20 @@ import disImg5 from '../img/오늘의집_800x800.jpg'
 import disImg6 from '../img/올리브영_800x800.jpg'
 import disImg7 from '../img/요기요_800x800.jpg'
 import '../css/templatemo-style.css'
+import { useNavigate } from 'react-router-dom'
 // import '../css/mainCss.css'
 // import Slider from "react-slick";
 
 
-const discountPage2 = () => {
+const DiscountPage2 = () => {
+    const nav = useNavigate()
+    const handleClick=(url)=>{
+        window.open(url,'_blank')
+    }
     
   return (
-    <div className='disContainer'>
+    <div className='myPageContainer'>
+    <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -25,10 +31,7 @@ const discountPage2 = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
+          
         </div>
       </header>
 
@@ -40,7 +43,7 @@ const discountPage2 = () => {
             <img src={disImg0} alt="Image" className="img-fluid" />
             <figcaption className="d-flex">
               <h2 className='disText'>할인받기</h2>
-              <a href="https://www.airbnb.co.kr/" className='disATag'>View more</a>
+              <a onClick={()=>{handleClick('https://www.airbnb.co.kr/')}} className='disATag'>View more</a>
             </figcaption>
           </figure>
           <div className="d-flex">
@@ -54,7 +57,7 @@ const discountPage2 = () => {
                     <img src={disImg1} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://www.elabormall.co.kr/index.asp" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://www.elabormall.co.kr/index.asp')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -67,7 +70,7 @@ const discountPage2 = () => {
                     <img src={disImg2} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://www.kurly.com/market-benefit" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://www.kurly.com/market-benefit')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -80,7 +83,7 @@ const discountPage2 = () => {
                     <img src={disImg3} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://chicor.com/main" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://chicor.com/main')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -93,7 +96,7 @@ const discountPage2 = () => {
                     <img src={disImg4} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://www.ssg.com/service/specialMain.ssg" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://www.ssg.com/service/specialMain.ssg')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -106,7 +109,7 @@ const discountPage2 = () => {
                     <img src={disImg5} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://store.ohou.se/today_deals?affect_type=Home&affect_id=0" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://store.ohou.se/today_deals?affect_type=Home&affect_id=0')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -119,7 +122,7 @@ const discountPage2 = () => {
                     <img src={disImg6} alt="Image" class="img-fluid"/>
                     <figcaption className="d-flex">
                         <h2 className='disText'>할인받기</h2>
-                        <a href="https://www.oliveyoung.co.kr/store/main/getHotdealList.do" className='disATag'>View more</a>
+                        <a onClick={()=>{handleClick('https://www.oliveyoung.co.kr/store/main/getHotdealList.do')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
                 <div className="d-flex">
@@ -141,8 +144,9 @@ const discountPage2 = () => {
                 </div>
             </div>  
       </div>
+      </div>
     </div>
   )
 }
 
-export default discountPage2
+export default DiscountPage2

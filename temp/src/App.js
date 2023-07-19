@@ -1,29 +1,81 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './App.css'
-import MyPage from './main/myPage'
 import ListMain from './main/listMain';
 import DiscountMain from './main/discountMain';
-import WriteView from './main/writeViewMain';
-import WritePageMain from './main/writePageMain';
+import WriteView from './main/WriteViewMain';
+import WritePageMain from './main/WritePageMain';
 import MainPageLeft from './main/mainPageLeft';
 import MainPageRight from './main/mainPageRight';
-import SignInMain from './main/signInMain';
+import SignInMain from  './components/loginTest';
 import NewPageMain from './main/newPageMain';
+import MainPageMain from './main/mainPageMain';
+import MyPageMainMain from './main/myPageMainMain'
+import SetUpMain from './main/setUpMain'
 // import SetUpMain from './main/setUpMain';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { CheckLogin } from './context/CheckLogin';
+import JoinTest from './components/JoinTest';
+import MyPageScrap from './components/MyPageScrap'
+import MyPageDC from './components/MyPageDC'
 
 function App() {
   const appStyle = {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
+    // justifyContent: "space-between",
+    // alignItems: "flex-start",
   };
+  const nav = useNavigate()
+  const [check ,setCheck] = useState(false)
+  const [data, setData] = useState('')
 
+  const change = (value)=>{
+    console.log('app.js');
+    if(value==='success'){
+      setData(value)
+      setCheck(!check)
+    }
+  }
+
+  
+ 
   return (
-    <div className="mainApp" style={appStyle}>
+    <div className="mainApp">
       {/* <Frame></Frame> */}
-      <MainPageLeft/>
+      {check ? 
+      <>
+      <div className='left'><MainPageLeft className="appLeftStyle"/></div>
+      
+      </>
+      :null}
+      {/* <div style={appStyle}> */}
+      <Routes className="appCenterStyle">
+      {check ? (
 
+          <>
+          <Route path='/listpage' element={<ListMain/>}/>
+          <Route path='/main' element={<MainPageMain/>}/>
+          <Route path='/discountinfo' element={<DiscountMain/>}/>
+          <Route path='/write' element={<WritePageMain/>}/>
+          <Route path='/my' element={<MyPageMainMain/>}/>
+          <Route path='/setup' element={<SetUpMain/>}/>
+          <Route path='/my/myScrap' element={<MyPageScrap/>}></Route>
+          <Route path='/my/myDC' element={<MyPageDC/>}></Route>
+          
+          {/* <Route path='/' element={<SignInMain/>}/> */}
+          <Route path='/new' element={<NewPageMain/>}/>
+          <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
+          </>
+         
+          
+        ) : (
+          <>
+          <Route path="/" element={<SignInMain onValueChange={change}/>} />
+          <Route path='/join' element={<JoinTest/>}/> 
+          </> 
+        )}
+
+<<<<<<< HEAD
       <Routes>
         <Route path='/listpage' element={<ListMain/>}/>
         <Route path='/main' element={<NewPageMain/>}/>
@@ -31,19 +83,18 @@ function App() {
         <Route path='/write' element={<WritePageMain/>}/>
         <Route path='/my' element={<MyPage/>}/>
         <Route path='/' element={<SignInMain/>}/>
+        
+
+=======
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
       </Routes>
-      {/* <MyPage></MyPage> */}
-      {/* <ListMain></ListMain> */}
-      {/* <DiscountMain></DiscountMain> */}
-      {/* <WriteView></WriteView> */}
-      {/* <WritePageMain></WritePageMain> */}
-      {/* <MainPageLeft></MainPageLeft> */}
-      {/* <SignInMain></SignInMain> */}
-      {/* <DiscountPage2></DiscountPage2> */}
-      {/* <NewPageMain></NewPageMain> */}
-      {/* <SetUpMain></SetUpMain> */}
-      <MainPageRight/>
-    </div>
+      {check ?<div className='right'><MainPageRight className="appRightStyle"/></div> : null}
+      {/* <div className='right'><MainPageRight className="appRightStyle"/></div> */}
+
+      </div>
+      
+      // </div>
+      
   );
 }
 

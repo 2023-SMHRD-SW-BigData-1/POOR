@@ -24,8 +24,8 @@ const frame = () => {
               <MainPageLeft></MainPageLeft>
           </div>
           <div className='childCenter'>
-              {/* <ListPage></ListPage> */}
-              <DiscountPage2></DiscountPage2>
+              <ListPage></ListPage>
+              {/* <DiscountPage2></DiscountPage2> */}
               {/* <NewPageMain></NewPageMain> */}
               {/* <SetUpMain></SetUpMain> */}
               {/* <MyPageMain></MyPageMain> */}

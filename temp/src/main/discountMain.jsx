@@ -1,5 +1,4 @@
 import React from 'react'
-import DiscountPage from '../components/discountPageJsx'
 import DiscountPage2 from '../components/discountPage2'
 
 const discountMain = () => {
