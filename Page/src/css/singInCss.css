@@ -7,11 +7,11 @@
   --theme-two: #FFFFFF;
   --text: #697a79;
 }
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 /* body {
   background-color: #F0F4F3;
   background-repeat: no-repeat;
@@ -54,6 +54,8 @@ this softens the color of the shapes, but most prominently shows the shapes as i
   /* display the halves side by side */
   display: flex;
   margin-top: 150px;
+  justify-content: center;
+  margin-left: 500px;
 }
 /* for both panels
 display the content in a single column layout
@@ -151,6 +153,7 @@ this excludes the social icons */
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
+  margin-bottom: -20px;
 }
 /* .submitBtn{
   background: var(--theme);
@@ -203,21 +206,32 @@ expand the main panel to cover the entirety of the viewport
   background: var(--theme);
   color: var(--theme-two);
 }
+.joinBtn{
+  /* background: var(--theme);
+  color: var(--theme-two);
+  flex-grow: 2;
+  border-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; */
+  width: 230px;
+  margin-top: -10px;
+  margin-left: -15px !important;
+}
+
 .FormPanel .submitBtn{
   background: var(--theme);
   color: var(--theme-two);
-  width: 140px;
+  width: 230px;
     border: 1px solid currentColor;
     border-radius: 50px;
     padding: 0.85rem 2.75rem;
-    margin: 2rem 0;
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
     margin-bottom: -20px;
     font-family: 'mainFontBold2';
     font-size: 0.9rem;
-    margin-left: 25px;
+    margin-left: -15px;
 }
 
 /*
@@ -252,5 +266,7 @@ on smaller viewports remove the border radius
 }
 .searchLink{
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    margin-left: -20px;
 }

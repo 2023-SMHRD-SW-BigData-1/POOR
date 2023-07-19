@@ -1,6 +1,13 @@
-.container{
+.rightContainer{
     padding-left: 20px;
+    display: inline-block;
     position: fixed;
+    background-color: #F0F4F3;
+    /* display: inline-block; */
+    width: 18%;
+    height: 100%;
+    right: 0px;
+    bottom: 0px;
 }
 .pageTop{
     margin-top: 80px;
@@ -33,11 +40,8 @@
 }
 .mainRightEtc{
     color: gray;
-    /* float: right; */
-    position: fixed;
-    bottom: 0;
-    right: 20px;
-    bottom: 20px;
+    margin-top: 450px;
+    margin-left: 180px;
     font-size: x-large;
     text-decoration: none;
     font-family: "mainFont3";
@@ -45,4 +49,9 @@
 }
 a:hover{
     text-decoration: underline;
+}
+@media (max-width:1500px) {
+    .rightContainer{
+        display: none;
+    }
 }

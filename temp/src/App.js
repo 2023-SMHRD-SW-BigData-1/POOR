@@ -31,6 +31,8 @@ function App() {
         <Route path='/write' element={<WritePageMain/>}/>
         <Route path='/my' element={<MyPage/>}/>
         <Route path='/' element={<SignInMain/>}/>
+        
+
       </Routes>
       {/* <MyPage></MyPage> */}
       {/* <ListMain></ListMain> */}

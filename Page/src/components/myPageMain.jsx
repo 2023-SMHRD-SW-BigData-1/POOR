@@ -16,12 +16,28 @@ import mainPageImg9 from '../img/자린고비2_300x300.jpg'
 import mainPageImg10 from '../img/정형돈_300x300.jpg'
 import mainPageImg11 from '../img/폰반찬_300x300.jpg'
 import mainPageImg12 from '../img/하하우는_300x300.jpg'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 
-const myPageScrap = () => {
+const MyPageMain = () => {
+
+  const nav = useNavigate()
+  const [followCount, setFollowCount] = useState(0);
+  const [isFllowed, setIsFollowed] = useState(false);
+
+  const handleFollow = () => {
+    if (isFllowed) {
+      setFollowCount(followCount - 1);
+      setIsFollowed(false);
+    } else {
+      setFollowCount(followCount + 1);
+      setIsFollowed(true);
+    }
+  }
   return (
     <>
-    <div className='myPageContainer'>
+    <div className='myPageContainerSub'>
     <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
@@ -31,18 +47,10 @@ const myPageScrap = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
-          <nav className="headerRightImage">
-            <a href="/"><i className="far fa-compass"></i></a>
-            <a href="/"><i className="far fa-heart"></i></a>
-            <a href="/"><i className="fas fa-user"></i></a>
-          </nav>
+          
         </div>
       </header>
-      <div className="main">
+      <div className="mainPageContainer">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
@@ -52,6 +60,8 @@ const myPageScrap = () => {
               <div className="profile__username">im_notPoor</div>
               <div className="profile__btn">
                 <span>김거지</span>
+                <button className={`follow-button-${isFllowed ? 'followed' : ''}`} onClick={handleFollow}>{isFllowed ? 'UNFOLLOW' : 'FOLLOW'}</button>
+
               </div>
             </div>
           </div>
@@ -66,90 +76,100 @@ const myPageScrap = () => {
           <div className="status__container">
             <div className="status__item">
               <div className="status__info">게시물</div>
-              <div className="status__number">152</div>
+              <div className="status__number">11</div>
             </div>
             <div className="status__item">
               <div className="status__info">팔로워</div>
-              <div className="status__number">264</div>
+              <div className="status__number">{followCount}</div>
             </div>
             <div className="status__item">
               <div className="status__info">팔로우</div>
-              <div className="status__number">823</div>
+              <div className="status__number">23</div>
             </div>
           </div>
         </div>
+
+
         <div className="toolbar">
           <div className="toolbar__container">
-            <a href="./myPageMain.html">
+            <button onClick={()=>nav('/my')}>
               <div className="toolbar__icon">
                 <img src={iconImg1} alt="" />
               </div>
-            </a>
-            <a href="./myPageScrap.html">
+            </button>
+            
+            <button onClick={()=>nav('./myScrap')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg2} alt="" />
               </div>
-            </a>
-            <a href="./myPageDC.html">
+
+            </button>
+
+            <button onClick={()=>nav('./myDC')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg3} alt="" />
               </div>
-            </a>
+            </button>
+            
+
           </div>
           <br />
         </div>
         <div className="content">
           <div className="content__container">
             <div className="content__photo">
-              <a href="">
-                <img src={mainPageImg1} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed1')}>
+                <img src={mainPageImg1} alt="" className='content_photo_img'/>
+              </button>
             </div>
             <div className="content__photo">
-              <a href="">
-                <img src={mainPageImg2} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed2')}>
+                <img src={mainPageImg2} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg3} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed3')}>
+                <img src={mainPageImg3} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg4} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed4')}>
+                <img src={mainPageImg4} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg5} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed5')}>
+                <img src={mainPageImg5} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg6} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed6')}>
+                <img src={mainPageImg6} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg7} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed7')}>
+                <img src={mainPageImg7} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg8} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed8')}>
+                <img src={mainPageImg8} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg9} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed9')}>
+                <img src={mainPageImg9} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg10} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed10')}>
+                <img src={mainPageImg10} alt="" className='content_photo_img'/>
+              </button>
             </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg11} alt="" />
-              </a>
-            </div><div className="content__photo">
-              <a href="">
-                <img src={mainPageImg12} alt="" />
-              </a>
+              <button onClick={()=>nav('./myfeed11')}>
+                <img src={mainPageImg11} alt="" className='content_photo_img'/>
+              </button>
             </div>
+            {/* <div className="content__photo">
+              <button onClick={()=>nav('./myfeed1')}>
+                <img src={mainPageImg12} alt="" />
+              </button>
+            </div> */}
           </div>
         </div>
       </div>
@@ -159,4 +179,4 @@ const myPageScrap = () => {
   )
 }
 
-export default myPageScrap
+export default MyPageMain

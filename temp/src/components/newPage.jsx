@@ -44,24 +44,44 @@ const NewPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (newComment !== '') {
+
+      fetch('http://localhost:8888/comment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ comment: newComment }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // 댓글 저장이 성공한 경우
+            console.log('댓글이 성공적으로 저장되었습니다.');
+
       setComments([...comments, newComment]);
       setNewComment('');
+
+    } else {
+      // 댓글 저장이 실패한 경우
+      console.log('댓글 저장에 실패하였습니다.');
+    }
+    console.log('상태 코드:', response.status);
+
+    // 응답 본문(json 형태로 파싱하여 사용)
+    response.json().then((data) => {
+      console.log('응답 데이터:', data);
+    });
+  })
+  
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
     }
   };
+  
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
-  };
-
-
-  const searchTags = (tag) => {
-    // 검색 로직을 수행하고 결과를 설정합니다.
-    // 예를 들어, API 요청을 보내거나 로컬 데이터에서 필터링을 수행할 수 있습니다.
-    const results = []; // 검색 결과를 담을 배열
-    // 검색 로직 수행
-    // ...
-
-    setSearchResults(results);
   };
 
 

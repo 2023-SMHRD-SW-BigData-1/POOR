@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import iconImg1 from '../img/게시글아이콘-removebg-preview.png'
 import iconImg2 from '../img/스크랩아이콘-removebg-preview.png'
 import iconImg3 from '../img/세일_아이콘-removebg-preview.png'
@@ -6,10 +6,26 @@ import '../css/myPageCss.css'
 import mainImg from '../img/캡처.PNG'
 import DCImg1 from '../img/시코르_300x300.jpg'
 import DCImg2 from '../img/쓱 할인_300x300.jpg'
+import { useNavigate } from 'react-router-dom'
 
-const myPageDC = () => {
+const MyPageDC = () => {
+  const nav = useNavigate()
+  const [followCount, setFollowCount] = useState(0);
+  const [isFllowed, setIsFollowed] = useState(false);
+
+  const handleFollow = () => {
+    if (isFllowed) {
+      setFollowCount(followCount - 1);
+      setIsFollowed(false);
+    } else {
+      setFollowCount(followCount + 1);
+      setIsFollowed(true);
+    }
+  }
+
   return (
     <>
+    <div className='myPageContainerSub'>
     <div className='myPageBody'>
       <header className="headerContainer">
         <div className="headerContents">
@@ -19,18 +35,10 @@ const myPageDC = () => {
               거지의꿈
             </a>
           </div>
-          <div className="headerSearchBar">
-            <i className="fas fa-search"></i>
-            <input type="text" placeholder="검색" />
-          </div>
-          <nav className="headerRightImage">
-            <a href="/"><i className="far fa-compass"></i></a>
-            <a href="/"><i className="far fa-heart"></i></a>
-            <a href="/"><i className="fas fa-user"></i></a>
-          </nav>
+          
         </div>
       </header>
-      <div className="main">
+      <div className="mainPageContainer">
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
@@ -40,6 +48,7 @@ const myPageDC = () => {
               <div className="profile__username">im_notPoor</div>
               <div className="profile__btn">
                 <span>김거지</span>
+                <button className={`follow-button-${isFllowed ? 'followed' : ''}`} onClick={handleFollow}>{isFllowed ? 'UNFOLLOW' : 'FOLLOW'}</button>
               </div>
             </div>
           </div>
@@ -54,36 +63,44 @@ const myPageDC = () => {
           <div className="status__container">
             <div className="status__item">
               <div className="status__info">게시물</div>
-              <div className="status__number">152</div>
+              <div className="status__number">12</div>
             </div>
             <div className="status__item">
               <div className="status__info">팔로워</div>
-              <div className="status__number">264</div>
+              <div className="status__number">{followCount}</div>
             </div>
             <div className="status__item">
               <div className="status__info">팔로우</div>
-              <div className="status__number">823</div>
+              <div className="status__number">23</div>
             </div>
           </div>
         </div>
         <div className="toolbar">
           <div className="toolbar__container">
-            <a href="./myPageMain.html">
+            <button onClick={()=>nav('/my')}>
               <div className="toolbar__icon">
                 <img src={iconImg1} alt="" />
               </div>
-            </a>
-            <a href="./myPageScrap.html">
+            </button>
+            
+            <button onClick={()=>nav('/my/myScrap')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg2} alt="" />
               </div>
-            </a>
-            <a href="./myPageDC.html">
+
+            </button>
+
+            <button onClick={()=>nav('/my/myDC')}>
+
               <div className="toolbar__icon">
                 <img src={iconImg3} alt="" />
               </div>
-            </a>
+            </button>
+            
+
           </div>
+       
           <br />
         </div>
         <div className="content">
@@ -102,8 +119,9 @@ const myPageDC = () => {
         </div>
       </div>
       </div>
+      </div>
     </>
   )
 }
 
-export default myPageDC
+export default MyPageDC

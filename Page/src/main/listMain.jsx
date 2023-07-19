@@ -1,10 +1,18 @@
-import React from 'react'
-import ListPage from '../components/listPageJsx'
+import React,{useEffect} from 'react'
+import ListPage from '../components/ListPageJsx'
 
-const listMain = () => {
+const ListMain = (props) => {
+
+  useEffect(()=>{
+    console.log("List.js")
+    console.log(props.check)
+  },[props.check])
+
+
+
   return (
     <ListPage></ListPage>
   )
 }
 
-export default listMain
+export default ListMain

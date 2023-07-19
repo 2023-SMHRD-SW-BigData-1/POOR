@@ -24,12 +24,12 @@ const mainPageLeft = () => {
             <li className="nav-item">
               <a className='iconATag' href="/listpage">
                 <img className="icon" src={searchIcon} alt="" /></a>
-                <a href="/listpage" className='textA'>검색</a>
+                <a href="/new" className='textA'>검색</a>
             </li>
             <li className="nav-item">
               <a className='iconATag' href="/write">
                 <img className="icon" src={newIcon} alt="" /></a>
-                <a href="/write" className='textA'>게시글</a>
+                <a href="/listpage" className='textA'>게시글</a>
             </li>
             <li className="nav-item">
               <a className='iconATag' href="/discount">
