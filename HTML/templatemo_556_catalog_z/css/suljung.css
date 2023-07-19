@@ -1,0 +1,107 @@
+.tool*{
+    text-decoration:none;
+  }
+  .suljungtool h5,p{
+    margin:0;
+    padding:0;
+  }
+  
+  ul,li,ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  
+  .appContainer{
+    position:relative;
+  }
+  
+  /* 디폴트 */
+  
+  h3{
+    padding:0;
+    margin:0;
+  }
+  body{
+      background-color:gray;
+  }
+  
+  .app{
+    width:400px;
+    height:auto;
+    background-color:white;
+  }
+  
+  .appHeader{
+    height:80px;
+    border-bottom:6px solid #F3F3F3;
+  /*   background-color:red; */
+    padding:30px 0px 20px 20px;
+    positon:relative;
+  }
+  
+  .appHeader h5{
+    font-size:16px;
+    padding-bottom:8px;
+  }
+  
+  .appHeader span{
+    font-size:13px;
+    padding-top:10px;
+    border-bottom:1px solid;
+  }
+  
+  .appHeader strong{
+    position: absolute;
+    width: 2.5%;
+    height: 35%;
+    top: 5%;
+    right: 8%;
+  }
+  
+  
+  .onen li{
+    border-bottom:1px solid #F3F3F3;
+  }
+  
+  .onen li .inner span{
+    display:block;
+  }
+  
+  
+  .accept{
+    height:160px;
+  }
+  
+  .alarm{
+    height:80px;
+  }
+  
+  .innerCont{
+    padding:25px 20px;
+  }
+  
+  .innerCont h3{
+    padding:8px 0px;
+  }
+  
+  .innerCont span{
+    padding:8px 0px;
+  }
+  
+  
+  .bottom{
+    height:50px;
+    background-color:#F0F5F5;
+    padding:20px 20px;
+  }
+  
+  .bottom h4{
+    color:#20D6F6;
+    line-height:15px;
+    letter-spacing:-1px;
+  }
+  
+  .bottom strong{
+    border-bottom:1px solid;
+  }

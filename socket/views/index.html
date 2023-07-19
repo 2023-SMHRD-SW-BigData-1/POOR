@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io.connect('http://localhost:8090', {
+        path : '/socket.io'
+    })
+
+    socket.on('news', function(data){ // data : 서버가 보낸 메시지
+        console.log(data);
+        socket.emit('reply', 'Hello js')
+    })
+</script>
+</body>
+</html>

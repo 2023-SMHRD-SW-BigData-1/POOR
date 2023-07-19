@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>거지의 꿈 채팅방</h1>
+    <form action="user/login" method="post">
+        <input type="text" name="id">
+        <input type="password" name="pw">
+        <input type="submit" value="LOGIN">
+    </form>
+
+    <table>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <!-- <h1>거지의 꿈 채팅방</h1> -->
+    {%if state ===''%}
+
+    <!-- <form action="user/login" method="post">
+        <input type="text" name="id">
+        <input type="password" name="pw">
+        <input type="submit" value="LOGIN">
+    </form> -->
+    {%else%}
+    <table border="1">
+        <tr>
+            <th>방제목</th>
+            <th>입장</th>
+        </tr>
+        <!-- DB 안의 채팅방 개수만큼 출력 -->
+
+        <tr>
+            <td>{{rooms.rows[0][1]}}</td>
+            <td><button onclick="location.href='/room/{{rooms.rows[0][0]}}'">입장</button></td>
+        </tr>
+        <tr>
+            <td>{{rooms.rows[1][1]}}</td>
+            <td><button onclick="location.href='/room/{{rooms.rows[1][0]}}'">입장</button></td>
+        </tr>
+        <tr>
+            <td>{{rooms.rows[2][1]}}</td>
+            <td><button onclick="location.href='/room/{{rooms.rows[2][0]}}'">입장</button></td>
+        </tr>
+        
+
+    </table>
+    {%endif%}
+</body>
+</html>

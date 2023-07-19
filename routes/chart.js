@@ -10,6 +10,12 @@ router.use(express.urlencoded({extended:false}));
 const app = express()
 app.use(cors())
 
+<<<<<<< HEAD
+=======
+router.get('*', function(req,res){
+    res.sendFile(path.join(__dirname,'../Page','build','index.html'))
+})
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
 
 oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/project/oracle_client'})
 let conn;
@@ -25,6 +31,7 @@ oracledb.getConnection({
     conn = con;
 });
 
+<<<<<<< HEAD
 const chartDataSave = async (req, res) => {
     try {
       const setTotalBalance = req.body.setTotalBalance;
@@ -50,5 +57,12 @@ const chartDataSave = async (req, res) => {
   
   router.post('/chart', chartDataSave);
 
+=======
+// const getChart = async (req, res) => {
+//     try {
+//         const getSql = ""
+//     }
+// }
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
 
 module.exports = router;

@@ -95,12 +95,21 @@ const LoginTest = ({onValueChange}) => {
             <input type='password' placeholder='PASSWORD' name='pw' ref={pw} />
         
 
+<<<<<<< HEAD
         {/* <div className="searchLink">
           <a href={link.href}>{link.text}</a>
           <a href={linkPw.href}>{linkPw.text}</a>
         </div> */}
         
         <button onClick={toggleSignIn} className='submitBtn'>{button}</button>
+=======
+        <div className="searchLink">
+          <a href={link.href}>{link.text}</a>
+          <a href={linkPw.href}>{linkPw.text}</a>
+        </div>
+        
+        <button onClick={toggleSignIn}>{button}</button>
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
         </form>
         <button onClick={()=>nav('/join')} className='joinBtn'>JOIN</button>
       </div>

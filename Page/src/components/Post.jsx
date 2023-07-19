@@ -122,13 +122,25 @@ const Post = ({profil1,postImg,profil2,}) => {
                 <span>king_of_poor</span>
                 <p>오늘도 절약 성공~🥳</p>
               </div>
+<<<<<<< HEAD
               
+=======
+              <div className="moreView">
+                <a href="">더보기</a>
+              </div>
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
             </div>
             <div className="friendsSentence">
               <span>South_gunOne</span>
               <p>보기좋게 성공~~~😎</p>
             </div>
+<<<<<<< HEAD
             
+=======
+            <div className="time">
+              <p>42분전</p>
+            </div>
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
             
             <div className='commentMain'>
               <div className='commentContainer'>

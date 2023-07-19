@@ -280,7 +280,11 @@ const NewPage = () => {
         <Post profil1={profil1} postImg={photo5} profil2={profil2}/>
 
 
+<<<<<<< HEAD
         {/* <aside>
+=======
+        <aside>
+>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
           <div className="asideHead">
             <img src={profil3} width="56px" height="56px" alt="" />
             <div className="asideHeadText">
@@ -356,6 +360,7 @@ const NewPage = () => {
                 </div>
             </div>
         </aside> */}
+        </div>
         </div>
         </div>
     </div>
