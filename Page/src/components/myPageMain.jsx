@@ -121,16 +121,11 @@ const MyPageMain = () => {
           <div className="content__container">
             <div className="content__photo">
               <button onClick={()=>nav('./myfeed1')}>
-<<<<<<< HEAD
                 <img src={mainPageImg1} alt="" className='content_photo_img'/>
-=======
-                <img src={mainPageImg1} alt="" />
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
               </button>
             </div>
             <div className="content__photo">
               <button onClick={()=>nav('./myfeed2')}>
-<<<<<<< HEAD
                 <img src={mainPageImg2} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
@@ -168,45 +163,6 @@ const MyPageMain = () => {
             </div><div className="content__photo">
               <button onClick={()=>nav('./myfeed11')}>
                 <img src={mainPageImg11} alt="" className='content_photo_img'/>
-=======
-                <img src={mainPageImg2} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed3')}>
-                <img src={mainPageImg3} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed4')}>
-                <img src={mainPageImg4} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed5')}>
-                <img src={mainPageImg5} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed6')}>
-                <img src={mainPageImg6} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed7')}>
-                <img src={mainPageImg7} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed8')}>
-                <img src={mainPageImg8} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed9')}>
-                <img src={mainPageImg9} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed10')}>
-                <img src={mainPageImg10} alt="" />
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed11')}>
-                <img src={mainPageImg11} alt="" />
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
               </button>
             </div>
             {/* <div className="content__photo">

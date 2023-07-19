@@ -1,28 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MainImg from '../img/캡처.PNG'
 import '../css/mainCss.css'
 import '../css/writeViewCss.css'
-import { useNavigate, useParams } from 'react-router-dom'
 
-const WriteView = ({title, content, id, date, number}) => {
-  let {num}= useParams()
-  console.log('num', num)
-  const nav = useNavigate()
-
-
-  const appStyle = {
-    display: "flex",
-    flexDirection : 'column'
-    
-  };
-  const upStyle={
-    display: "flex",
-    marginLeft : "50px"
-  }
-  
-
+const writeView = () => {
   return (
-    <div style={appStyle}>
+    <>
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
@@ -46,20 +29,20 @@ const WriteView = ({title, content, id, date, number}) => {
         <div className="board_view_wrap">
           <div className="board_view">
             <div className="title">
-              {title}
+              냉장고 문이 안열려요..
             </div>
             <div className="wirteInfo">
               <dl>
                 <dt>번호</dt>
-                <dd>{number}</dd>
+                <dd>1</dd>
               </dl>
               <dl>
                 <dt>글쓴이</dt>
-                <dd>{id}</dd>
+                <dd>정세연</dd>
               </dl>
               <dl>
                 <dt>작성일</dt>
-                <dd>{date}</dd>
+                <dd>2023.7.14</dd>
               </dl>
               <dl>
                 <dt>조회</dt>
@@ -67,8 +50,9 @@ const WriteView = ({title, content, id, date, number}) => {
               </dl>
             </div>
             <div className="cont">
-              {content} <br />
-              
+              # 냉장고 AS<br />
+              # 냉장고 문 안열림<br />
+              # 냉장고 고장<br />
               <br />
               <br />
               <br />
@@ -76,13 +60,13 @@ const WriteView = ({title, content, id, date, number}) => {
             </div>
           </div>
           <div className="bt_wrap">
-            <button onClick={()=>{nav('/listpage')}}>목록</button>
-            <button onClick={()=>{nav('/write')}}>수정</button>
+            <a href="list.html" className="on">목록</a>
+            <a href="edit.html">수정</a>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
-export default WriteView
+export default writeView

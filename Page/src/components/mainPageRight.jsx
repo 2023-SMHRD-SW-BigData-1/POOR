@@ -34,13 +34,8 @@ const MainPageRight = () => {
       <div className='pageTop'>
         <img className='topImg' src={mainImg} alt='' />
         <div className='topInside'>
-<<<<<<< HEAD
           <h3>{`김거지님`}</h3>
           <h3>{`등급 그냥..거지?`}</h3>
-=======
-          <h3>{`${nick}님`}</h3>
-          <h3>{`등급${A}`}</h3>
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
         </div>
       </div>
       <div className='bottom'>

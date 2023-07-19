@@ -7,13 +7,9 @@ const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}));
 const app = express()
-<<<<<<<< HEAD:routes/join.js
 router.get('*', function(req,res){
     res.sendFile(path.join(__dirname,'../Page','build','index.html'))
 })
-========
-
->>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899:temp/routes/join.js
 
 oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/project/oracle_client'})
 let conn;
@@ -28,13 +24,41 @@ conn =oracledb.getConnection({
     }
     conn = con;
 })
-router.get('/', function(req,res){
-    console.log('join router');
-    console.log('listpage');
-    res.sendFile(path.join(__dirname,'../project/build/index.html'))
 
-})
 
+
+
+// const join = async(req,res)=>{
+//     try{
+
+     
+//         const sql = "SELECT * FROM T_USER WHERE USER_ID = '"+req.body.id+"'";
+    
+
+//         let result;
+//         result = await conn.execute(sql)
+
+//         console.log(result.rows.length);
+//             if (result.rows.length >= 1) {
+//               // 로그인 성공
+//               console.log('이미있는 값')
+//               res.redirect('/join')
+//             } else {
+//               // 로그인 실패
+//               console.log('없는 값');
+//               const sql = "INSERT INTO t_user (user_id, user_pw, user_nick, user_joindate, user_type, user_grade, user_consume) VALUES ('"+req.body.id+"', '"+req.body.pw+"', '"+req.body.name+"', sysdate, 'U', 'C', '1000')";
+    
+
+//               let result;
+//               result = await conn.execute(sql)
+//               res.redirect('/join')
+//             }
+//             // await conn.close()
+//     }catch(err){
+//         console.log(err);
+//     }
+
+// }
 const join = async (req, res) => {
     try {
         const checkSql = "SELECT * FROM T_USER WHERE USER_ID = :id";
@@ -49,19 +73,14 @@ const join = async (req, res) => {
         } else {
             // 없는 값: 회원가입 성공
             console.log('없는 값');
-            console.log(req.body);
            
             
             const insertResult = await conn.execute(insertSql, [req.body.id, req.body.pw, req.body.name]);
             // console.log(insertResult)
             conn.commit()
 
-<<<<<<<< HEAD:routes/join.js
             res.json({message : 'success'})
 
-========
-            res.redirect('../');
->>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899:temp/routes/join.js
         }
     } catch (err) {
         console.log(err);

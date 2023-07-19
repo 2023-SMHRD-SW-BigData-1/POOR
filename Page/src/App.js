@@ -44,6 +44,12 @@ function App() {
       setCheck(!check)
     }
   }
+  
+  useEffect(function(){
+      if(window.localStorage.getItem('user_nick')!==null){
+        setCheck(true)
+      }
+  },[])
 
 
   useEffect(()=>{

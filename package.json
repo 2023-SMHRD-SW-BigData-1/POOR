@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -9,18 +8,5 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "oracledb": "^6.0.3"
-=======
-  "dependencies": {
-    "bootstrap": "^5.3.0",
-    "chokidar": "^3.5.3",
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "nunjucks": "^3.2.4",
-    "oracledb": "^6.0.2",
-    "react-bootstrap": "^2.8.0",
-    "session-file-store": "^1.5.0",
-    "socket.io": "^4.7.1"
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
   }
 }

@@ -41,15 +41,9 @@ oracledb.getConnection({
 
 const getPost = async (req,res)=>{
     try{
-<<<<<<< HEAD
         const getSql = "SELECT POST_SEQ, POST_TITLE, USER_ID, TO_CHAR(CREATED_AT, 'YYYY-MM-DD') AS POST_DATE, POST_VIEWS FROM t_post ORDER BY POST_SEQ DESC"
         const getResult = await conn.execute(getSql)
         // console.log(getResult.rows);
-=======
-        const getSql = "SELECT * FROM t_post ORDER BY POST_SEQ ASC"
-        const getResult = await conn.excute(getSql)
-        console.log(getResult.rows);
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
         const data = getResult.rows
         res.send(data)
 

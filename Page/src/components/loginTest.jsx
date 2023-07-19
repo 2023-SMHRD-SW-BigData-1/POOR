@@ -30,7 +30,8 @@ const LoginTest = ({onValueChange}) => {
       console.log('데이터 전송');
       axios.post('http://localhost:8888/user', data)
         .then(response => {
-          console.log(response.data.message);
+          console.log(response.data.user_nick);
+          window.localStorage.setItem("user_nick",response.data.user_nick)
           console.log('onvaluechange'); 
           onValueChange(response.data.message)
           nav('/main')
@@ -95,21 +96,12 @@ const LoginTest = ({onValueChange}) => {
             <input type='password' placeholder='PASSWORD' name='pw' ref={pw} />
         
 
-<<<<<<< HEAD
         {/* <div className="searchLink">
           <a href={link.href}>{link.text}</a>
           <a href={linkPw.href}>{linkPw.text}</a>
         </div> */}
         
         <button onClick={toggleSignIn} className='submitBtn'>{button}</button>
-=======
-        <div className="searchLink">
-          <a href={link.href}>{link.text}</a>
-          <a href={linkPw.href}>{linkPw.text}</a>
-        </div>
-        
-        <button onClick={toggleSignIn}>{button}</button>
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
         </form>
         <button onClick={()=>nav('/join')} className='joinBtn'>JOIN</button>
       </div>

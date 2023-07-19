@@ -11,20 +11,12 @@ const app = express()
 app.use(cors())
 
 router.get('/', function (req, res) {
-<<<<<<<< HEAD:routes/post.js
     res.sendFile(path.join(__dirname, '../Page/build/index.html'))
-========
-    res.sendFile(path.join(__dirname, '../project/build/index.html'))
->>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899:temp/routes/post.js
 })
 
 
 
-<<<<<<<< HEAD:routes/post.js
 oracledb.initOracleClient({libDir: 'C:/Users/smhrd/Desktop/project/oracle_client'})
-========
-oracledb.initOracleClient({libDir: 'oracle_client'})
->>>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899:temp/routes/post.js
 let conn;
 
 oracledb.getConnection({

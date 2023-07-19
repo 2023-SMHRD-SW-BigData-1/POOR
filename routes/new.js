@@ -39,11 +39,7 @@ const chat = async (req, res) => {
     } catch (err) {
         console.log(err);
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
 };
 const getChat = async (req, res) => {
     try {
@@ -53,13 +49,8 @@ const getChat = async (req, res) => {
         // console.log(getResult.rows);
         const data = getResult.rows
         res.json(data)
-<<<<<<< HEAD
         
         
-=======
-
-
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
     } catch (err) {
         console.log(err);
     }
@@ -68,26 +59,15 @@ const getChat = async (req, res) => {
 app.use(chat)
 app.use(getChat)
 
-<<<<<<< HEAD
 
 router.get('/', function (req, res) {
     console.log('new router');
     getChat(req,res)
     // res.sendFile(path.join(__dirname, '../Page/build/index.html'))
-=======
-router.get('/', function (req, res) {
-    console.log('new router');
-    getChat(req,res)
-    // res.sendFile(path.join(__dirname, '../project/build/index.html'))
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
 })
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
 router.post('/new', (req,res)=>{
     console.log('new router2');
     console.log('chat req',req.body);

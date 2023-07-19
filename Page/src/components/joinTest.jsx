@@ -87,11 +87,7 @@ const submitBtn = 'JOIN';
         {/* <div className="searchLink">
           <a href="">아이디찾기</a>
           <a href="">비밀번호찾기</a>
-<<<<<<< HEAD
         </div> */}
-=======
-        </div>
->>>>>>> 5aca50cd35ddb7de3054ef1081a5c8b75d7ed899
         <input type="submit" value='JOIN' onClick={toggleSignIn} className='submitBtn'/>
         {/* <button onClick={toggleSignIn}>{button}</button> */}
         </form>
