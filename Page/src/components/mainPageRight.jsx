@@ -1,12 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import '../css/mainPageRight.css';
 import goalIcon from '../img/goal.PNG';
 import memoIcon from '../img/memeo.PNG';
 import mainImg from '../img/캡처.PNG';
+import { useNavigate } from 'react-router-dom';
 
 const MainPageRight = () => {
+
+
+  const nav = useNavigate();
   const goalsRef = useRef([]);
   const memosRef = useRef([]);
+  const logOut = () => {
+    window.localStorage.clear();
+    window.location.reload();
+    nav('/');
+  }
 
   const handleGoalDoubleClick = index => {
     goalsRef.current[index].contentEditable = true;
@@ -75,11 +84,7 @@ const MainPageRight = () => {
         </ul>
       </div>
       <div className='mainRightEtc'>
-        <a href=''>소개</a>
-        <span>, </span>
-        <a href=''>도움말</a>
-        <span>, </span>
-        <a href=''>고객 센터</a>
+        <button onClick={logOut}>로그아웃</button>
       </div>
     </div>
   );

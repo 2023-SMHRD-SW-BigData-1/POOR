@@ -40,12 +40,17 @@
 }
 .mainRightEtc{
     color: gray;
-    margin-top: 450px;
+    margin-top: 320px;
     margin-left: 180px;
-    font-size: x-large;
+    font-size: 1.5rem !important;
     text-decoration: none;
     font-family: "mainFont3";
-
+    
+}
+.mainRightEtc button{
+    font-size: 1.5rem;
+    font-family: "mainFontBold2";
+    
 }
 a:hover{
     text-decoration: underline;

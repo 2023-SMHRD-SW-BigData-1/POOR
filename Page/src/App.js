@@ -46,8 +46,12 @@ function App() {
   }
   
   useEffect(function(){
-      if(window.localStorage.getItem('user_nick')!==null){
+      if(window.localStorage.getItem('user_ID')!=null){
         setCheck(true)
+      }else{
+        window.localStorage.clear()
+        setCheck(false)
+        nav('/')
       }
   },[])
 

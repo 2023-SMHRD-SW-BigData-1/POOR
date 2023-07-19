@@ -30,8 +30,9 @@ const LoginTest = ({onValueChange}) => {
       console.log('데이터 전송');
       axios.post('http://localhost:8888/user', data)
         .then(response => {
-          console.log(response.data.user_nick);
-          window.localStorage.setItem("user_nick",response.data.user_nick)
+          console.log(response.data);
+          window.localStorage.setItem("user_ID",response.data.user_ID)
+          window.localStorage.setItem("user_Nick",response.data.user_Nick)
           console.log('onvaluechange'); 
           onValueChange(response.data.message)
           nav('/main')

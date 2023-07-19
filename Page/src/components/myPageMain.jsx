@@ -18,6 +18,7 @@ import mainPageImg11 from '../img/폰반찬_300x300.jpg'
 import mainPageImg12 from '../img/하하우는_300x300.jpg'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import myPageImg from '../img/마페고양이프사.png'
 
 
 const MyPageMain = () => {
@@ -25,6 +26,8 @@ const MyPageMain = () => {
   const nav = useNavigate()
   const [followCount, setFollowCount] = useState(0);
   const [isFllowed, setIsFollowed] = useState(false);
+  const [myNick, setMyNick] = useState()
+  const [myId, setMyId] = useState()
 
   const handleFollow = () => {
     if (isFllowed) {
@@ -54,12 +57,12 @@ const MyPageMain = () => {
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
-              <img src="http://placekitten.com/300/300" alt="" />
+              <img src={myPageImg} alt="" />
             </div>
             <div className="profile__right">
-              <div className="profile__username">im_notPoor</div>
+              <div className="profile__username">{myId}</div>
               <div className="profile__btn">
-                <span>김거지</span>
+                <div>{myNick}</div>
                 <button className={`follow-button-${isFllowed ? 'followed' : ''}`} onClick={handleFollow}>{isFllowed ? 'UNFOLLOW' : 'FOLLOW'}</button>
 
               </div>

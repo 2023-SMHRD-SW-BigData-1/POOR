@@ -41,13 +41,20 @@ const handleLogin = async(req,res)=>{
             if (result.rows.length >= 1) {
               console.log('로그인 성공');
               console.log(result.rows[0])
-              let nick = result.rows[0].USER_NICK
-              console.log("로그인 nick : "+nick)
-            //   setCheck(false);
-            //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
-            res.json({message : 'success', user_nick:nick})
-            req.session.userId = logInUserID
-            res.sendStatus(200)
+              let userId = result.rows[0].USER_ID
+              let userNick = result.rows[0].USER_NICK
+              
+              console.log("로그인 id : "+userId)
+              //   setCheck(false);
+              //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
+              res.json({message : 'success', user_ID:userId, user_Nick:userNick})
+              setMyNick(userNick);
+              setMyId(userId);
+              req.session.userId = logInUserID
+              req.session.userNick = logInUserNick
+              res.sendStatus(200)
+              console.log('session success');
+
             } else {
               console.log('로그인 실패');
             //   setCheck(true);
