@@ -27,12 +27,12 @@ const nav = useNavigate();
             <li className="nav-item">
               <button className='iconATag' onClick={()=>nav('./listpage')}>
                 <img className="icon" src={searchIcon} alt="" /></button>
-                <button className='textA' onClick={()=>nav('./listpage')}>  검색</button>
+                <button className='textA' onClick={()=>nav('./listpage')}>  게시판</button>
             </li>
             <li className="nav-item">
             <button className='iconATag' onClick={()=>nav('./new')}>
                 <img className="icon" src={newIcon} alt="" /></button>
-                <button className='textA' onClick={()=>nav('./new')}>  게시글</button>
+                <button className='textA' onClick={()=>nav('./new')}>  피드</button>
             </li>
             <li className="nav-item">
             <button className='iconATag' onClick={()=>nav('./discountinfo')}>
