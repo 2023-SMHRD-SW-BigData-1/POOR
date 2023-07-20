@@ -1,0 +1,10 @@
+.feedEtc{
+    display: flex;
+    flex-direction: column;
+}
+.feedEtc button{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-family: 'mainFont3';
+}

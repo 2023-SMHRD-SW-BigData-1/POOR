@@ -7,6 +7,9 @@ const Post = ({profil1,postImg,profil2,}) => {
     const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
 
+  const userNick = window.localStorage.getItem("user_Nick")
+
+
   const handleLike = () => {
     if (isLiked) {
       setLikeCount(likeCount - 1);
@@ -95,21 +98,12 @@ const Post = ({profil1,postImg,profil2,}) => {
             <img src={postImg} width="550px" height="580px" alt="" />
           </div>
           <div className="feedReactionButton">
-            <div className="reactionButton1">
-              <button><i className="far fa-heart"></i></button>
-              <button><i className="far fa-comment"></i></button>
-              <button><i className="fas fa-share-square"></i></button>
-            </div>
-            <div className="reactionButton2">
-              <button><i className="far fa-bookmark"></i></button>
-            </div>
+            
+            
           </div>
           <div className="feedReaction">
             <div className="ReactionImage">
-                <a href="">
-              <img src={profil2} width="32px" height="32px" alt="" />
-              <span>saeyeon_20님, wonho_20님 외 4명이 좋아합니다.</span>
-              </a>
+                
               <div className="sns-like-button">
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLike}>
                 {isLiked ? '💰' : '💸'}
@@ -117,24 +111,14 @@ const Post = ({profil1,postImg,profil2,}) => {
                 <span className="like-count">{likeCount}</span>
               </div>
             </div>
-            <div className="reactionSentence">
-              <div className="surfSentence">
-                <span>king_of_poor</span>
-                <p>오늘도 절약 성공~🥳</p>
-              </div>
-              
-            </div>
-            <div className="friendsSentence">
-              <span>South_gunOne</span>
-              <p>보기좋게 성공~~~😎</p>
-            </div>
+            
             
             
             <div className='commentMain'>
               <div className='commentContainer'>
                 <ul>
                   {comments.map(item => (
-                    <li>{item.CHAT}</li>
+                    <li>{`${userNick}   : ${item.CHAT}`}</li>
                   ))}
                 </ul>
               </div>

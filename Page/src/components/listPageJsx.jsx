@@ -39,15 +39,15 @@ const ListPage = () => {
   }
 
   const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(5);
+  const [end, setEnd] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumber = [];
-  for (let i = 1; i <= Math.ceil(data.length / 5); i++) {
+  for (let i = 1; i <= Math.ceil(data.length / 10); i++) {
     pageNumber.push(i);
   }
   useEffect(() => {
-    setStart((currentPage - 1) * 5);
-    setEnd(currentPage * 5);
+    setStart((currentPage - 1) * 10);
+    setEnd(currentPage * 10);
   }, [currentPage]);
 
 
@@ -58,10 +58,10 @@ const ListPage = () => {
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href=" ">
+          <div className="mainA" href=" ">
               <img className="mainImg" src={MainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
         </div>
       </header>

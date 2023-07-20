@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../css/mainPageCss.css'
 // import graph from './hyunhwang.js'
+import MainImg from '../img/캡처.PNG'
 
 
 import ChartComponent from './graph.jsx'
@@ -22,6 +23,20 @@ const MainPage = () => {
   return (
     <div className='myPageContainer'>
     <div className="myPageBody">
+    <header className="headerContainer">
+        <div className="headerContents">
+          <div className="mainTag">
+          <div className="mainA" href=" ">
+              <img className="mainImg" src={MainImg} alt="" />
+              거지의꿈
+            </div>
+          </div>
+          {/* <div className="headerSearchBar">
+            <i className="fas fa-search"></i>
+            <input type="text" placeholder="검색" />
+          </div> */}
+        </div>
+      </header>
       <div className="blackboard_image">
         {/* <img className="backImg" src="./img2/칠판-100.jpg" width="100%" height="500px" /> */}
         <div className="textContainer">

@@ -7,11 +7,16 @@ import mainImg from '../img/캡처.PNG'
 import DCImg1 from '../img/시코르_300x300.jpg'
 import DCImg2 from '../img/쓱 할인_300x300.jpg'
 import { useNavigate } from 'react-router-dom'
+import myPageImg from '../img/마페고양이프사.png'
+
 
 const MyPageDC = () => {
   const nav = useNavigate()
   const [followCount, setFollowCount] = useState(0);
   const [isFllowed, setIsFollowed] = useState(false);
+
+  const userId = window.localStorage.getItem("user_ID")
+  const userNick = window.localStorage.getItem("user_Nick")
 
   const handleFollow = () => {
     if (isFllowed) {
@@ -27,13 +32,13 @@ const MyPageDC = () => {
     <>
     <div className='myPageContainerSub'>
     <div className='myPageBody'>
-      <header className="headerContainer">
+      <header className="headerContainerMy">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href="/">
+          <div className="mainA" href=" ">
               <img className="mainImg" src={mainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
           
         </div>
@@ -42,12 +47,12 @@ const MyPageDC = () => {
         <div className="profile">
           <div className="profile__head">
             <div className="profile__image">
-              <img src="http://placekitten.com/300/300" alt="" />
+              <img src={myPageImg} alt="" />
             </div>
             <div className="profile__right">
-              <div className="profile__username">im_notPoor</div>
+              <div className="profile__username">{userId}</div>
               <div className="profile__btn">
-                <span>김거지</span>
+                <span>{userNick}</span>
                 <button className={`follow-button-${isFllowed ? 'followed' : ''}`} onClick={handleFollow}>{isFllowed ? 'UNFOLLOW' : 'FOLLOW'}</button>
               </div>
             </div>

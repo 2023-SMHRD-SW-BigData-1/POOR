@@ -16,10 +16,10 @@ const WriteView = ({title, content, id, date, number, views}) => {
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href=" ">
+          <div className="mainA" href=" ">
               <img className="mainImg" src={MainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
           {/* <div className="headerSearchBar">
             <i className="fas fa-search"></i>

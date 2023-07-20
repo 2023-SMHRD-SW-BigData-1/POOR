@@ -26,10 +26,10 @@ const DiscountPage2 = () => {
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href=" ">
+            <div className="mainA" href=" ">
               <img className="mainImg" src={mainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
           
         </div>
@@ -46,10 +46,7 @@ const DiscountPage2 = () => {
               <a onClick={()=>{handleClick('https://www.airbnb.co.kr/')}} className='disATag'>View more</a>
             </figcaption>
           </figure>
-          <div className="d-flex">
-            <span className="tm-text-gray-light">10 Jul 2023</span>
-            <span className='disText'>12,460 views</span>
-          </div>
+          
         </div>
         
         <div class="disObject">
@@ -60,10 +57,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://www.elabormall.co.kr/index.asp')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">12 Jul 2023</span>
-                    <span className='disText'>11,402 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -73,10 +67,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://www.kurly.com/market-benefit')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">10 Jul 2023</span>
-                    <span className='disText'>9,906 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -86,10 +77,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://chicor.com/main')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">09 Jul 2023</span>
-                    <span className='disText'>16,100 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -99,10 +87,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://www.ssg.com/service/specialMain.ssg')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">08 Jul 2023</span>
-                    <span className='disText'>16,008 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -112,10 +97,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://store.ohou.se/today_deals?affect_type=Home&affect_id=0')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">11 Jul 2023</span>
-                    <span className='disText'>12,860 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -125,10 +107,7 @@ const DiscountPage2 = () => {
                         <a onClick={()=>{handleClick('https://www.oliveyoung.co.kr/store/main/getHotdealList.do')}} className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">14 Jul 2023</span>
-                    <span className='disText'>10,900 views</span>
-                </div>
+                
             </div>
             <div class="disObject">
                 <figure class="effect-ming tm-video-item">
@@ -138,10 +117,7 @@ const DiscountPage2 = () => {
                         <a href="" className='disATag'>View more</a>
                     </figcaption>                    
                 </figure>
-                <div className="d-flex">
-                    <span className="tm-text-gray-light">14 Jul 2023</span>
-                    <span className='disText'>11,300 views</span>
-                </div>
+                
             </div>  
       </div>
       </div>

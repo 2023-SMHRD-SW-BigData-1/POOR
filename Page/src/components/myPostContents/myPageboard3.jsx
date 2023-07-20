@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../css/mainCss.css'
 import img1 from '../../img/캡처.PNG'
 import mainPageImg4 from '../../img/우는개구리_300x300.jpg'
+
 import mpcat from '../../img/마페고양이프사.png'
 
 
@@ -12,6 +13,8 @@ import axios from 'axios'
 
 const MyPageboard3 = () => {
   const nav = useNavigate()
+  const userID = window.localStorage.getItem("user_ID")
+
 
 
   const [likeCount, setLikeCount] = useState(0);
@@ -135,7 +138,7 @@ const MyPageboard3 = () => {
           <div className="feedHeader">
             <a href="" className="">
             <img src={mpcat} width="32px" height="32px" alt="" />
-            <span>im_notPoor</span>
+            <span>{userID}</span>
             </a>
           </div>
           <div className="feedImage">

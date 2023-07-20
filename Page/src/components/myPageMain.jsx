@@ -16,9 +16,10 @@ import mainPageImg9 from '../img/자린고비2_300x300.jpg'
 import mainPageImg10 from '../img/정형돈_300x300.jpg'
 import mainPageImg11 from '../img/폰반찬_300x300.jpg'
 import mainPageImg12 from '../img/하하우는_300x300.jpg'
+import myPageImg from '../img/마페고양이프사.png'
+
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import myPageImg from '../img/마페고양이프사.png'
 
 
 const MyPageMain = () => {
@@ -26,8 +27,9 @@ const MyPageMain = () => {
   const nav = useNavigate()
   const [followCount, setFollowCount] = useState(0);
   const [isFllowed, setIsFollowed] = useState(false);
-  const [myNick, setMyNick] = useState()
-  const [myId, setMyId] = useState()
+
+  const userId = window.localStorage.getItem("user_ID")
+  const userNick = window.localStorage.getItem("user_Nick")
 
   const handleFollow = () => {
     if (isFllowed) {
@@ -42,13 +44,13 @@ const MyPageMain = () => {
     <>
     <div className='myPageContainerSub'>
     <div className='myPageBody'>
-      <header className="headerContainer">
+      <header className="headerContainerMy">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href="/">
+          <div className="mainA" href=" ">
               <img className="mainImg" src={mainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
           
         </div>
@@ -60,9 +62,9 @@ const MyPageMain = () => {
               <img src={myPageImg} alt="" />
             </div>
             <div className="profile__right">
-              <div className="profile__username">{myId}</div>
+              <div className="profile__username">{userId}</div>
               <div className="profile__btn">
-                <div>{myNick}</div>
+                <span>{userNick}</span>
                 <button className={`follow-button-${isFllowed ? 'followed' : ''}`} onClick={handleFollow}>{isFllowed ? 'UNFOLLOW' : 'FOLLOW'}</button>
 
               </div>
@@ -79,7 +81,7 @@ const MyPageMain = () => {
           <div className="status__container">
             <div className="status__item">
               <div className="status__info">게시물</div>
-              <div className="status__number">11</div>
+              <div className="status__number">10</div>
             </div>
             <div className="status__item">
               <div className="status__info">팔로워</div>
@@ -133,41 +135,42 @@ const MyPageMain = () => {
               </button>
             </div><div className="content__photo">
               <button onClick={()=>nav('./myfeed3')}>
-                <img src={mainPageImg3} alt="" className='content_photo_img'/>
-              </button>
-            </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed4')}>
                 <img src={mainPageImg4} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed5')}>
+              <button onClick={()=>nav('./myfeed4')}>
                 <img src={mainPageImg5} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed6')}>
+              <button onClick={()=>nav('./myfeed5')}>
                 <img src={mainPageImg6} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed7')}>
+              <button onClick={()=>nav('./myfeed6')}>
                 <img src={mainPageImg7} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed8')}>
+              <button onClick={()=>nav('./myfeed7')}>
                 <img src={mainPageImg8} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed9')}>
+              <button onClick={()=>nav('./myfeed8')}>
                 <img src={mainPageImg9} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed10')}>
+              <button onClick={()=>nav('./myfeed9')}>
                 <img src={mainPageImg10} alt="" className='content_photo_img'/>
               </button>
             </div><div className="content__photo">
-              <button onClick={()=>nav('./myfeed11')}>
+              <button onClick={()=>nav('./myfeed10')}>
                 <img src={mainPageImg11} alt="" className='content_photo_img'/>
               </button>
             </div>
+            {/* <div className="content__photo">
+              <button onClick={()=>nav('./myfeed11')}>
+                <img src={mainPageImg11} alt="" className='content_photo_img'/>
+              </button>
+            </div> */}
             {/* <div className="content__photo">
               <button onClick={()=>nav('./myfeed1')}>
                 <img src={mainPageImg12} alt="" />

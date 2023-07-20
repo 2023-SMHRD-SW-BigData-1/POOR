@@ -30,6 +30,8 @@ import FeedMain11 from './feedMain/FeedMain11';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ChartMain from './main/ChartMain';
+import Writefeed from './components/Writefeed';
+
 
 function App() {
   
@@ -42,6 +44,7 @@ function App() {
     if(value==='success'){
       setData(value)
       setCheck(!check)
+      
     }
   }
   
@@ -85,6 +88,8 @@ function App() {
           <Route path='/home' element={<MainPageMain/>}/>
           <Route path='/listpage/viewpage/:num' element={<WriteView/>}/>
           <Route path='/chart' element={<ChartMain/>}/>
+          <Route path='/writefeed' element={<Writefeed/>}/>
+
           <Route path='/my/myfeed1' element={<FeedMain1/>}/>
           <Route path='/my/myfeed2' element={<FeedMain2/>}/>
           <Route path='/my/myfeed3' element={<FeedMain3/>}/>

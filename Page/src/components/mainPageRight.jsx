@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 const MainPageRight = () => {
 
+  const userNick = window.localStorage.getItem("user_Nick")
+
 
   const nav = useNavigate();
   const goalsRef = useRef([]);
@@ -43,7 +45,7 @@ const MainPageRight = () => {
       <div className='pageTop'>
         <img className='topImg' src={mainImg} alt='' />
         <div className='topInside'>
-          <h3>{`김거지님`}</h3>
+          <h3>{`${userNick} 님`}</h3>
           <h3>{`등급 그냥..거지?`}</h3>
         </div>
       </div>

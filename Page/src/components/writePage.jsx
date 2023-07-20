@@ -47,10 +47,10 @@ const WritePage = () => {
       <header className="headerContainer">
         <div className="headerContents">
           <div className="mainTag">
-            <a className="mainA" href=" ">
+          <div className="mainA" href=" ">
               <img className="mainImg" src={MainImg} alt="" />
               거지의꿈
-            </a>
+            </div>
           </div>
           {/* <div className="headerSearchBar">
             <i className="fas fa-search"></i>

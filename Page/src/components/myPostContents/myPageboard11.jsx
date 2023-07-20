@@ -12,6 +12,7 @@ import axios from 'axios'
 
 
 const MyPageboard11 = () => {
+  const userID = window.localStorage.getItem("user_ID")
   const nav = useNavigate()
 
 
@@ -136,7 +137,7 @@ const MyPageboard11 = () => {
           <div className="feedHeader">
             <a href="" className="">
             <img src={mpcat} width="32px" height="32px" alt="" />
-            <span>im_notPoor</span>
+            <span>{userID}</span>
             </a>
           </div>
           <div className="feedImage">

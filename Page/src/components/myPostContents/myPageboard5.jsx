@@ -14,6 +14,9 @@ import axios from 'axios'
 const MyPageboard5 = () => {
   const nav = useNavigate()
 
+  const userID = window.localStorage.getItem("user_ID")
+
+
 
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
@@ -136,7 +139,7 @@ const MyPageboard5 = () => {
           <div className="feedHeader">
             <a href="" className="">
             <img src={mpcat} width="32px" height="32px" alt="" />
-            <span>im_notPoor</span>
+            <span>{userID}</span>
             </a>
           </div>
           <div className="feedImage">

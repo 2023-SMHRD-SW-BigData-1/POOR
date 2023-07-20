@@ -48,8 +48,7 @@ const handleLogin = async(req,res)=>{
               //   setCheck(false);
               //   res.sendFile(path.join(__dirname,'../project/build/index.html'))
               res.json({message : 'success', user_ID:userId, user_Nick:userNick})
-              setMyNick(userNick);
-              setMyId(userId);
+              
               req.session.userId = logInUserID
               req.session.userNick = logInUserNick
               res.sendStatus(200)

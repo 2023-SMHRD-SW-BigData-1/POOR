@@ -12,6 +12,9 @@ const MyPageboard = () => {
 
   const [userId, setUserId] = useState('');
 
+  const userID = window.localStorage.getItem("user_ID")
+
+
   useEffect(() => {
     // 서버로부터 사용자 ID 가져오기
     axios.get('/user')
@@ -145,7 +148,7 @@ const MyPageboard = () => {
           <div className="feedHeader">
             <a href="" className="">
             <img src={mpcat} width="32px" height="32px" alt="" />
-            <span>im_notPoor</span>
+            <span>{userID}</span>
             </a>
           </div>
           <div className="feedImage">
